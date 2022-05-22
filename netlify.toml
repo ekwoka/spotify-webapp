@@ -1,0 +1,23 @@
+[build]
+  command = "npx pnpm install --store=node_modules/.pnpm-store && pnpm netlify|| npm run netlify"
+  functions = "api/endpoints"
+  publish = "./dist"
+
+[build.environment]
+  NPM_FLAGS="--version"
+
+[context.production.environment]
+  NODE_VERSION = '18.2.0'
+
+  [[redirects]]
+    from ="/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
+
+  [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
+
+[functions]
+  node_bundler = "esbuild"
