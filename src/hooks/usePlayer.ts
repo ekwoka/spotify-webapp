@@ -47,6 +47,12 @@ export const usePlayer = (): [
     };
   }, [player]);
 
+  useEffect(() => {
+    if (!player || !token) return;
+    if (player.token === token) return;
+    player.setToken(token);
+  }, [player, token]);
+
   const actions = useMemo<PlayerActions>(
     () =>
       player
