@@ -1,2 +1,2 @@
-export { Player } from "./Player";
-export { TrackInfo } from "./TrackInfo";
+export { Player } from './Player';
+export { TrackInfo } from './TrackInfo';

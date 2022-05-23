@@ -1,1 +1,1 @@
-export { SpotifyLogo } from "./SpotifyLogo";
+export { SpotifyLogo } from './SpotifyLogo';
