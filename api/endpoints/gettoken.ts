@@ -10,14 +10,11 @@ export const handler: Handler = async (req) => {
       'https://accounts.spotify.com/api/token',
       fetchOptions(code)
     );
-    if (!response.ok) {
-      console.log(await response.json());
-      throw 'Error fetching token';
-    }
+    if (!response.ok) throw 'Error fetching token';
+
     const data = await response.json();
     return formattedReturn(200, data);
   } catch (error) {
-    console.log(error);
     return formattedReturn(418, { error });
   }
 };
