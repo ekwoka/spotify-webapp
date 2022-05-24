@@ -22,6 +22,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.4",
     "preact": "^10.7.2",
     "preact-global-state": "^1.0.4",
     "preact-router": "^4.0.1",
@@ -89,7 +90,9 @@
       ],
       "@typescript-eslint/no-explicit-any": "off",
       "no-redeclare": "off",
-      "@typescript-eslint/no-redeclare": ["error"]
+      "@typescript-eslint/no-redeclare": [
+        "error"
+      ]
     }
   },
   "prettier": {

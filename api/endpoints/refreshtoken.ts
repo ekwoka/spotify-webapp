@@ -1,5 +1,6 @@
 import { Handler } from '@netlify/functions';
 import { ENV, formattedReturn } from '../utils';
+import fetch from 'node-fetch';
 
 export const handler: Handler = async (req) => {
   try {
