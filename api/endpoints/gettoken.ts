@@ -16,6 +16,7 @@ export const handler: Handler = async (req) => {
     const data = await response.json();
     return formattedReturn(200, data);
   } catch (error) {
+    console.log(error);
     return formattedReturn(418, { error });
   }
 };
