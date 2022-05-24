@@ -1,11 +1,9 @@
 import { Handler } from '@netlify/functions';
 import { ENV, redirect } from '../utils';
 import querystring from 'node:querystring';
-import { generateRandomString } from '../utils/crypto';
 
 export const handler: Handler = async () => {
   const scope = scopes.join(' ');
-  const state = generateRandomString(16);
 
   console.log(ENV.REDIRECT);
 
@@ -15,7 +13,6 @@ export const handler: Handler = async () => {
       client_id: ENV.SPOTIFY_CLIENT,
       scope,
       redirect_uri: ENV.REDIRECT,
-      state,
     })}`
   );
 };

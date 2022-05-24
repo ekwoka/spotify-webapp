@@ -1,3 +1,4 @@
+import { useCallback } from 'preact/hooks';
 import { useGlobalState } from './useGlobalState';
 
 export const useStorage = <T>(
@@ -12,10 +13,13 @@ export const useStorage = <T>(
       : initialValue
   );
 
-  const set = (value: T) => {
-    storage.setItem(key, JSON.stringify(value));
-    setValue(value);
-  };
+  const set = useCallback(
+    (value: T) => {
+      storage.setItem(key, JSON.stringify(value));
+      setValue(value);
+    },
+    [key, storage]
+  );
 
   return [value, set];
 };

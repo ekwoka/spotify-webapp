@@ -34,7 +34,7 @@ export const usePlayer = (): [
   }, []);
 
   useEffect(() => {
-    if (!player) return console.log('skipping state handler');
+    if (!player) return;
 
     const handler = (state: PlayerState | null) => {
       if (!state) return;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useCallback, useEffect, useState } from 'preact/hooks';
 
 const GlobalState = <T>(initialValue: T): GlobalStateMethods<T> => {
   let value: T = initialValue;
@@ -64,12 +64,9 @@ export const useGlobalState: UseGlobalState = (key, defaultValue) => {
     };
   });
 
-  return [
-    currentState,
-    function (v) {
-      globalState.setValue(v);
-    },
-  ];
+  const set = useCallback((v: any) => globalState.setValue(v), [globalState]);
+
+  return [currentState, set];
 };
 
 export const store = Store();

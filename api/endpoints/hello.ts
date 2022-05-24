@@ -4,5 +4,5 @@ import querystring from 'node:querystring';
 
 export const handler: Handler = async () => {
   console.log('redirecting...');
-  return redirect(`/${querystring.stringify({ test: true })}`);
+  return redirect(`/${querystring.stringify({ hello: 'world' })}`);
 };
