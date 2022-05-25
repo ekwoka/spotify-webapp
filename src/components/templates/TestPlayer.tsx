@@ -1,11 +1,9 @@
 import { JSXInternal } from 'preact/src/jsx';
-import { PlayerState, useAuth } from '../../hooks';
-import { useGlobalState } from '../../hooks/useGlobalState';
+import { useAuth } from '../../hooks';
 import { SpotifyLogo } from '../atoms/icons/SpotifyLogo';
-import { Player, TrackInfo } from '../modules';
+import { Main } from './MainApp';
 
 export const TestPlayer = (): JSXInternal.Element => {
-  const [state] = useGlobalState<PlayerState | null>('playerstate', null);
   const [ready, status] = useAuth();
 
   if (!ready) return <SpotifyLogo class="text-white" />;
@@ -17,5 +15,5 @@ export const TestPlayer = (): JSXInternal.Element => {
       </button>
     );
 
-  return <Player />;
+  return <Main />;
 };
