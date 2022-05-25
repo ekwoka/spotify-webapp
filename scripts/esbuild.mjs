@@ -38,6 +38,7 @@ build({
     importGlobPlugin.default(),
     alias({
       react: require.resolve('preact/compat'),
+      'react-dom': require.resolve('preact/compat'),
     }),
   ],
 }).then(async (res) => {
