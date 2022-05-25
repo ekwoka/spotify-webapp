@@ -50,16 +50,14 @@ export const useAuth = (): [boolean, string] => {
         },
         body: JSON.stringify({ refresh_token: refreshToken }),
       });
-      if (!response.ok) {
-        setStatus('failed refresh');
-        return;
-      }
+      if (!response.ok) throw 'Refresh Token Invalid';
       const { access_token } = await response.json();
       setToken(access_token);
       setStatus('refreshed');
       setReady(true);
     } catch (error) {
       setStatus('failed refresh');
+      setToken('');
       setRefreshToken('');
     }
   }, [refreshToken]);
