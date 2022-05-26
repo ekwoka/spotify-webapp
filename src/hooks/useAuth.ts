@@ -60,6 +60,7 @@ export const useAuth = (): [boolean, string] => {
       setToken('');
       setRefreshToken('');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshToken]);
 
   useEffect(() => {
@@ -70,14 +71,15 @@ export const useAuth = (): [boolean, string] => {
       const timeout = setTimeout(refresh, TEN_MINUTES);
       return () => clearTimeout(timeout);
     }
-  }, [refreshToken, ready, token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refreshToken, ready, token, refresh]);
 
   useEffect(() => {
     if (!token && !refreshToken && !code) {
       setStatus('logged out');
       setReady(true);
     }
-  });
+  }, [token, refreshToken, code]);
 
   return [ready, status];
 };

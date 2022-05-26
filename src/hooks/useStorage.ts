@@ -18,6 +18,7 @@ export const useStorage = <T>(
       storage.setItem(key, JSON.stringify(value));
       setValue(value);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [key, storage]
   );
 

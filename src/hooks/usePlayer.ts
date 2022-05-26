@@ -45,6 +45,7 @@ export const usePlayer = (): [
     return () => {
       player.removeListener('state', handler);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [player]);
 
   useEffect(() => {

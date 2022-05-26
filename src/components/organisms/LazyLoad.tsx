@@ -25,9 +25,10 @@ export const lazyLoad = (
   fallback?: LazyLoadProps['fallback']
 ) => {
   const LazyComponent = lazy(cb);
-  return (props: any) => (
+  const LazyLoadWrapped = (props: any) => (
     <LazyLoad Component={LazyComponent} fallback={fallback} {...props} />
-  ); // eslint-disable-line react/display-name
+  );
+  return LazyLoadWrapped;
 };
 
 export type LazyLoadProps = {

@@ -1,6 +1,5 @@
 import { JSXInternal } from 'preact/src/jsx';
 import { AnimatedWaves } from './AnimatedWaves';
-import { BlobField } from './BlobField';
 
 export const BlurredBackground = ({
   src,
@@ -12,7 +11,7 @@ export const BlurredBackground = ({
       {src && (
         <img
           src={src}
-          class="absolute -inset-4 min-h-[calc(100vh+32px)] min-w-[calc(100vw+32px)] object-cover blur-lg opacity-60"
+          class="absolute -inset-4 min-h-[calc(100vh+32px)] min-w-[calc(100vw+32px)] object-cover opacity-60 blur-lg"
           loading="lazy"
         />
       )}

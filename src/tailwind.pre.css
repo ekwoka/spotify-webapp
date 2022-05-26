@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-
   .player-progress {
-    @apply appearance-none w-full h-1;
+    @apply h-1 w-full appearance-none;
   }
 
   .player-progress[value]::-webkit-progress-bar {
@@ -13,27 +12,24 @@
   }
 
   .player-progress[value]::-webkit-progress-value {
-    background-image:
-    -webkit-linear-gradient(top,
-    rgba(255, 255, 255, .25),
-    rgba(0, 0, 0, .25)),
-    -webkit-linear-gradient(left, #448F3d, #448F3d);
+    background-image: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.25),
+        rgba(0, 0, 0, 0.25)
+      ),
+      -webkit-linear-gradient(left, #448f3d, #448f3d);
     background-size: 35px 20px, 100% 100%, 100% 100%;
     @apply duration-1000 ease-out;
   }
 
   .player-progress[value]::-moz-progress-bar {
-    background-image:
-    -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0.25),
-    rgba(0, 0, 0, 0.25)
-    ),
-    -moz-linear-gradient(
-    left, #448F3d, #448F3d
-    );
+    background-image: -moz-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.25),
+        rgba(0, 0, 0, 0.25)
+      ),
+      -moz-linear-gradient(left, #448f3d, #448f3d);
     @apply rounded-sm duration-1000 ease-in-out;
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
-
 }

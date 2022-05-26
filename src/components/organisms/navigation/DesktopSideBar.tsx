@@ -13,6 +13,7 @@ export const DeskTopSideBar = (): JSXInternal.Element => (
         <nav class="flex-1 space-y-1 px-2 pb-4">
           {MAIN_NAVIGATION.map((navItem) => (
             <Link
+              key={navItem.path}
               href={navItem.path}
               class="group flex items-center rounded-md bg-indigo-800 px-2 py-2 text-base font-medium text-white">
               {navItem.Icon && (

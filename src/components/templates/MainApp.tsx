@@ -6,7 +6,7 @@ import { DeskTopSideBar, MobileSideBar } from '../organisms/navigation';
 
 export const Main = () => {
   const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(false);
-  const [_, __, playerState] = usePlayer();
+  const playerState = usePlayer()[2];
 
   const bgImage = useMemo(() => {
     if (!playerState?.track_window?.current_track?.album?.images[0])

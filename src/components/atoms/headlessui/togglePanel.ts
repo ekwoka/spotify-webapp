@@ -1,5 +1,4 @@
 import { cloneElement, createElement, VNode } from 'preact';
-import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { classNames } from '../../../utils/classNames';
 
@@ -25,6 +24,7 @@ export const TogglePanel = ({
     : cloneElement(children as VNode, { class: className, ...props });
 };
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 type TogglePanel = {
   show: boolean;
   falseClass: string;

@@ -11,16 +11,20 @@ export const AnimatedWaves = ({
       <div class="absolute inset-0 flex flex-col justify-end">
         <svg>
           <defs>
-			<filter id="glow">
-				<feGaussianBlur class="blur" result="coloredBlur" stdDeviation="4"></feGaussianBlur>
-				<feMerge>
-					<feMergeNode in="coloredBlur"></feMergeNode>
-          <feMergeNode in="coloredBlur"></feMergeNode>
-          <feMergeNode in="coloredBlur"></feMergeNode>
-					<feMergeNode in="SourceGraphic"></feMergeNode>
-				</feMerge>
-			</filter>
-		</defs>
+            <filter id="glow">
+              <feGaussianBlur
+                class="blur"
+                result="coloredBlur"
+                stdDeviation="4"
+              />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
         </svg>
         {Array.from({ length: layers }, (_, i): JSXInternal.Element => {
           const steps = Array.from(
@@ -32,15 +36,17 @@ export const AnimatedWaves = ({
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
-              class="absolute bottom-0 text-green-600 stroke-green-200"
+              class="absolute bottom-0 stroke-green-200 text-green-600"
               style={{
-                height: `${320 + (layers - i-1) * 100}px`,
+                height: `${320 + (layers - i - 1) * 100}px`,
               }}>
-
-              <path fill="currentColor" id={`wave-path-${i}`} style={{
-                filter: 'url(#glow)',
-                opacity: '0.5'
-              }}>
+              <path
+                fill="currentColor"
+                id={`wave-path-${i}`}
+                style={{
+                  filter: 'url(#glow)',
+                  opacity: '0.5',
+                }}>
                 <animate
                   attributeName="d"
                   dur="60s"

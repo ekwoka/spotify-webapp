@@ -51,6 +51,7 @@ export const MobileSideBar = ({
             <nav class="space-y-1 px-2">
               {MAIN_NAVIGATION.map((navItem) => (
                 <Link
+                  key={navItem.path}
                   href={navItem.path}
                   class="group flex items-center rounded-md bg-indigo-800 px-2 py-2 text-base font-medium text-white"
                   tabIndex={isOpen ? 0 : -1}>
