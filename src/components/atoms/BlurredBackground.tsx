@@ -1,19 +1,24 @@
 import { JSXInternal } from 'preact/src/jsx';
+import { AnimatedWaves } from './AnimatedWaves';
+import { BlobField } from './BlobField';
 
 export const BlurredBackground = ({
   src,
 }: {
   src: string | undefined;
 }): JSXInternal.Element => {
-  if (!src) return <></>;
   return (
-    <>
-      <img
-        src={src}
-        class="absolute -inset-4 min-h-[calc(100vh+32px)] min-w-[calc(100vw+32px)] object-cover blur-lg"
-        loading="lazy"
-      />
-      <div class="absolute -inset-4 bg-gray-900 opacity-50" />
-    </>
+    <div class="fixed inset-0">
+      {src && (
+        <img
+          src={src}
+          class="absolute -inset-4 min-h-[calc(100vh+32px)] min-w-[calc(100vw+32px)] object-cover blur-lg opacity-60"
+          loading="lazy"
+        />
+      )}
+      <AnimatedWaves layers={3} />
+      <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 to-transparent opacity-75" />
+      <div class="absolute inset-0 bg-gray-900 opacity-50" />
+    </div>
   );
 };
