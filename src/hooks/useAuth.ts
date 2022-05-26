@@ -70,7 +70,7 @@ export const useAuth = (): [boolean, string] => {
       const timeout = setTimeout(refresh, TEN_MINUTES);
       return () => clearTimeout(timeout);
     }
-  }, [refreshToken, ready]);
+  }, [refreshToken, ready, token]);
 
   useEffect(() => {
     if (!token && !refreshToken && !code) {
