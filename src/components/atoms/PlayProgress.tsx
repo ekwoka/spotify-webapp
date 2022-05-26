@@ -12,10 +12,12 @@ export const PlayProgress = ({
   const [display, setDisplay] = useState<number>(currentTime);
 
   useEffect(() => {
-    const start = Date.now();
+    console.log()
+    let start: number | null = null
     let cancelled = false;
     // eslint-disable-next-line no-undef
     const step: FrameRequestCallback = (time) => {
+      if (!start) start = time
       if (cancelled || !isPlaying) return;
       setDisplay(Math.round(currentTime + (time - start)));
       requestAnimationFrame(step);
