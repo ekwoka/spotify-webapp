@@ -27,21 +27,26 @@ export const PlayerBar = (): JSXInternal.Element => {
         duration={currentState.duration}
         isPlaying={!currentState.paused}
       />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 gap-2">
         <div class="flex flex-row gap-2">
           <img
             src={currentSong.album.images[0].url}
             class="h-24 w-auto object-cover"
             loading="lazy"
           />
-          <div class="grow-1 flex flex-col">
-            <div>Song: {currentSong.name}</div>
-            <div>Artist: {currentSong.artists[0].name}</div>
-            <div>Album: {currentSong.album.name}</div>
+          <div class="flex flex-1 flex-col justify-center truncate">
+            <div class="flex items-center space-x-3">
+              <h3 class="truncate whitespace-pre-wrap text-sm font-medium text-gray-50 line-clamp-3">
+                {currentSong.name}
+              </h3>
+            </div>
+            <p class="mt-1 truncate text-sm text-gray-200">
+              {currentSong.artists[0].name}
+            </p>
           </div>
         </div>
         <div class="flex w-full flex-row items-center justify-center pb-2">
-          <button onClick={() => previous()}>
+          <button onClick={() => previous()} class="hidden md:block">
             <FastForwardIcon class="h-12 w-12 rotate-180" />
           </button>
           <button
@@ -62,7 +67,7 @@ export const PlayerBar = (): JSXInternal.Element => {
               </>
             )}
           </button>
-          <button onClick={() => next()}>
+          <button onClick={() => next()} class="hidden md:block">
             <FastForwardIcon class="h-12 w-12" />
           </button>
         </div>
