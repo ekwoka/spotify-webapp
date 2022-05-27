@@ -8,7 +8,7 @@ export const BlurredBackground = ({
 }): JSXInternal.Element => {
   return (
     <div class="fixed inset-0">
-      {src && (
+      {src && false && (
         <img
           src={src}
           class="absolute -inset-4 min-h-[calc(100vh+32px)] min-w-[calc(100vw+32px)] object-cover opacity-60 blur-lg"
