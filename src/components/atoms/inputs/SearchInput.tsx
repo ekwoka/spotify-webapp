@@ -1,3 +1,4 @@
+import { useRouter } from 'preact-router';
 import {
   StateUpdater,
   useEffect,
@@ -18,6 +19,11 @@ export const SearchInput = ({
 }: SearchInput): JSXInternal.Element => {
   const [query, setQuery] = useState<string>(value);
   const focus = useRef<HTMLInputElement>(null);
+  const matches = useRouter()[0].matches;
+
+  useEffect(() => {
+    if (matches?.q) setQuery(matches.q);
+  }, [matches]);
 
   useEffect(() => {
     const action = (): void => {
@@ -44,7 +50,7 @@ export const SearchInput = ({
   }, [query, config.setOnCommit, handleChange]);
 
   return (
-    <div>
+    <div class="px-4 py-2">
       {label && (
         <label htmlFor="search" class="block text-sm font-medium text-gray-700">
           {label}

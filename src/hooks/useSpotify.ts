@@ -11,7 +11,7 @@ export const useSpotify = () => {
     if (token) spotifyApi.setAccessToken(token);
   }, [token]);
 
-  return spotifyApi.searchTracks.bind(spotifyApi);
+  return spotifyApi;
 };
 
 export type TrackObject = any;
