@@ -1,7 +1,8 @@
+import { useGlobalState } from '@ekwoka/preact-global-state';
 import Router, { route, Route } from 'preact-router';
 import { StateUpdater } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { useAsyncEffect, useGlobalState } from '../../hooks';
+import { useAsyncEffect } from '../../hooks';
 import { SearchInput } from '../atoms/inputs/SearchInput';
 import { PlayerBar } from '../organisms/PlayerBar';
 import { Home } from '../routes/Home';

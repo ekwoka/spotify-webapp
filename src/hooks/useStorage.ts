@@ -1,5 +1,5 @@
 import { useCallback } from 'preact/hooks';
-import { useGlobalState } from './useGlobalState';
+import { useGlobalState } from '@ekwoka/preact-global-state';
 
 export const useStorage = <T>(
   key: string,

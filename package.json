@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ekwoka/preact-global-state": "^0.1.1",
     "@heroicons/react": "^1.0.6",
     "dotenv": "^16.0.1",
     "node-fetch": "^3.2.4",

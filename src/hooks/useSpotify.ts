@@ -1,4 +1,4 @@
-import { useGlobalState } from './useGlobalState';
+import { useGlobalState } from '@ekwoka/preact-global-state';
 import SpotifyWebApi from 'spotify-web-api-node';
 import { useEffect } from 'preact/hooks';
 

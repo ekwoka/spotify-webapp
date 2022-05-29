@@ -1,11 +1,7 @@
+import { useGlobalState } from '@ekwoka/preact-global-state';
 import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import {
-  TrackObject,
-  useAsyncEffect,
-  useGlobalState,
-  useSpotify,
-} from '../../hooks';
+import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
 import { ResultsItem } from '../atoms';
 import { ResultsGrid } from '../modules';
 
