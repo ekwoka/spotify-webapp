@@ -1,3 +1,4 @@
+import { hotkeys } from '@ekwoka/hotkeys';
 import { useRouter } from 'preact-router';
 import {
   StateUpdater,
@@ -8,7 +9,6 @@ import {
 } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { debounce } from '../../../utils/debounce';
-import { hotkeys } from '../../../utils/preact-hotkeys/hotkeys';
 
 export const SearchInput = ({
   value,
