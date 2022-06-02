@@ -2,7 +2,6 @@ import { useEffect, useMemo } from 'preact/hooks';
 import SpotifyPlayer, { SpotifyWebPlaybackState } from 'spotify-web-playback';
 import { useAsyncEffect } from './useAsyncEffect';
 import { useGlobalState } from '@ekwoka/preact-global-state';
-import { useStorage } from './useStorage';
 
 let alreadyCalled = false;
 

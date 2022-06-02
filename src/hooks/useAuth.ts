@@ -83,8 +83,8 @@ export const useAuth = (): UseAuth => {
   }, [token, refreshToken, code]);
 
   useEffect(() => {
-    if ( status === 'logged out') route('/login');
-  })
+    if (status === 'logged out') route('/login');
+  });
 
   return [done, status];
 };
