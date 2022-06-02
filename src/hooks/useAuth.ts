@@ -76,7 +76,6 @@ export const useAuth = (): UseAuth => {
   }, [refreshToken, done, refresh]);
 
   useEffect(() => {
-    console.log(token)
     if (!token && !refreshToken && !code) {
       setStatus('logged out');
       setDone(true);
