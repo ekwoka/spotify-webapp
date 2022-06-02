@@ -24,8 +24,8 @@
     "@ekwoka/preact-global-state": "^0.1.2",
     "@heroicons/react": "^1.0.6",
     "dotenv": "^16.0.1",
-    "node-fetch": "^3.2.4",
-    "preact": "^10.7.2",
+    "node-fetch": "^3.2.5",
+    "preact": "^10.7.3",
     "preact-router": "^4.0.1",
     "spotify-web-api-node": "^5.0.2",
     "spotify-web-playback": "^1.4.0"
