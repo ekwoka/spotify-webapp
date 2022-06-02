@@ -1,3 +1,3 @@
-import { TestPlayer } from './components/templates/TestPlayer';
+import { Root } from './routes/Root';
 
-export const App = () => <TestPlayer />;
+export const App = () => <Root />;

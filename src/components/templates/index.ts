@@ -1,1 +1,1 @@
-export { TestPlayer } from './TestPlayer';
+export { Splash } from './Splash';

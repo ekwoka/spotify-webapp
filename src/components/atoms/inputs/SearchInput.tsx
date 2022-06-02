@@ -62,7 +62,7 @@ export const SearchInput = ({
           name="search"
           id="search"
           ref={focus}
-          class="block w-full rounded-md border-gray-300 pr-12 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          class="block w-full rounded-md border-gray-300 pr-12 text-black shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
           value={query}
           onChange={({ target }): void =>
             setQuery((target as HTMLInputElement).value)

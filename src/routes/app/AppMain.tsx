@@ -1,8 +1,11 @@
 import { useMemo, useState } from 'preact/hooks';
 import { usePlayer } from '../../hooks';
-import { BlurredBackground } from '../atoms/BlurredBackground';
-import { MainSection } from '../layout/MainSection';
-import { DeskTopSideBar, MobileSideBar } from '../organisms/navigation';
+import { BlurredBackground } from '../../components/atoms/BlurredBackground';
+import { MainSection } from '../../components/layout/MainSection';
+import {
+  DeskTopSideBar,
+  MobileSideBar,
+} from '../../components/organisms/navigation';
 
 export const Main = () => {
   const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(false);

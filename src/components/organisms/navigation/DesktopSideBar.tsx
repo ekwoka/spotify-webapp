@@ -5,7 +5,7 @@ import { SpotifyLogo } from '../../atoms/icons';
 
 export const DeskTopSideBar = (): JSXInternal.Element => (
   <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-    <div class="flex flex-grow flex-col overflow-y-auto bg-indigo-700 pt-5">
+    <div class="flex flex-grow flex-col overflow-y-auto bg-emerald-700 pt-5">
       <div class="flex flex-shrink-0 items-center px-4">
         <SpotifyLogo class="max-h-8 w-full text-white" />
       </div>
@@ -15,9 +15,9 @@ export const DeskTopSideBar = (): JSXInternal.Element => (
             <Link
               key={navItem.path}
               href={navItem.path}
-              class="group flex items-center rounded-md bg-indigo-800 px-2 py-2 text-base font-medium text-white">
+              class="group flex items-center rounded-md bg-emerald-800 px-2 py-2 text-base font-medium text-white">
               {navItem.Icon && (
-                <navItem.Icon class="mr-3 h-6 w-6 flex-shrink-0 text-indigo-300" />
+                <navItem.Icon class="mr-3 h-6 w-6 flex-shrink-0 text-emerald-300" />
               )}
               {navItem.name}
             </Link>

@@ -19,7 +19,7 @@ export const usePlayer = (): [
     'playerstate',
     null
   );
-  const [token, setToken] = useStorage<string>('token', '');
+  const [token, setToken] = useGlobalState<string>('token', '');
 
   useAsyncEffect(async () => {
     if (alreadyCalled || !token) return;

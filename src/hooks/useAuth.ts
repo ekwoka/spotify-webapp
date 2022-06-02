@@ -1,11 +1,13 @@
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { route } from 'preact-router';
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { useAsyncEffect } from './useAsyncEffect';
 import { useStorage } from './useStorage';
 
-export const useAuth = (): [boolean, string] => {
-  const [ready, setReady] = useState<boolean>(false);
-  const [status, setStatus] = useState<string>('waiting');
-  const [token, setToken] = useStorage<string>('token', '');
+export const useAuth = (): UseAuth => {
+  const [done, setDone] = useState<boolean>(false);
+  const [status, setStatus] = useState<AuthStatus>('preparing');
+  const [token, setToken] = useGlobalState<string>('token', '');
   const [refreshToken, setRefreshToken] = useStorage<string>(
     'refreshToken',
     ''
@@ -19,7 +21,7 @@ export const useAuth = (): [boolean, string] => {
     if (!code) return;
 
     try {
-      setStatus('fetching');
+      setStatus('getting token');
       const response = await fetch('/api/gettoken', {
         method: 'POST',
         headers: {
@@ -31,10 +33,10 @@ export const useAuth = (): [boolean, string] => {
       const { access_token, refresh_token } = await response.json();
       setToken(access_token);
       setRefreshToken(refresh_token);
-      setStatus('success');
-      setReady(true);
+      setStatus('logged in');
+      setDone(true);
     } catch (e) {
-      setStatus('code failed');
+      setStatus('logged out');
       console.log('code failed', e);
       window.location.href = '/';
     }
@@ -53,11 +55,10 @@ export const useAuth = (): [boolean, string] => {
       if (!response.ok) throw 'Refresh Token Invalid';
       const { access_token } = await response.json();
       setToken(access_token);
-      setStatus('refreshed');
-      setReady(true);
+      setStatus('logged in');
+      setDone(true);
     } catch (error) {
-      setStatus('failed refresh');
-      setToken('');
+      setStatus('logged out');
       setRefreshToken('');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,23 +66,37 @@ export const useAuth = (): [boolean, string] => {
 
   useEffect(() => {
     if (!refreshToken) return;
-    if (!ready) {
+    if (!done) {
       refresh();
     } else {
       const timeout = setTimeout(refresh, TEN_MINUTES);
       return () => clearTimeout(timeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refreshToken, ready, token, refresh]);
+  }, [refreshToken, done, refresh]);
 
   useEffect(() => {
+    console.log(token)
     if (!token && !refreshToken && !code) {
       setStatus('logged out');
-      setReady(true);
+      setDone(true);
     }
   }, [token, refreshToken, code]);
 
-  return [ready, status];
+  useEffect(() => {
+    if ( status === 'logged out') route('/login');
+  })
+
+  return [done, status];
 };
 
 const TEN_MINUTES = 1000 * 60 * 10;
+
+type UseAuth = [boolean, AuthStatus];
+
+export type AuthStatus =
+  | 'preparing'
+  | 'refreshing'
+  | 'getting token'
+  | 'logged in'
+  | 'logged out';
