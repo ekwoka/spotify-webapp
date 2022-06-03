@@ -22,7 +22,7 @@ export const SearchInput = ({
   const matches = useRouter()[0].matches;
 
   useEffect(() => {
-    if (matches?.q) setQuery(matches.q);
+    if (matches?.rest?.includes('search')) setQuery(matches.rest.split('/')[1]);
   }, [matches]);
 
   useEffect(() => {
