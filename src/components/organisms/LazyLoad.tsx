@@ -1,5 +1,6 @@
 import { JSXInternal } from 'preact/src/jsx';
 import { Suspense, lazy } from 'preact/compat';
+import { Spinner } from '../atoms/icons';
 
 export const LazyLoad = ({
   Component,
@@ -17,7 +18,9 @@ const prepareFallback = (fb: LazyLoadProps['fallback']) => {
 };
 
 const Default = () => (
-  <div class="w-full text-center text-5xl text-white">Loading...</div>
+  <div class="w-full p-8">
+    <Spinner />
+  </div>
 );
 
 export const lazyLoad = (
