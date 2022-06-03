@@ -1,17 +1,20 @@
 import { Handler } from '@netlify/functions';
 import { ENV, formattedReturn } from '../utils';
 import fetch from 'node-fetch';
+import { parse } from 'cookie';
 
 export const handler: Handler = async (req) => {
   try {
-    const { refresh_token: refreshToken } = JSON.parse(req.body as string);
+    if (!req.headers.cookie) throw 'No cookies';
+    const { refresh_token: refreshToken } = parse(req.headers.cookie);
 
     const response = await fetch(
       'https://accounts.spotify.com/api/token',
       fetchOptions(refreshToken)
     );
+
     if (!response.ok) throw 'Error fetching token';
-    const data = await response.json();
+    const data = (await response.json()) as { refresh_token: string };
     return formattedReturn(200, data);
   } catch (e) {
     return formattedReturn(418, { error: e });

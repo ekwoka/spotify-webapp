@@ -1,5 +1,5 @@
 import { Handler } from '@netlify/functions';
-import { ENV, formattedReturn } from '../utils';
+import { ENV, formattedReturn, refreshCookie } from '../utils';
 import fetch from 'node-fetch';
 
 export const handler: Handler = async (req) => {
@@ -12,8 +12,10 @@ export const handler: Handler = async (req) => {
     );
     if (!response.ok) throw 'Error fetching token';
 
-    const data = await response.json();
-    return formattedReturn(200, data);
+    const data = (await response.json()) as { refresh_token: string };
+    return formattedReturn(200, data, {
+      'Set-Cookie': refreshCookie(data.refresh_token),
+    });
   } catch (error) {
     return formattedReturn(418, { error });
   }

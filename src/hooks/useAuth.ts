@@ -2,16 +2,12 @@ import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { route } from 'preact-router';
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { useAsyncEffect } from './useAsyncEffect';
-import { useStorage } from './useStorage';
 
 export const useAuth = (): UseAuth => {
   const [done, setDone] = useState<boolean>(false);
   const [status, setStatus] = useState<AuthStatus>('preparing');
-  const [token, setToken] = useGlobalState<string>('token', '');
-  const [refreshToken, setRefreshToken] = useStorage<string>(
-    'refreshToken',
-    ''
-  );
+  const setToken = useGlobalState<string>('token', '')[1];
+
   const code = useMemo(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get('code');
@@ -30,9 +26,8 @@ export const useAuth = (): UseAuth => {
         body: JSON.stringify({ code }),
       });
       if (!response.ok) throw 'Code Invalid';
-      const { access_token, refresh_token } = await response.json();
+      const { access_token } = await response.json();
       setToken(access_token);
-      setRefreshToken(refresh_token);
       setStatus('logged in');
       setDone(true);
     } catch (e) {
@@ -43,29 +38,23 @@ export const useAuth = (): UseAuth => {
   }, [code]);
 
   const refresh = useCallback(async () => {
+    if (code) return;
     setStatus('refreshing');
     try {
-      const response = await fetch('/api/refreshtoken', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ refresh_token: refreshToken }),
-      });
+      const response = await fetch('/api/refreshtoken');
       if (!response.ok) throw 'Refresh Token Invalid';
       const { access_token } = await response.json();
       setToken(access_token);
       setStatus('logged in');
-      setDone(true);
     } catch (error) {
       setStatus('logged out');
-      setRefreshToken('');
     }
+    setDone(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refreshToken]);
+  }, []);
 
   useEffect(() => {
-    if (!refreshToken) return;
+    /* TODO: Use HTTP-only cookie for Refreshing */
     if (!done) {
       refresh();
     } else {
@@ -73,14 +62,7 @@ export const useAuth = (): UseAuth => {
       return () => clearTimeout(timeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refreshToken, done, refresh]);
-
-  useEffect(() => {
-    if (!token && !refreshToken && !code) {
-      setStatus('logged out');
-      setDone(true);
-    }
-  }, [token, refreshToken, code]);
+  }, [done, refresh]);
 
   useEffect(() => {
     if (status === 'logged out') route('/login');
