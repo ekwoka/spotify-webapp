@@ -14,7 +14,7 @@
     "watch": "run-p watch:* serve",
     "watch:js": "NODE_ENV=development node scripts/esbuild.mjs",
     "watch:css": "tailwindcss -i src/tailwind.pre.css -o dist/styles.css -w",
-    "lint": "eslint --fix src; prettier --write src; eslint --fix api; prettier --write api",
+    "lint": "eslint --fix src; prettier --write src --loglevel error; eslint --fix api; prettier --write api --loglevel error",
     "upgrade": "ncu -u && pnpm i && pnpm build && git commit -S -am ':arrow_up: Dependencies' && pnpm version patch"
   },
   "author": "",
