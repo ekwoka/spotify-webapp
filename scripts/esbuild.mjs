@@ -3,26 +3,31 @@ import importGlobPlugin from 'esbuild-plugin-import-glob';
 import { copy } from 'esbuild-plugin-copy';
 import alias from 'esbuild-plugin-alias';
 import { createRequire } from 'module';
+import { getAllTypeScript } from './utils/getAllTypescript.mjs';
 const require = createRequire(import.meta.url);
 
 const dev = process.env.NODE_ENV === 'development';
+const test = process.env.NODE_ENV === 'test';
 
+const paths = test
+  ? await getAllTypeScript(['./src'], ['.ts', '.tsx'])
+  : ['./src/index.tsx'];
 console.time('esbuild');
 build({
-  entryPoints: ['./src/index.tsx'],
+  entryPoints: paths,
   jsxFactory: 'h',
   jsxFragment: 'Fragment',
   outdir: './dist',
-  inject: ['./src/preact-shim.ts'],
-  splitting: true,
-  format: 'esm',
-  bundle: true,
+  inject: test ? ['./src/preact-shim.ts'] : [],
+  splitting: !test,
+  format: test ? 'cjs' : 'esm',
+  bundle: !test,
   target: 'es2017',
   platform: 'browser',
-  minify: !dev,
+  minify: !(dev || test),
   watch: dev
     ? {
-        onRebuild(err, res) {
+        onRebuild(err) {
           if (err) console.error('esbuild failed:', err);
           else console.log('esbuild rebuilt');
         },
