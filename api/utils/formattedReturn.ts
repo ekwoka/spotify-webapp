@@ -10,10 +10,15 @@ export const formattedReturn = (
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
       ...header,
-    },
+    } as DefaultHeaders & AnyObject,
   };
 };
 
 type AnyObject = {
   [key: string]: any;
+};
+
+type DefaultHeaders = {
+  'Access-Control-Allow-Origin': '*';
+  'Access-Control-Allow-Credentials': true;
 };

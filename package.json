@@ -127,6 +127,9 @@
     "transform": {},
     "roots": [
       "<rootDir>/dist"
-    ]
+    ],
+    "fakeTimers": {
+      "enableGlobally": true
+    }
   }
 }

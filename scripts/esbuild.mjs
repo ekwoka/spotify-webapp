@@ -10,7 +10,7 @@ const dev = process.env.NODE_ENV === 'development';
 const test = process.env.NODE_ENV === 'test';
 
 const paths = test
-  ? await getAllTypeScript(['./src'], ['.ts', '.tsx'])
+  ? await getAllTypeScript(['./src', './api'], ['.ts', '.tsx'])
   : ['./src/index.tsx'];
 console.time('esbuild');
 build({
