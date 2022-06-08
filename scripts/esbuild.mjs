@@ -18,7 +18,7 @@ build({
   jsxFactory: 'h',
   jsxFragment: 'Fragment',
   outdir: './dist',
-  inject: test ? ['./src/preact-shim.ts'] : [],
+  inject: test ? [] : ['./src/preact-shim.ts'],
   splitting: !test,
   format: test ? 'cjs' : 'esm',
   bundle: !test,
