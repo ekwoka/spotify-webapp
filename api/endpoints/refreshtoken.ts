@@ -1,6 +1,6 @@
 import { Handler } from '@netlify/functions';
 import { ENV, formattedReturn } from '../utils';
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import { parse } from 'cookie';
 
 export const handler: Handler = async (req) => {
