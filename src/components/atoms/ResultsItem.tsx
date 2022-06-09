@@ -33,6 +33,7 @@ export const ResultsItem = ({
         <img
           class="h-full max-h-24 w-auto flex-shrink-0 rounded-md bg-gray-300 object-cover"
           src={album.images[0].url}
+          loading="lazy"
           width={album.images[0].width}
           height={album.images[0].height}
           alt={album.name}
