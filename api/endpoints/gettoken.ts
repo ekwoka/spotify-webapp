@@ -16,7 +16,7 @@ export const handler: Handler | MockedHandler = async (
     if (!response.ok) throw 'Error fetching token';
 
     const data = (await response.json()) as { refresh_token: string };
-    return formattedReturn(200, data, {
+    return formattedReturn(200, { ...data, refresh_token: undefined }, {
       'Set-Cookie': refreshCookie(data.refresh_token),
     });
   } catch (error) {
