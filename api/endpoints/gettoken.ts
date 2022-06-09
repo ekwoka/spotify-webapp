@@ -1,11 +1,14 @@
 import { Handler } from '@netlify/functions';
+import { Event } from '@netlify/functions/dist/function/event';
 import { ENV, formattedReturn, refreshCookie } from '../utils';
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
+import { FormattedReturn } from '../utils/formattedReturn';
 
-export const handler: Handler = async (req) => {
+export const handler: Handler | MockedHandler = async (
+  req: Event
+): Promise<FormattedReturn> => {
   try {
     const { code } = JSON.parse(req.body as string);
-
     const response = await fetch(
       'https://accounts.spotify.com/api/token',
       fetchOptions(code)
@@ -35,3 +38,13 @@ const fetchOptions = (code: string) => ({
     grant_type: 'authorization_code',
   }),
 });
+
+type HandlerRequest = {
+  body: string;
+};
+
+type MockedHandler = (req: HandlerRequest) => Promise<{
+  statusCode: number;
+  body: string;
+  headers: { 'Set-Cookie': string };
+}>;

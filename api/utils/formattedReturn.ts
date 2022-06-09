@@ -2,7 +2,7 @@ export const formattedReturn = (
   statusCode: number,
   body: any,
   header: AnyObject = {}
-) => {
+): FormattedReturn => {
   return {
     statusCode,
     body: JSON.stringify(body),
@@ -21,4 +21,10 @@ type AnyObject = {
 type DefaultHeaders = {
   'Access-Control-Allow-Origin': '*';
   'Access-Control-Allow-Credentials': true;
+};
+
+export type FormattedReturn = {
+  statusCode: number;
+  body: string;
+  headers: DefaultHeaders & AnyObject;
 };
