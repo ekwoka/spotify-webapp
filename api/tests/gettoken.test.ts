@@ -41,7 +41,7 @@ describe('GetToken Endpoint', () => {
     expect(response.statusCode).toBe(200);
     const { refresh_token } = JSON.parse(response.body);
     expect(refresh_token).toBeUndefined();
-  })
+  });
 
   it('should return a secure HTTP cookie containing the refresh token', async () => {
     /* @ts-ignore */
@@ -60,7 +60,7 @@ describe('GetToken Endpoint', () => {
     expect(response.headers['Set-Cookie']).toContain('refresh_token=200');
     expect(response.headers['Set-Cookie']).toContain('HttpOnly');
     expect(response.headers['Set-Cookie']).toContain('Secure');
-  })
+  });
   it('should return 418 when code is bad', async () => {
     /* @ts-ignore */
     fetch.mockImplementation(() =>
@@ -74,7 +74,7 @@ describe('GetToken Endpoint', () => {
       {} as any
     )) as FormattedReturn;
 
-    expect(response.statusCode).toBe(418)
+    expect(response.statusCode).toBe(418);
     expect(JSON.parse(response.body).error).toBe('Error fetching token');
-   })
+  });
 });

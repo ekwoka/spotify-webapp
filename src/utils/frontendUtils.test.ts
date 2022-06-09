@@ -11,7 +11,11 @@ describe('Front End Utilities', () => {
 
   describe('debounce', () => {
     it('returns a function', () => {
-      expect(typeof debounce(() => {})).toBe('function');
+      expect(
+        typeof debounce(() => {
+          /* nothing */
+        })
+      ).toBe('function');
     });
     it('properly debounces the function', () => {
       const func = jest.fn();
