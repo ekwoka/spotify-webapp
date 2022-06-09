@@ -2,10 +2,8 @@ import { Handler } from '@netlify/functions';
 import { ENV, redirect } from '../utils';
 import querystring from 'node:querystring';
 
-export const handler: Handler = async () => {
+export const handler: Handler | MockedHandler = async () => {
   const scope = scopes.join(' ');
-
-  console.log(ENV.REDIRECT);
 
   return redirect(
     `https://accounts.spotify.com/authorize?${querystring.stringify({
@@ -31,3 +29,11 @@ const scopes: string[] = [
   'user-library-read',
   'user-read-private',
 ];
+
+type MockedHandler = (req: any) => Promise<{
+  statusCode: number;
+  body: string;
+  headers: {
+    location: string;
+  };
+}>;

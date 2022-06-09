@@ -73,7 +73,6 @@ describe('GetToken Endpoint', () => {
       { body: JSON.stringify({ code: 'invalid' }) } as any,
       {} as any
     )) as FormattedReturn;
-
     expect(response.statusCode).toBe(418);
     expect(JSON.parse(response.body).error).toBe('Error fetching token');
   });
