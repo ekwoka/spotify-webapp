@@ -1,4 +1,5 @@
 import { describe, expect, it } from '@jest/globals';
+import { ENV } from './config';
 import { generateRandomString } from './crypto';
 import { formattedReturn } from './formattedReturn';
 import { redirect } from './redirect';
@@ -54,4 +55,12 @@ describe('Server Utilities', () => {
       );
     });
   });
+
+  describe('Config', () => {
+    it('should contain necessary data', () => {
+      expect(ENV.SPOTIFY_CLIENT).toBeDefined();
+      expect(ENV.SPOTIFY_SECRET).toBeDefined();
+      expect(ENV.REDIRECT).toBeDefined();
+    });
+  })
 });

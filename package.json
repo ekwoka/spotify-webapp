@@ -31,6 +31,7 @@
     "dotenv": "^16.0.1",
     "preact": "^10.7.3",
     "preact-router": "^4.0.1",
+    "react": "npm:preact-compat@^3.19.0",
     "spotify-web-api-node": "^5.0.2",
     "spotify-web-playback": "^1.4.0"
   },
