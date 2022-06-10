@@ -2,7 +2,7 @@ import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
 import { ResultsItem } from '../../components/atoms';
-import { ResultsGrid } from '../../components/modules';
+import { ResultsGrid } from '../../components/molecules';
 
 export const Home = (): JSXInternal.Element => {
   const [results, setResults] = useState<TrackObject[]>([]);
