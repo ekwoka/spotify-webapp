@@ -14,7 +14,7 @@ export const PlayerBar = (): JSXInternal.Element => {
   if (!currentState || !currentSong)
     return (
       <div
-        class="fixed inset-x-0 bottom-0 flex h-24 flex-row gap-2 bg-gray-900 text-white"
+        class="fixed inset-x-0 bottom-0 z-20 flex h-24 flex-row gap-2 bg-gray-900 text-white"
         onClick={() => play(TEST_URIS)}>
         {player ? 'No Songs' : 'Connecting...'}
       </div>
