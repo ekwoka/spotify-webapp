@@ -3,19 +3,17 @@ import Router, { route, Route } from 'preact-router';
 import { StateUpdater } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { useAsyncEffect } from '../../hooks';
-import { SearchInput } from '../atoms/inputs/SearchInput';
-import { lazyLoad } from '../organisms';
-import { PlayerBar } from '../organisms/PlayerBar';
+import { SearchInput } from '../../components/atoms/inputs/SearchInput';
+import { lazyLoad } from '../../components/organisms';
+import { PlayerBar } from '../../components/organisms/PlayerBar';
 
 const LazyResults = lazyLoad(
   () =>
-    import('../routes/SearchResults').then(
-      (mod) => mod.SearchResults
-    ) as Promise<() => JSXInternal.Element>
+    import('./SearchResults').then((mod) => mod.SearchResults) as Promise<
+      () => JSXInternal.Element
+    >
 );
-const LazyHome = lazyLoad(() =>
-  import('../routes/Home').then((mod) => mod.Home)
-);
+const LazyHome = lazyLoad(() => import('./Home').then((mod) => mod.Home));
 
 export const MainSection = (): JSXInternal.Element => {
   const [search, setSearch] = useGlobalState<string>('searchString', '');

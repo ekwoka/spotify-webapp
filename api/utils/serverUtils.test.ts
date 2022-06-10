@@ -62,5 +62,5 @@ describe('Server Utilities', () => {
       expect(ENV.SPOTIFY_SECRET).toBeDefined();
       expect(ENV.REDIRECT).toBeDefined();
     });
-  })
+  });
 });
