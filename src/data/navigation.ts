@@ -1,5 +1,6 @@
 import {
   CogIcon,
+  DotsHorizontalIcon,
   HeartIcon,
   HomeIcon,
   InformationCircleIcon,
@@ -47,6 +48,30 @@ export const SECONDARY_NAVIGATION: NavigationItem[] = [
     name: 'About',
     path: '/',
     Icon: InformationCircleIcon,
+  },
+];
+
+export const TAB_NAV: NavigationItem[] = [
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Playlists',
+    path: '/',
+  },
+  {
+    name: 'Artists',
+    path: '/',
+  },
+  {
+    name: 'Albums',
+    path: '/',
+  },
+  {
+    name: '',
+    path: '/',
+    Icon: DotsHorizontalIcon,
   },
 ];
 
