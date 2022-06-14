@@ -73,8 +73,7 @@
       "ignoreMissing": [
         "react"
       ]
-    },
-    "strict-peer-dependencies": false
+    }
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
