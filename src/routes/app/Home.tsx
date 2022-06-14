@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
-import { ResultsItem } from '../../components/atoms';
-import { ResultsGrid } from '../../components/molecules';
+import { SimpleFlexGrid } from '../../components/molecules/SimpleFlexGrid';
+import { SimpleGridItem } from '../../components/atoms/SimpleGridItem';
 
 export const Home = (): JSXInternal.Element => {
   const [results, setResults] = useState<TrackObject[]>([]);
@@ -14,6 +14,9 @@ export const Home = (): JSXInternal.Element => {
   }, []);
 
   return (
-    <ResultsGrid as={(item) => <ResultsItem {...item} />} data={results} />
+    <SimpleFlexGrid
+      as={(item) => <SimpleGridItem {...item} />}
+      data={results}
+    />
   );
 };
