@@ -27,11 +27,16 @@ export const PlayerBar = (): JSXInternal.Element => {
         duration={currentState.duration}
         isPlaying={!currentState.paused}
       />
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid h-full grid-cols-2 gap-2">
         <div class="flex flex-row gap-2">
           <img
-            src={currentSong.album.images[0].url}
+            src={
+              currentSong.album.images[0]?.url ??
+              'https://placekitten.com/640/640'
+            }
             class="h-24 w-auto object-cover"
+            width="1"
+            height="1"
             loading="lazy"
           />
           <div class="flex flex-1 flex-col justify-center truncate">
@@ -41,12 +46,12 @@ export const PlayerBar = (): JSXInternal.Element => {
               </h3>
             </div>
             <p class="mt-1 truncate text-sm text-gray-200">
-              {currentSong.artists[0].name}
+              {currentSong.artists[0]?.name ?? 'None'}
             </p>
           </div>
         </div>
         <div class="flex w-full flex-row items-center justify-center pb-2">
-          <button onClick={() => previous()} class="hidden md:block">
+          <button onClick={() => previous()} class="block">
             <FastForwardIcon class="h-12 w-12 rotate-180" />
           </button>
           <button
@@ -67,7 +72,7 @@ export const PlayerBar = (): JSXInternal.Element => {
               </>
             )}
           </button>
-          <button onClick={() => next()} class="hidden md:block">
+          <button onClick={() => next()} class="block">
             <FastForwardIcon class="h-12 w-12" />
           </button>
         </div>

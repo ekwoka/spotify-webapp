@@ -16,7 +16,7 @@ export const usePlayer = (): [
   );
   const [status, setStatus] = useGlobalState<PlayerState | null>(
     'playerstate',
-    null
+    nullPlaybackState
   );
   const [token, setToken] = useGlobalState<string>('token', '');
 
@@ -87,4 +87,56 @@ const nullPlayerActions: PlayerActions = {
   next: () => Promise.resolve(),
   previous: () => Promise.resolve(),
   seek: () => Promise.resolve(),
+};
+
+const nullPlaybackState: SpotifyWebPlaybackState = {
+  duration: 1,
+  position: 0,
+  paused: true,
+  track_window: {
+    current_track: {
+      album: {
+        images: [],
+        name: '',
+        uri: '',
+      },
+      artists: [],
+      id: '',
+      linked_from: { uri: null, id: null },
+      linked_from_uri: null,
+      duration_ms: 1,
+      name: '',
+      uri: '',
+      is_playable: false,
+      media_type: '',
+      type: '',
+    },
+    next_tracks: [],
+    previous_tracks: [],
+  },
+  context: {
+    uri: null,
+    metadata: {
+      album: {
+        images: [],
+        name: '',
+        uri: '',
+      },
+      artists: [],
+      name: '',
+      type: '',
+    },
+  },
+  bitrate: 0,
+  disallows: {
+    skipping_prev: false,
+    resuming: false,
+  },
+  restrictions: {
+    disallow_resuming_reasons: [],
+    disallow_skipping_prev_reasons: [],
+  },
+  shuffle: false,
+  timestamp: 0,
+  repeat_mode: 0,
 };
