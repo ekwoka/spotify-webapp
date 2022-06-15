@@ -1,15 +1,16 @@
-import { ChevronRightIcon } from '@heroicons/react/solid';
-import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
+import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { SongLabel } from './SongLabel';
 
 export const SimpleGridItem = ({
   name,
   artists,
   album,
+  uri,
 }: TrackObject): JSXInternal.Element => {
   const [artist, setArtist] = useState<{ [key: string]: any } | null>(null);
   const SpotifyApi = useSpotify();
+  const { play } = usePlayer()[1];
 
   useAsyncEffect(async () => {
     const response = await SpotifyApi.getArtist(artists[0].id);
@@ -17,7 +18,9 @@ export const SimpleGridItem = ({
   }, []);
 
   return (
-    <li class="flex w-48 shrink-0 flex-col gap-4">
+    <li
+      class="flex w-52 shrink-0 cursor-pointer flex-col gap-4"
+      onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"
         src={album.images[0].url}
@@ -26,7 +29,9 @@ export const SimpleGridItem = ({
         height={album.images[0].height}
         alt={album.name}
       />
-      <button type="button" class="flex w-full flex-row items-center gap-2">
+      <button
+        type="button"
+        class="flex w-full flex-row items-center gap-2 text-left">
         {artist && (
           <img
             class="h-6 w-6 rounded-full"
