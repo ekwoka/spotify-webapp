@@ -52,7 +52,9 @@ export const SearchInput = ({
   return (
     <div class="px-4 py-2">
       {label && (
-        <label htmlFor="search" class="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="search"
+          class="block text-sm font-medium text-neutral-700">
           {label}
         </label>
       )}
@@ -62,7 +64,7 @@ export const SearchInput = ({
           name="search"
           id="search"
           ref={focus}
-          class="block w-full rounded-md border-gray-300 pr-12 text-black shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
+          class="block w-full rounded-md border-neutral-300 pr-12 text-black shadow-sm focus:border-lime-500 focus:ring-lime-500 sm:text-sm"
           value={query}
           onChange={({ target }): void =>
             setQuery((target as HTMLInputElement).value)
@@ -72,8 +74,8 @@ export const SearchInput = ({
           }}
         />
         <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
-          {Icon && <Icon class="h-4 w-4 text-gray-500" />}
-          <kbd class="inline-flex items-center rounded border border-gray-200 px-2 font-sans text-sm font-medium text-gray-400">
+          {Icon && <Icon class="h-4 w-4 text-neutral-500" />}
+          <kbd class="inline-flex items-center rounded border border-neutral-200 px-2 font-sans text-sm font-medium text-neutral-400">
             ⌘K
           </kbd>
         </div>

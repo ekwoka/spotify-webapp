@@ -16,8 +16,8 @@ export const BlurredBackground = ({
         />
       )}
       <AnimatedWaves layers={3} />
-      <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 to-transparent opacity-75" />
-      <div class="absolute inset-0 bg-gray-900 opacity-50" />
+      <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 to-transparent opacity-75" />
+      <div class="absolute inset-0 bg-neutral-900 opacity-50" />
     </div>
   );
 };

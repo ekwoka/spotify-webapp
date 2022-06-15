@@ -5,7 +5,7 @@ export const Player = () => {
 
   return (
     <button
-      class="mx-auto mt-20 max-w-max rounded-full bg-green-500 px-4 py-2 text-black disabled:bg-gray-500"
+      class="mx-auto mt-20 max-w-max rounded-full bg-green-500 px-4 py-2 text-black disabled:bg-neutral-500"
       type="button"
       onClick={() => play(TEST_URIS)}
       disabled={!player}>
