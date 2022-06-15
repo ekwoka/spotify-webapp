@@ -37,9 +37,7 @@ export const SimpleGridItem = ({
             alt={artist.name}
           />
         )}
-        <span class=" text-left text-xs line-clamp-1">
-          {name} <ChevronRightIcon class="inline h-3 w-3" /> {artists[0].name}
-        </span>
+        <SongLabel name={name} artist={artists[0].name} class="text-xs" />
       </button>
     </li>
   );

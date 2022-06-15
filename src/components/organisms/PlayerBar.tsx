@@ -39,16 +39,6 @@ export const PlayerBar = (): JSXInternal.Element => {
             height="1"
             loading="lazy"
           />
-          <div class="flex flex-1 flex-col justify-center truncate">
-            <div class="flex items-center space-x-3">
-              <h3 class="truncate whitespace-pre-wrap text-sm font-medium text-gray-50 line-clamp-3">
-                {currentSong.name}
-              </h3>
-            </div>
-            <p class="mt-1 truncate text-sm text-gray-200">
-              {currentSong.artists[0]?.name ?? 'None'}
-            </p>
-          </div>
         </div>
         <div class="flex w-full flex-row items-center justify-center pb-2">
           <button onClick={() => previous()} class="block">
@@ -76,6 +66,11 @@ export const PlayerBar = (): JSXInternal.Element => {
             <FastForwardIcon class="h-12 w-12" />
           </button>
         </div>
+        <SongLabel
+          name={currentSong.name}
+          artist={currentSong.artists[0]?.name ?? 'None'}
+          class="flex-none pb-2 text-sm"
+        />
       </div>
     </div>
   );
