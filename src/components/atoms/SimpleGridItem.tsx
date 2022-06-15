@@ -32,16 +32,14 @@ export const SimpleGridItem = ({
       <button
         type="button"
         class="flex w-full flex-row items-center gap-2 text-left">
-        {artist && (
-          <img
-            class="h-6 w-6 rounded-full"
-            src={artist.images[0].url}
-            loading="lazy"
-            width={artist.images[0].width}
-            height={artist.images[0].height}
-            alt={artist.name}
-          />
-        )}
+        <img
+          class="h-6 w-6 rounded-full"
+          src={artist?.images[0].url ?? 'https://placekitten.com/100/100'}
+          loading="lazy"
+          width={artist?.images[0].width ?? 1}
+          height={artist?.images[0].height ?? 1}
+          alt={artist?.name ?? ''}
+        />
         <SongLabel name={name} artist={artists[0].name} class="text-xs" />
       </button>
     </li>
