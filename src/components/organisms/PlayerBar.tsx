@@ -7,7 +7,7 @@ import { PlayerControls } from '../molecules/PlayerControls';
 import { PlayerOptions } from '../molecules/PlayerOptions';
 
 export const PlayerBar = (): JSXInternal.Element => {
-  const [player, { play, pause, next, previous }, currentState] = usePlayer();
+  const currentState = usePlayer()[2];
   const currentSong = useMemo(() => {
     if (!currentState) return null;
     return currentState.track_window.current_track;
@@ -15,21 +15,19 @@ export const PlayerBar = (): JSXInternal.Element => {
 
   if (!currentState || !currentSong)
     return (
-      <div
-        class="fixed inset-x-0 bottom-0 z-20 flex h-24 flex-row gap-2 bg-gray-900 text-white"
-        onClick={() => play(TEST_URIS)}>
-        {player ? 'No Songs' : 'Connecting...'}
+      <div class="fixed inset-x-0 bottom-0 z-20 flex h-24 flex-row gap-2 bg-neutral-900 text-center text-neutral-200">
+        'Connecting...'
       </div>
     );
 
   return (
-    <div class="fixed inset-x-0 bottom-0 h-24 bg-gray-900 text-white">
+    <div class="fixed inset-x-0 bottom-0 h-24 bg-neutral-900 text-neutral-200">
       <PlayProgress
         currentTime={currentState.position}
         duration={currentState.duration}
         isPlaying={!currentState.paused}
       />
-      <div className="grid h-full grid-cols-2 gap-2">
+      <div className="flex h-full flex-row flex-nowrap items-center justify-between gap-4">
         <div class="flex flex-row gap-2">
           <img
             src={
