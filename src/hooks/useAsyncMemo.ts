@@ -9,6 +9,7 @@ export const useAsyncMemo = <T>(
   const [state, setState] = useState<T>(fallback);
   useAsyncEffect(async () => {
     const result = await fn();
+    if (!result) return;
     setState(result);
   }, deps);
   return state;
