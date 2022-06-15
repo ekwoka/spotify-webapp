@@ -11,7 +11,7 @@ export const ResultsGrid = <T extends unknown>({
   return (
     <ul
       role="list"
-      className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-3">
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-3">
       {data.map(as)}
     </ul>
   );

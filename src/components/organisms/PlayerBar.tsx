@@ -27,7 +27,7 @@ export const PlayerBar = (): JSXInternal.Element => {
         duration={currentState.duration}
         isPlaying={!currentState.paused}
       />
-      <div className="flex h-full flex-row flex-nowrap items-center justify-between gap-4">
+      <div class="flex h-full flex-row flex-nowrap items-center justify-between gap-4">
         <div class="flex flex-row gap-2">
           <img
             src={

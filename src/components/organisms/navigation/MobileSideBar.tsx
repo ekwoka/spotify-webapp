@@ -40,7 +40,7 @@ export const MobileSideBar = ({
               onClick={() => setIsOpen(false)}
               tabIndex={isOpen ? 0 : -1}>
               <span class="sr-only">Close sidebar</span>
-              <XIcon className="h-6 w-6 text-neutral-200" aria-hidden="true" />
+              <XIcon class="h-6 w-6 text-neutral-200" aria-hidden="true" />
             </button>
           </TogglePanel>
 
