@@ -1,8 +1,9 @@
-import { FastForwardIcon, PauseIcon, PlayIcon } from '@heroicons/react/solid';
 import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { PlayProgress } from '../atoms/PlayProgress';
+import { SongLabel } from '../atoms/SongLabel';
+import { PlayerControls } from '../molecules/PlayerControls';
 
 export const PlayerBar = (): JSXInternal.Element => {
   const [player, { play, pause, next, previous }, currentState] = usePlayer();
@@ -40,32 +41,7 @@ export const PlayerBar = (): JSXInternal.Element => {
             loading="lazy"
           />
         </div>
-        <div class="flex w-full flex-row items-center justify-center pb-2">
-          <button onClick={() => previous()} class="block">
-            <FastForwardIcon class="h-12 w-12 rotate-180" />
-          </button>
-          <button
-            onClick={() => {
-              if (!currentState) return play(TEST_URIS);
-              if (currentState.paused) play();
-              else pause();
-            }}>
-            {currentState?.paused ? (
-              <>
-                <span class="sr-only">Play Current Track</span>
-                <PlayIcon class="h-12 w-12" />
-              </>
-            ) : (
-              <>
-                <span class="sr-only">Pause Current Track</span>
-                <PauseIcon class="h-12 w-12" />
-              </>
-            )}
-          </button>
-          <button onClick={() => next()} class="block">
-            <FastForwardIcon class="h-12 w-12" />
-          </button>
-        </div>
+        <PlayerControls />
         <SongLabel
           name={currentSong.name}
           artist={currentSong.artists[0]?.name ?? 'None'}
@@ -75,9 +51,3 @@ export const PlayerBar = (): JSXInternal.Element => {
     </div>
   );
 };
-
-const TEST_URIS: string[] = [
-  'spotify:track:4b9LMCUaw55QajVRfrfPyS',
-  'spotify:track:2zCXNCWa1RMIHfv0435jhT',
-  'spotify:track:03UrZgTINDqvnUMbbIMhql',
-];
