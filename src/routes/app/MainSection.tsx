@@ -25,7 +25,7 @@ export const MainSection = (): JSXInternal.Element => {
   return (
     <div class="relative flex flex-1 flex-col gap-2 md:pl-64">
       <TopBar />
-      <main class="mb-36 px-4 py-4 text-neutral-200">
+      <main class="mb-36 min-h-screen px-4 py-4 text-neutral-200">
         <Router>
           <Route path="/" component={LazyHome} />
           <Route path="/search/:q" component={LazyResults} />
