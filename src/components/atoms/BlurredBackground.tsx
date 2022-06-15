@@ -1,11 +1,11 @@
 import { JSXInternal } from 'preact/src/jsx';
-import { AnimatedWaves } from './AnimatedWaves';
+/* import { AnimatedWaves } from './AnimatedWaves'; */
 
-export const BlurredBackground = ({
+export const BlurredBackground = (/* {
   src,
 }: {
   src: string | undefined;
-}): JSXInternal.Element => {
+} */): JSXInternal.Element => {
   return (
     <div class="fixed inset-0">
       {/* {src && (
