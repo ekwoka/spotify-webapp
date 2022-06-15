@@ -33,3 +33,13 @@
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
