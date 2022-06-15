@@ -4,6 +4,7 @@ import { usePlayer } from '../../hooks';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
 import { PlayerControls } from '../molecules/PlayerControls';
+import { PlayerOptions } from '../molecules/PlayerOptions';
 
 export const PlayerBar = (): JSXInternal.Element => {
   const [player, { play, pause, next, previous }, currentState] = usePlayer();
@@ -47,6 +48,7 @@ export const PlayerBar = (): JSXInternal.Element => {
           artist={currentSong.artists[0]?.name ?? 'None'}
           class="flex-none pb-2 text-sm"
         />
+        <PlayerOptions />
       </div>
     </div>
   );
