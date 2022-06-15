@@ -1,22 +1,32 @@
-import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
+import { TrackObject } from '../../hooks';
 import { SimpleFlexGrid } from '../../components/molecules/SimpleFlexGrid';
 import { SimpleGridItem } from '../../components/atoms/SimpleGridItem';
+import { TrackList } from '../../components/organisms/TrackList';
 
 export const Home = (): JSXInternal.Element => {
-  const [results, setResults] = useState<TrackObject[]>([]);
-  const SpotifyApi = useSpotify();
-
-  useAsyncEffect(async () => {
-    const response = await SpotifyApi.getMyTopTracks({ limit: 20 });
-    setResults((prev) => response?.body?.items || prev);
-  }, []);
-
   return (
-    <SimpleFlexGrid
-      as={(item) => <SimpleGridItem {...item} />}
-      data={results}
-    />
+    <div class="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
+        <h2>Most Listened Tracks</h2>
+        <TrackList type="getMyTopTracks" limit={50}>
+          <SimpleFlexGrid
+            as={(item) => <SimpleGridItem {...item} />}
+            items={[] as TrackObject[]}
+            minHeight={52}
+          />
+        </TrackList>
+      </div>
+      <div className="flex flex-col gap-4">
+        <h2>Recently Played tracks</h2>
+        <TrackList type="getMyRecentlyPlayedTracks" limit={50}>
+          <SimpleFlexGrid
+            as={(item) => <SimpleGridItem {...item} />}
+            items={[] as TrackObject[]}
+            minHeight={52}
+          />
+        </TrackList>
+      </div>
+    </div>
   );
 };
