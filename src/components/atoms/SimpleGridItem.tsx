@@ -8,14 +8,14 @@ export const SimpleGridItem = ({
   album,
   uri,
 }: TrackObject): JSXInternal.Element => {
-  const [artist, setArtist] = useState<{ [key: string]: any } | null>(null);
   const SpotifyApi = useSpotify();
   const { play } = usePlayer()[1];
 
-  useAsyncEffect(async () => {
-    const response = await SpotifyApi.getArtist(artists[0].id);
-    setArtist((prev) => response?.body || prev);
-  }, []);
+  const artist = useAsyncMemo<{ [key: string]: any } | null>(
+    async () => (await SpotifyApi.getArtist(artists[0].id)).body,
+    null,
+    []
+  );
 
   return (
     <li
