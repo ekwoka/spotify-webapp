@@ -2,6 +2,7 @@ import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { PlayProgress } from '../atoms/PlayProgress';
+import { RespImage } from '../atoms/RespImage';
 import { SongLabel } from '../atoms/SongLabel';
 import { PlayerControls } from '../molecules/PlayerControls';
 import { PlayerOptions } from '../molecules/PlayerOptions';
@@ -29,11 +30,13 @@ export const PlayerBar = (): JSXInternal.Element => {
       />
       <div class="flex h-full flex-row flex-nowrap items-center justify-between gap-4">
         <div class="flex flex-row gap-2">
-          <img
+          <RespImage
             src={
               currentSong.album.images[0]?.url ??
               'https://placekitten.com/640/640'
             }
+            maxWidth={currentSong.album.images[0]?.width}
+            sizes={`${24 / 4}rem`}
             class="h-24 w-auto object-cover"
             width="1"
             height="1"
