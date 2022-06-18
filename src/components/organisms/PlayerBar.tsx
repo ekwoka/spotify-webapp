@@ -22,7 +22,7 @@ export const PlayerBar = (): JSXInternal.Element => {
     );
 
   return (
-    <div class="fixed inset-x-0 bottom-0 h-24 bg-neutral-900 text-neutral-200">
+    <div class="fixed inset-x-0 bottom-0 z-20 h-24 bg-neutral-900 text-neutral-200">
       <PlayProgress
         currentTime={currentState.position}
         duration={currentState.duration}
