@@ -44,7 +44,7 @@ export const PlayerBar = (): JSXInternal.Element => {
         <SongLabel
           name={currentSong.name}
           artist={currentSong.artists[0]?.name ?? 'None'}
-          class="flex-none pb-2 text-sm"
+          class="pb-2 text-sm"
         />
         <PlayerOptions />
       </div>
