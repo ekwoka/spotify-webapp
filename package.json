@@ -32,6 +32,7 @@
     "preact": "^10.8.1",
     "preact-router": "^4.0.1",
     "react": "npm:preact-compat@^3.19.0",
+    "sharp": "^0.30.6",
     "spotify-web-api-node": "^5.0.2",
     "spotify-web-playback": "^1.4.0"
   },
@@ -44,6 +45,7 @@
     "@types/cookie": "^0.5.1",
     "@types/jest": "^28.1.2",
     "@types/node": "^18.0.0",
+    "@types/sharp": "^0.30.4",
     "@types/spotify-api": "^0.0.16",
     "@types/spotify-web-api-node": "^5.0.7",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
