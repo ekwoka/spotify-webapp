@@ -1,6 +1,5 @@
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
-import { RespImage } from './RespImage';
 import { SongLabel } from './SongLabel';
 
 export const SimpleGridItem = ({
@@ -22,11 +21,9 @@ export const SimpleGridItem = ({
     <li
       class="flex w-52 shrink-0 cursor-pointer flex-col gap-4"
       onClick={() => play(uri)}>
-      <RespImage
-        src={album.images[0].url}
-        maxWidth={album.images[0].width}
-        sizes={`${52 / 4}rem`}
+      <img
         class="h-auto w-full rounded-lg"
+        src={album.images[0].url}
         loading="lazy"
         width={album.images[0].width}
         height={album.images[0].height}
@@ -35,11 +32,9 @@ export const SimpleGridItem = ({
       <button
         type="button"
         class="flex w-full flex-row items-center gap-2 text-left">
-        <RespImage
-          src={artist?.images[0].url ?? 'https://placekitten.com/100/100'}
-          maxWidth={100}
-          sizes="1.5rem"
+        <img
           class="h-6 w-6 rounded-full"
+          src={artist?.images[0].url ?? 'https://placekitten.com/100/100'}
           loading="lazy"
           width={artist?.images[0].width ?? 1}
           height={artist?.images[0].height ?? 1}

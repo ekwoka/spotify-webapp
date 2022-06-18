@@ -2,7 +2,6 @@ import { PlayIcon, ViewGridAddIcon } from '@heroicons/react/solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { TrackObject } from '../../hooks/useSpotify';
-import { RespImage } from './RespImage';
 
 export const ResultsItem = ({
   id,
@@ -33,11 +32,9 @@ export const ResultsItem = ({
             </span>
           )}
         </div>
-        <RespImage
+        <img
           class="h-full max-h-24 w-auto flex-shrink-0 rounded-md bg-neutral-300 object-cover"
           src={album.images[0].url}
-          maxWidth={album.images[0].width}
-          sizes={`${24 / 4}rem`}
           loading="lazy"
           width={album.images[0].width}
           height={album.images[0].height}
