@@ -19,6 +19,7 @@ export const toRespImageURL = (url: string, width = 180): string => {
 export const toRespImageSrcset = (url: string, maxWidth = Infinity): string => {
   return imgWidths
     .map((w) => (w < maxWidth ? `${toRespImageURL(url, w)} ${w}w` : ''))
+    .filter((u) => u)
     .join(', ');
 };
 
