@@ -1,20 +1,21 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { route } from 'preact-router';
-import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
+import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 import { useAsyncEffect } from './useAsyncEffect';
 
 export const useAuth = (): UseAuth => {
   const [done, setDone] = useState<boolean>(false);
   const [status, setStatus] = useState<AuthStatus>('preparing');
   const setToken = useGlobalState<string>('token', '')[1];
-
-  const code = useMemo(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('code');
-  }, []);
+  const code = useRef<string | null>(
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('code');
+    })()
+  );
 
   useAsyncEffect(async () => {
-    if (!code) return;
+    if (!code.current) return;
 
     try {
       setStatus('getting token');
@@ -23,7 +24,7 @@ export const useAuth = (): UseAuth => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ code }),
+        body: JSON.stringify({ code: code.current }),
       });
       if (!response.ok) throw 'Code Invalid';
       const { access_token } = await response.json();
@@ -35,11 +36,11 @@ export const useAuth = (): UseAuth => {
       console.log('code failed', e);
       window.location.href = '/';
     }
-  }, [code]);
+    code.current = null;
+  }, [code.current]);
 
   const refresh = useCallback(async () => {
-    if (code) return;
-    setStatus('refreshing');
+    if (code.current) return;
     try {
       const response = await fetch('/api/refreshtoken');
       if (!response.ok) throw 'Refresh Token Invalid';
@@ -54,12 +55,11 @@ export const useAuth = (): UseAuth => {
   }, []);
 
   useEffect(() => {
-    /* TODO: Use HTTP-only cookie for Refreshing */
     if (!done) {
       refresh();
     } else {
-      const timeout = setTimeout(refresh, TEN_MINUTES);
-      return () => clearTimeout(timeout);
+      const timeout = setInterval(refresh, TEN_MINUTES);
+      return () => clearInterval(timeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [done, refresh]);
