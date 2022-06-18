@@ -1,6 +1,7 @@
 import { it, expect, describe, jest } from '@jest/globals';
 import { classNames } from './classNames';
 import { debounce } from './debounce';
+import { toRespImageSrcset, toRespImageURL } from './respImage';
 
 describe('Front End Utilities', () => {
   describe('classNames', () => {
@@ -27,6 +28,19 @@ describe('Front End Utilities', () => {
       jest.advanceTimersByTime(500);
       expect(func).toHaveBeenCalled();
       expect(func).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('responsiveImage', () => {
+    it('returns a respImage string', () => {
+      const src = toRespImageURL('https://example.com/image.jpg', 200);
+      expect(src).toBe('/api/image?url=https://example.com/image.jpg&w=200');
+    });
+    it('returns multiple respImage strings', () => {
+      const srcset = toRespImageSrcset('https://example.com/image.jpg', 200);
+      expect(srcset).toBe(
+        '/api/image?url=https://example.com/image.jpg&w=90 90w, /api/image?url=https://example.com/image.jpg&w=180 180w'
+      );
     });
   });
 });
