@@ -1,4 +1,5 @@
 import { JSXInternal } from 'preact/src/jsx';
+import { toRespImageURL, toRespImageSrcset } from '../../utils';
 
 export const RespImage = ({
   src,
