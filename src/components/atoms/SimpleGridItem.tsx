@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
 import { SongLabel } from './SongLabel';
@@ -23,10 +24,10 @@ export const SimpleGridItem = ({
       onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"
-        src={album.images[0].url}
+        src={album.images[0]?.url ?? 'https://placekitten.com/600/600'}
         loading="lazy"
-        width={album.images[0].width}
-        height={album.images[0].height}
+        width={album.images[0]?.width ?? 1}
+        height={album.images[0]?.height ?? 1}
         alt={album.name}
       />
       <button
@@ -34,10 +35,10 @@ export const SimpleGridItem = ({
         class="flex w-full flex-row items-center gap-2 text-left">
         <img
           class="h-6 w-6 rounded-full"
-          src={artist?.images[0].url ?? 'https://placekitten.com/100/100'}
+          src={artist?.images[0]?.url ?? 'https://placekitten.com/100/100'}
           loading="lazy"
-          width={artist?.images[0].width ?? 1}
-          height={artist?.images[0].height ?? 1}
+          width={artist?.images[0]?.width ?? 1}
+          height={artist?.images[0]?.height ?? 1}
           alt={artist?.name ?? ''}
         />
         <SongLabel name={name} artist={artists[0].name} class="text-xs" />

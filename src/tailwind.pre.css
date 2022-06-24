@@ -35,11 +35,11 @@
 }
 
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    @apply hidden;
-  }
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    @apply hidden;
   }
 }

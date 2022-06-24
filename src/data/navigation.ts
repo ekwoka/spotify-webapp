@@ -33,7 +33,7 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
   },
   {
     name: 'Search',
-    path: '/',
+    path: '/search',
     Icon: SearchIcon,
   },
 ];

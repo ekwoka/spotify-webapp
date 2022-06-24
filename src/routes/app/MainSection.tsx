@@ -28,6 +28,7 @@ export const MainSection = (): JSXInternal.Element => {
       <main class="mb-36 min-h-screen px-4 py-4 text-neutral-200">
         <Router>
           <Route path="/" component={LazyHome} />
+          <Route path="/search" component={LazyResults} />
           <Route path="/search/:q" component={LazyResults} />
         </Router>
       </main>

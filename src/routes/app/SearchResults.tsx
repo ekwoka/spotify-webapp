@@ -1,8 +1,10 @@
 import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
-import { ResultsItem } from '../../components/atoms';
-import { ResultsGrid } from '../../components/molecules';
+import { ResultsItem, SimpleGridItem } from '../../components/atoms';
+import { ResultsGrid, SimpleFlexGrid } from '../../components/molecules';
+import { SearchInput } from '../../components/atoms/inputs';
+import { route } from 'preact-router';
 
 export const SearchResults = ({
   q: query,
@@ -10,15 +12,25 @@ export const SearchResults = ({
   q: string;
 }): JSXInternal.Element => {
   const [results, setResults] = useState<TrackObject[]>([]);
+  const [search, setSearch] = useState<string>(query ?? '');
   const SpotifyApi = useSpotify();
 
   useAsyncEffect(async () => {
-    if (!query) return;
-    const response = await SpotifyApi.searchTracks(query);
+    route(`/search/${search}`);
+    if (!search) return;
+    const response = await SpotifyApi.searchTracks(search);
     setResults((prev) => response?.body?.tracks?.items || prev);
-  }, [query]);
+  }, [search]);
 
   return (
-    <ResultsGrid as={(item) => <ResultsItem {...item} />} data={results} />
+    <div class="flex w-full flex-col gap-8">
+      <SearchInput value={search} setter={setSearch} />
+      <SimpleFlexGrid
+        as={(item) => <SimpleGridItem key={item.id} {...item} />}
+        items={results}
+        minHeight={52}
+        wrap={true}
+      />
+    </div>
   );
 };

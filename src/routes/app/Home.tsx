@@ -11,7 +11,7 @@ export const Home = (): JSXInternal.Element => {
         <h2>Most Listened Tracks</h2>
         <TrackList type="getMyTopTracks" limit={10}>
           <SimpleFlexGrid
-            as={(item) => <SimpleGridItem {...item} />}
+            as={(item) => <SimpleGridItem key={item.id} {...item} />}
             items={[] as TrackObject[]}
             minHeight={52}
           />
@@ -21,7 +21,7 @@ export const Home = (): JSXInternal.Element => {
         <h2>Recently Played tracks</h2>
         <TrackList type="getMyRecentlyPlayedTracks" limit={10}>
           <SimpleFlexGrid
-            as={(item) => <SimpleGridItem {...item} />}
+            as={(item) => <SimpleGridItem key={item.id} {...item} />}
             items={[] as TrackObject[]}
             minHeight={52}
           />
