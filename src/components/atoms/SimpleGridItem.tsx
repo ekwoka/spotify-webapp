@@ -1,4 +1,3 @@
-import { useEffect } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
 import { SongLabel } from './SongLabel';

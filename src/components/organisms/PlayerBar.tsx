@@ -3,6 +3,7 @@ import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
+import { Zen } from '../atoms/Zen';
 import { PlayerControls } from '../molecules/PlayerControls';
 import { PlayerOptions } from '../molecules/PlayerOptions';
 
@@ -41,11 +42,15 @@ export const PlayerBar = (): JSXInternal.Element => {
           />
         </div>
         <PlayerControls />
-        <SongLabel
-          name={currentSong.name}
-          artist={currentSong.artists[0]?.name ?? 'None'}
-          class="pb-2 text-sm"
-        />
+        {currentSong.name ? (
+          <SongLabel
+            name={currentSong.name}
+            artist={currentSong.artists[0]?.name ?? 'Unknown'}
+            class="pb-2 text-sm"
+          />
+        ) : (
+          <Zen />
+        )}
         <PlayerOptions />
       </div>
     </div>

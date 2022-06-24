@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncEffect, useSpotify } from '../../hooks';
-import { ResultsItem, SimpleGridItem } from '../../components/atoms';
-import { ResultsGrid, SimpleFlexGrid } from '../../components/molecules';
+import { SimpleGridItem } from '../../components/atoms';
+import { SimpleFlexGrid } from '../../components/molecules';
 import { SearchInput } from '../../components/atoms/inputs';
 import { route } from 'preact-router';
 
