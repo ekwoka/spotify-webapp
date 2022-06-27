@@ -58,7 +58,7 @@ export const TAB_NAV: NavigationItem[] = [
   },
   {
     name: 'Playlists',
-    path: '/',
+    path: '/playlists',
   },
   {
     name: 'Artists',

@@ -6,11 +6,7 @@ import { SimpleFlexGrid } from '../../components/molecules';
 import { SearchInput } from '../../components/atoms/inputs';
 import { route } from 'preact-router';
 
-export const SearchResults = ({
-  q: query,
-}: {
-  q: string;
-}): JSXInternal.Element => {
+export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
   const [results, setResults] = useState<TrackObject[]>([]);
   const [search, setSearch] = useState<string>(query ?? '');
   const SpotifyApi = useSpotify();

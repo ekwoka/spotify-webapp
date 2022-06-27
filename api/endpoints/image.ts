@@ -1,3 +1,5 @@
+/* Does not work on the edge */
+
 /* eslint-disable no-unexpected-multiline */
 import { Handler } from '@netlify/functions';
 import { Response } from '@netlify/functions/dist/function/response';

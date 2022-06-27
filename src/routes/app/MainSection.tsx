@@ -6,13 +6,16 @@ import { lazyLoad } from '../../components/organisms';
 import { PlayerBar } from '../../components/organisms/PlayerBar';
 import { TopBar } from '../../components/organisms/navigation/TopBar';
 
-const LazyResults = lazyLoad(
+const LazyHome = lazyLoad(() => import('./Home').then((mod) => mod.Home));
+const LazySearch = lazyLoad(
   () =>
-    import('./SearchResults').then((mod) => mod.SearchResults) as Promise<
+    import('./Search').then((mod) => mod.Search) as Promise<
       () => JSXInternal.Element
     >
 );
-const LazyHome = lazyLoad(() => import('./Home').then((mod) => mod.Home));
+const LazyPlaylist = lazyLoad(() =>
+  import('./Playlists').then((mod) => mod.Playlists)
+);
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
@@ -28,8 +31,9 @@ export const MainSection = (): JSXInternal.Element => {
       <main class="mb-36 min-h-screen px-4 py-4 text-neutral-200">
         <Router>
           <Route path="/" component={LazyHome} />
-          <Route path="/search" component={LazyResults} />
-          <Route path="/search/:q" component={LazyResults} />
+          <Route path="/search" component={LazySearch} />
+          <Route path="/search/:q" component={LazySearch} />
+          <Route path="/playlists" component={LazyPlaylist} />
         </Router>
       </main>
       <PlayerBar />
