@@ -51,7 +51,7 @@ export const PlayerBar = (): JSXInternal.Element => {
         ) : (
           <Zen />
         )}
-        <PlayerOptions />
+        <PlayerOptions song={currentSong} />
       </div>
     </div>
   );

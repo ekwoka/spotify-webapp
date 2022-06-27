@@ -42,4 +42,20 @@
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
   }
+
+  .animate-like {
+    animation: like 200ms ease-out;
+  }
+
+  @keyframes like {
+    0% {
+      transform: scale(0.1);
+    }
+    75% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
