@@ -14,12 +14,12 @@ export const SimpleFlexGrid = <T extends unknown>({
   items: T[];
   minHeight?: number;
   wrap?: boolean;
-  }): JSXInternal.Element => {
+}): JSXInternal.Element => {
   const container = useRef<HTMLUListElement>(null);
   const scrollRight = (): void => {
     if (!container.current) return;
-    container.current.scrollLeft += (container.current.clientWidth*2/3);
-  }
+    container.current.scrollLeft += (container.current.clientWidth * 2) / 3;
+  };
 
   return (
     <div class="relative">
@@ -27,7 +27,7 @@ export const SimpleFlexGrid = <T extends unknown>({
         role="list"
         ref={container}
         class={classNames(
-          'no-scrollbar flex w-full max-w-full flex-row gap-8 overflow-x-scroll scroll-smooth snap-proximity snap-x',
+          'no-scrollbar flex w-full max-w-full snap-x snap-proximity flex-row gap-8 overflow-x-scroll scroll-smooth',
           wrap ? 'flex-wrap' : 'flex-nowrap'
         )}
         style={{
@@ -38,7 +38,9 @@ export const SimpleFlexGrid = <T extends unknown>({
       </ul>
       {!wrap && (
         <div class="pointer-events-none absolute inset-0 flex flex-row justify-end">
-          <button type="button" onClick={scrollRight}
+          <button
+            type="button"
+            onClick={scrollRight}
             class="pointer-events-auto flex h-full w-1/3 items-center justify-end bg-gradient-to-r from-transparent via-neutral-900/75 to-neutral-900">
             <ChevronRightIcon class="m-12 h-8 w-8 text-neutral-200/50" />
           </button>
