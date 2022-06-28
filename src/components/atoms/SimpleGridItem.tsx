@@ -19,7 +19,7 @@ export const SimpleGridItem = ({
 
   return (
     <li
-      class="flex w-52 shrink-0 cursor-pointer flex-col gap-4"
+      class="flex w-52 shrink-0 cursor-pointer flex-col gap-4 snap-start"
       onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"
