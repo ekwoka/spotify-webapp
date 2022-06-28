@@ -18,7 +18,7 @@ const prepareFallback = (fb: LazyLoadProps['fallback']) => {
 };
 
 const Default = () => (
-  <div class="w-full p-8">
+  <div class="w-full p-8 h-full flex items-center justify-center">
     <Spinner />
   </div>
 );
