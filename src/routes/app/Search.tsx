@@ -5,6 +5,7 @@ import { SimpleGridItem } from '../../components/atoms';
 import { SimpleFlexGrid } from '../../components/molecules';
 import { SearchInput } from '../../components/atoms/inputs';
 import { route } from 'preact-router';
+import { getRecommendations } from '../../utils/spotify/getRecommendations';
 
 export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
   const [results, setResults] = useState<TrackObject[]>([]);
@@ -13,7 +14,10 @@ export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
 
   useAsyncEffect(async () => {
     route(`/search/${search}`);
-    if (!search) return;
+    if (!search) {
+      setResults(await getRecommendations(SpotifyApi));
+      return;
+    }
     const response = await SpotifyApi.searchTracks(search);
     setResults((prev) => response?.body?.tracks?.items || prev);
   }, [search]);
