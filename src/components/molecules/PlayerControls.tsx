@@ -7,11 +7,13 @@ export const PlayerControls = (): JSXInternal.Element => {
 
   return (
     <div class="flex flex-row items-center justify-center px-8 pb-2">
-      <button onClick={() => previous()} class="block">
+      <button onClick={() => previous()} class="block disabled:text-gray-400"
+        disabled={!!currentState}>
         <FastForwardIcon class="h-8 w-8 rotate-180" />
       </button>
       <button
-        class="text-lime-500"
+        class="text-lime-500 disabled:text-gray-400"
+        disabled={!!currentState}
         onClick={() => {
           if (!currentState) return;
           if (currentState.paused) play();
@@ -29,7 +31,8 @@ export const PlayerControls = (): JSXInternal.Element => {
           </>
         )}
       </button>
-      <button onClick={() => next()} class="block">
+      <button onClick={() => next()} class="block disabled:text-gray-400"
+        disabled={!!currentState}>
         <FastForwardIcon class="h-8 w-8" />
       </button>
     </div>

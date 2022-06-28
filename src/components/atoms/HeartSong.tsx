@@ -20,7 +20,7 @@ export const HeartSong = ({ id }: { id: string }) => {
     });
   };
   return (
-    <button type="button" onClick={toggleHeart}>
+    <button type="button" onClick={toggleHeart} disabled={!id}>
       <HeartIcon
         class={classNames(
           'h-6 w-6 flex-none transition-colors',
