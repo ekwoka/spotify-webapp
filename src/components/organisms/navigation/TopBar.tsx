@@ -1,4 +1,4 @@
-import { Link } from 'preact-router';
+import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { TAB_NAV } from '../../../data/navigation';
 

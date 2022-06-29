@@ -1,5 +1,5 @@
 import { XIcon } from '@heroicons/react/outline';
-import { Link } from 'preact-router';
+import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { MAIN_NAVIGATION } from '../../../data/navigation';
 import { TogglePanel } from '../../atoms/headlessui/togglePanel';
