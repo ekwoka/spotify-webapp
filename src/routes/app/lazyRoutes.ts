@@ -13,3 +13,6 @@ export const LazySearch = lazyLoad(
 export const LazyPlaylist = lazyLoad(() =>
   import('./Playlists').then((mod) => mod.Playlists)
 );
+export const LazyPlaying = lazyLoad(() =>
+  import('./Playing').then((mod) => mod.Playing)
+);

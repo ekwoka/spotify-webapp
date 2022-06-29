@@ -23,6 +23,7 @@ export const MainSection = (): JSXInternal.Element => {
           <Route path="/search" component={LazySearch} />
           <Route path="/search/:q" component={LazySearch} />
           <Route path="/playlists" component={LazyPlaylist} />
+          <Route path="/playing" component={LazyPlaying} />
         </Router>
       </main>
       <PlayerBar />
