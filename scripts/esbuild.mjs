@@ -19,7 +19,7 @@ build({
   jsxFragment: 'Fragment',
   outdir: './dist',
   inject: test ? [] : ['./src/preact-shim.ts'],
-  splitting: !test,
+  splitting: false,
   format: test ? 'cjs' : 'esm',
   bundle: !test,
   target: 'es2017',
