@@ -2,20 +2,9 @@ import { useGlobalState } from '@ekwoka/preact-global-state';
 import Router, { route, Route } from 'preact-router';
 import { JSXInternal } from 'preact/src/jsx';
 import { useAsyncEffect } from '../../hooks';
-import { lazyLoad } from '../../components/organisms';
 import { PlayerBar } from '../../components/organisms/PlayerBar';
 import { TopBar } from '../../components/organisms/navigation/TopBar';
-
-const LazyHome = lazyLoad(() => import('./Home').then((mod) => mod.Home));
-const LazySearch = lazyLoad(
-  () =>
-    import('./Search').then((mod) => mod.Search) as Promise<
-      () => JSXInternal.Element
-    >
-);
-const LazyPlaylist = lazyLoad(() =>
-  import('./Playlists').then((mod) => mod.Playlists)
-);
+import { LazyHome, LazyPlaying, LazyPlaylist, LazySearch } from './lazyRoutes';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
