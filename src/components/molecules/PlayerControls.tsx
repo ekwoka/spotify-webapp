@@ -10,14 +10,14 @@ export const PlayerControls = (): JSXInternal.Element => {
       <button
         onClick={() => previous()}
         class="block disabled:text-gray-400"
-        disabled={!!currentState}>
+        disabled={!currentState?.track_window.current_track.id}>
         <FastForwardIcon class="h-8 w-8 rotate-180" />
       </button>
       <button
         class="text-lime-500 disabled:text-gray-400"
-        disabled={!!currentState}
+        disabled={!currentState?.track_window.current_track.id}
         onClick={() => {
-          if (!currentState) return;
+          if (!currentState?.track_window.current_track.id) return;
           if (currentState.paused) play();
           else pause();
         }}>
@@ -36,7 +36,7 @@ export const PlayerControls = (): JSXInternal.Element => {
       <button
         onClick={() => next()}
         class="block disabled:text-gray-400"
-        disabled={!!currentState}>
+        disabled={!currentState?.track_window.current_track.id}>
         <FastForwardIcon class="h-8 w-8" />
       </button>
     </div>
