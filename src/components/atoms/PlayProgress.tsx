@@ -12,7 +12,6 @@ export const PlayProgress = ({
   const [display, setDisplay] = useState<number>(currentTime);
 
   useEffect(() => {
-    console.log();
     let start: number | null = null;
     let cancelled = false;
     // eslint-disable-next-line no-undef

@@ -5,7 +5,6 @@ import { PlayerState } from '../../hooks';
 
 export const Playing = (): JSXInternal.Element => {
   const [state] = useGlobalState<PlayerState | null>('playerstate', null);
-  console.log(state);
   return (
     <section class="flex flex-col gap-8">
       <div class="flex flex-col gap-4">
