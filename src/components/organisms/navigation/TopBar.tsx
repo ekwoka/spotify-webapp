@@ -4,7 +4,7 @@ import { TAB_NAV } from '../../../data/navigation';
 
 export const TopBar = (): JSXInternal.Element => {
   return (
-    <div class="hidden sm:block">
+    <div class="block">
       <div class="border-b border-neutral-600 px-4 pt-4">
         <nav class="-mb-px flex space-x-8" aria-label="Tabs">
           {TAB_NAV.map((tab) => (
