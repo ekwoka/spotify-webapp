@@ -34,6 +34,7 @@ export const Playing = (): JSXInternal.Element => {
         <div class="flex flex-col gap-2">
           {state?.track_window.current_track && (
             <SimpleListSong
+              id={state?.track_window.current_track?.id}
               key={state?.track_window.current_track?.id}
               click={() => handlePlay(currentIndex)}
               name={state?.track_window.current_track?.name ?? ''}
@@ -54,6 +55,7 @@ export const Playing = (): JSXInternal.Element => {
         <div class="flex flex-col gap-2">
           {nextTracks.map((track, i) => (
             <SimpleListSong
+              id={track?.id ?? ''}
               key={track?.id}
               click={() => handlePlay(currentIndex + i + 1)}
               name={track?.name ?? ''}
