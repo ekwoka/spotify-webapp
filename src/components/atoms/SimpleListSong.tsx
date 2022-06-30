@@ -1,6 +1,8 @@
 import { JSXInternal } from 'preact/src/jsx';
+import { HeartSong } from './HeartSong';
 
 export const SimpleListSong = ({
+  id,
   name,
   image,
   album,
@@ -24,11 +26,13 @@ export const SimpleListSong = ({
         <p class="text-neutral-300">{artist}</p>
       </div>
       <p class="grow basis-0 text-neutral-300">{album}</p>
+      <HeartSong id={id} />
     </button>
   );
 };
 
 type SimpleListSongProps = {
+  id: string;
   name: string;
   image?: string;
   album: string;
