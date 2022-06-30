@@ -1,4 +1,5 @@
 import { it, expect, describe, jest } from '@jest/globals';
+import { chunkArray } from './chunkArray';
 import { classNames } from './classNames';
 import { debounce } from './debounce';
 import { getBestImage } from './getBestImage';
@@ -62,6 +63,20 @@ describe('Front End Utilities', () => {
 
       expect(emptyArray).toBe('');
       expect(badObjects).toBe('');
+    });
+  });
+  describe('chunkArray', () => {
+    it('returns chunked arrays', () => {
+      const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const chunks = chunkArray(testArray, 3);
+      expect(chunks).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
+      expect(testArray.length).toEqual(chunks.flat().length);
+    });
+    it('mutates array when set', () => {
+      const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const chunks = chunkArray(testArray, 3, true);
+      expect(chunks).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
+      expect(testArray.length).toEqual(0);
     });
   });
 });
