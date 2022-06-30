@@ -1,6 +1,7 @@
 import { it, expect, describe, jest } from '@jest/globals';
 import { classNames } from './classNames';
 import { debounce } from './debounce';
+import { getBestImage } from './getBestImage';
 import { toRespImageSrcset, toRespImageURL } from './respImage';
 
 describe('Front End Utilities', () => {
@@ -41,6 +42,26 @@ describe('Front End Utilities', () => {
       expect(srcset).toBe(
         '/api/image?url=https://example.com/image.jpg&w=90 90w, /api/image?url=https://example.com/image.jpg&w=180 180w'
       );
+    });
+  });
+  describe('getBestImage', () => {
+    it('return largest image string', () => {
+      const bestImage = getBestImage([
+        { width: 100, url: 'testStringWorst' },
+        { width: 200, url: 'testStringBest' },
+        { width: 150, url: 'testStringMiddle' },
+      ]);
+
+      expect(bestImage).toBe('testStringBest');
+    });
+    it('returns empty string when no images', () => {
+      const emptyArray = getBestImage([]);
+      const badObjects = getBestImage([
+        { width: 100 } as { width: number; url: string },
+      ]);
+
+      expect(emptyArray).toBe('');
+      expect(badObjects).toBe('');
     });
   });
 });
