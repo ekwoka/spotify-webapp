@@ -2,7 +2,7 @@ import { useGlobalState } from '@ekwoka/preact-global-state';
 import SpotifyWebApi from 'spotify-web-api-node';
 import { useEffect } from 'preact/hooks';
 
-const spotifyApi = new SpotifyWebApi();
+export const spotifyApi = new SpotifyWebApi();
 
 export const useSpotify = () => {
   const [token] = useGlobalState<string>('token');
