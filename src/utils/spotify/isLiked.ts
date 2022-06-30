@@ -7,7 +7,7 @@ export const getLiked = (id: string): Promise<boolean> => {
 };
 
 const queue: LikedQueue = [];
-const getAllLiked = debounce(async (): Promise<void> => {
+const getAllLiked = debounce((): void => {
   const chunks = chunkArray(queue, 50, true);
   chunks.forEach(async (chunk) => {
     const [ids, res] = chunk.reduce(
