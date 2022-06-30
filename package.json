@@ -105,6 +105,7 @@
       }
     },
     "rules": {
+      "require-await": "error",
       "@typescript-eslint/ban-ts-comment": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
@@ -119,7 +120,17 @@
       "@typescript-eslint/no-redeclare": [
         "error"
       ]
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "./api/endpoints/*.ts"
+        ],
+        "rules": {
+          "require-await": "off"
+        }
+      }
+    ]
   },
   "prettier": {
     "singleQuote": true,

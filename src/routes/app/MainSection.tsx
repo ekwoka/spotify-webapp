@@ -1,15 +1,15 @@
 import { useGlobalState } from '@ekwoka/preact-global-state';
 import Router, { route, Route } from 'preact-router';
 import { JSXInternal } from 'preact/src/jsx';
-import { useAsyncEffect } from '../../hooks';
 import { PlayerBar } from '../../components/organisms/PlayerBar';
 import { TopBar } from '../../components/organisms/navigation/TopBar';
 import { LazyHome, LazyPlaying, LazyPlaylist, LazySearch } from './lazyRoutes';
+import { useEffect } from 'preact/hooks';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
 
-  useAsyncEffect(async () => {
+  useEffect(() => {
     if (!search) return;
     route(`/search/${search}`);
   }, [search]);
