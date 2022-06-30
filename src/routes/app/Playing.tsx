@@ -8,17 +8,17 @@ export const Playing = (): JSXInternal.Element => {
   console.log(state);
   return (
     <section class="flex flex-col gap-8">
-      <div className="flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
         <h2 class="text-lg">Currently Playing</h2>
-        <div className="flex flex-col gap-2">
+        <div class="flex flex-col gap-2">
           {state?.track_window.current_track && (
             <SimpleListSong {...state.track_window.current_track} />
           )}
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
         <h2 class="text-lg">Up Next</h2>
-        <div className="flex flex-col gap-2">
+        <div class="flex flex-col gap-2">
           {state?.track_window.next_tracks.map((track) => (
             <SimpleListSong key={track.id} {...track} />
           ))}

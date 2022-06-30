@@ -7,7 +7,7 @@ import { TrackList } from '../../components/organisms/TrackList';
 export const Home = (): JSXInternal.Element => {
   return (
     <div class="flex flex-col gap-8">
-      <div className="flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
         <h2>Most Listened Tracks</h2>
         <TrackList type="getMyTopTracks" limit={10}>
           <SimpleFlexGrid
@@ -17,7 +17,7 @@ export const Home = (): JSXInternal.Element => {
           />
         </TrackList>
       </div>
-      <div className="flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
         <h2>Recently Played tracks</h2>
         <TrackList type="getMyRecentlyPlayedTracks" limit={10}>
           <SimpleFlexGrid
