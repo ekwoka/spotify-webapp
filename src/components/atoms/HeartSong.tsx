@@ -2,14 +2,14 @@ import { HeartIcon } from '@heroicons/react/solid';
 import { useState } from 'preact/hooks';
 import { useAsyncEffect, useSpotify } from '../../hooks';
 import { classNames } from '../../utils';
+import { getLiked } from '../../utils/spotify';
 
 export const HeartSong = ({ id }: { id: string }) => {
   const Spotify = useSpotify();
   const [isLiked, setIsLiked] = useState(false);
   useAsyncEffect(async () => {
     if (!id) return;
-    const response = await Spotify.containsMySavedTracks([id]);
-    setIsLiked(response.body[0]);
+    setIsLiked(await getLiked(id));
   }, [id]);
   const toggleHeart = () => {
     setIsLiked((prev) => {
