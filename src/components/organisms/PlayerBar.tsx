@@ -1,6 +1,7 @@
 import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
+import { getBestImage } from '../../utils/getBestImage';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
 import { Zen } from '../atoms/Zen';
@@ -32,7 +33,7 @@ export const PlayerBar = (): JSXInternal.Element => {
         <div class="flex flex-row gap-2">
           <img
             src={
-              currentSong.album.images[0]?.url ??
+              getBestImage(currentSong.album.images) ||
               'https://placekitten.com/640/640'
             }
             class="h-24 w-auto object-cover"

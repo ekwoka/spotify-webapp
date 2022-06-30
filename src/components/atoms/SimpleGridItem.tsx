@@ -1,5 +1,6 @@
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { getBestImage } from '../../utils/getBestImage';
 import { SongLabel } from './SongLabel';
 
 export const SimpleGridItem = ({
@@ -23,7 +24,7 @@ export const SimpleGridItem = ({
       onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"
-        src={album.images[0]?.url ?? 'https://placekitten.com/600/600'}
+        src={getBestImage(album.images) ?? 'https://placekitten.com/600/600'}
         loading="lazy"
         width={album.images[0]?.width ?? 1}
         height={album.images[0]?.height ?? 1}

@@ -2,6 +2,7 @@ import { PlayIcon, ViewGridAddIcon } from '@heroicons/react/solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { TrackObject } from '../../hooks/useSpotify';
+import { getBestImage } from '../../utils/getBestImage';
 
 export const ResultsItem = ({
   id,
@@ -34,7 +35,7 @@ export const ResultsItem = ({
         </div>
         <img
           class="h-full max-h-24 w-auto flex-shrink-0 rounded-md bg-neutral-300 object-cover"
-          src={album.images[0].url}
+          src={getBestImage(album.images)}
           loading="lazy"
           width={album.images[0].width}
           height={album.images[0].height}
