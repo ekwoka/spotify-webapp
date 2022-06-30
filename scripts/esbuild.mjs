@@ -1,6 +1,7 @@
 import { build } from 'esbuild';
 import importGlobPlugin from 'esbuild-plugin-import-glob';
 import { copy } from 'esbuild-plugin-copy';
+import { clean } from 'esbuild-plugin-clean';
 import alias from 'esbuild-plugin-alias';
 import { createRequire } from 'module';
 import { getAllTypeScript } from './utils/getAllTypescript.mjs';
@@ -34,6 +35,9 @@ build({
       }
     : false,
   plugins: [
+    clean({
+      patterns: ['./dist/*'],
+    }),
     copy({
       assets: {
         from: ['./src/static/*'],
@@ -46,7 +50,7 @@ build({
       'react-dom': require.resolve('preact/compat'),
     }),
   ],
-}).then(async (res) => {
+}).then(async (_) => {
   console.log(dev ? 'watching...' : 'JS Build Complete');
   console.timeEnd('esbuild');
 });
