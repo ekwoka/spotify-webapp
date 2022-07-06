@@ -1,5 +1,6 @@
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { classNames } from '../../utils';
 import { getBestImage } from '../../utils/getBestImage';
 import { SongLabel } from './SongLabel';
 
@@ -8,6 +9,7 @@ export const SimpleGridItem = ({
   artists,
   album,
   uri,
+  class: className,
 }: TrackObject): JSXInternal.Element => {
   const SpotifyApi = useSpotify();
   const { play } = usePlayer()[1];
@@ -20,7 +22,10 @@ export const SimpleGridItem = ({
 
   return (
     <li
-      class="flex w-52 shrink-0 grow cursor-pointer snap-start flex-col gap-4"
+      class={classNames(
+        'flex shrink-0 grow cursor-pointer snap-start flex-col gap-4',
+        className
+      )}
       onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"

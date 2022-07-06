@@ -39,6 +39,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
   }
@@ -57,5 +58,9 @@
     100% {
       transform: scale(1);
     }
+  }
+
+  .grid-cols-\[13rem\] {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   }
 }

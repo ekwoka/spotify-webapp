@@ -30,7 +30,7 @@ export const PlaylistItem = ({
   const { play } = usePlayer()[1];
   return (
     <li
-      class="flex w-52 shrink-0 cursor-pointer flex-col gap-4"
+      class="flex shrink-0 grow cursor-pointer flex-col gap-4"
       onClick={() => play(uri)}>
       <img
         class="h-auto w-full rounded-lg"
