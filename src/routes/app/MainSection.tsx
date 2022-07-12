@@ -5,6 +5,7 @@ import { PlayerBar } from '../../components/organisms/PlayerBar';
 import { TopBar } from '../../components/organisms/navigation/TopBar';
 import { LazyHome, LazyPlaying, LazyPlaylist, LazySearch } from './lazyRoutes';
 import { useEffect } from 'preact/hooks';
+import { Party } from './Party';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
@@ -24,6 +25,7 @@ export const MainSection = (): JSXInternal.Element => {
           <Route path="/search/:q" component={LazySearch} />
           <Route path="/playlists" component={LazyPlaylist} />
           <Route path="/playing" component={LazyPlaying} />
+          <Route path="/party" component={Party} />
         </Router>
       </main>
       <PlayerBar />

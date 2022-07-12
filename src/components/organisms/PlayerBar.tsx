@@ -5,6 +5,7 @@ import { getBestImage } from '../../utils/getBestImage';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
 import { Zen } from '../atoms/Zen';
+import { PartyController } from '../molecules/PartyController';
 import { PlayerControls } from '../molecules/PlayerControls';
 import { PlayerOptions } from '../molecules/PlayerOptions';
 
@@ -23,13 +24,13 @@ export const PlayerBar = (): JSXInternal.Element => {
     );
 
   return (
-    <div class="fixed inset-x-0 bottom-0 z-20 h-24 bg-neutral-900 text-neutral-200">
+    <div class="fixed inset-x-0 bottom-0 z-20 bg-neutral-900 text-neutral-200">
       <PlayProgress
         currentTime={currentState.position}
         duration={currentState.duration}
         isPlaying={!currentState.paused}
       />
-      <div class="flex h-full flex-row flex-nowrap items-center justify-between gap-4">
+      <div class="flex h-24 flex-row flex-nowrap items-center justify-between gap-4">
         <div class="flex flex-row gap-2">
           <img
             src={
@@ -54,6 +55,7 @@ export const PlayerBar = (): JSXInternal.Element => {
         )}
         <PlayerOptions song={currentSong} />
       </div>
+      <PartyController />
     </div>
   );
 };

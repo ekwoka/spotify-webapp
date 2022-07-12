@@ -6,6 +6,7 @@ import {
   InformationCircleIcon,
   MapIcon,
   SearchIcon,
+  SparklesIcon,
   UserIcon,
 } from '@heroicons/react/outline';
 import { JSXInternal } from 'preact/src/jsx';
@@ -18,23 +19,28 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
   },
   {
     name: 'Profile',
-    path: '/',
+    path: '/profile',
     Icon: UserIcon,
   },
   {
     name: 'Library',
-    path: '/',
+    path: '/library',
     Icon: HeartIcon,
   },
   {
     name: 'Discover',
-    path: '/',
+    path: '/discover',
     Icon: MapIcon,
   },
   {
     name: 'Search',
     path: '/search',
     Icon: SearchIcon,
+  },
+  {
+    name: 'Party Mode',
+    path: '/party',
+    Icon: SparklesIcon,
   },
 ];
 
@@ -62,15 +68,15 @@ export const TAB_NAV: NavigationItem[] = [
   },
   {
     name: 'Artists',
-    path: '/',
+    path: '/artists',
   },
   {
     name: 'Albums',
-    path: '/',
+    path: '/albums',
   },
   {
     name: '',
-    path: '/',
+    path: '/more',
     Icon: DotsHorizontalIcon,
   },
 ];

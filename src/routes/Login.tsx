@@ -1,4 +1,5 @@
 import { JSXInternal } from 'preact/src/jsx';
+import { MainButton } from '../components/atoms/inputs';
 
 export const Login = (): JSXInternal.Element => (
   <main class="flex h-screen w-full items-center justify-center">
@@ -9,11 +10,9 @@ export const Login = (): JSXInternal.Element => (
       <p class="max-w-sm">
         A Redesigned alternative to the standard Spotify App.
       </p>
-      <button
-        class="flex w-full justify-center rounded-md border border-transparent bg-lime-500 py-2 px-4 font-medium text-neutral-900 shadow-sm hover:bg-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
-        onClick={() => (window.location.href = `/api/login`)}>
+      <MainButton onClick={() => (window.location.href = `/api/login`)}>
         Login with Spotify
-      </button>
+      </MainButton>
     </div>
   </main>
 );
