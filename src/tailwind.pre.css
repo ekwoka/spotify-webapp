@@ -64,3 +64,13 @@
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   }
 }
+
+@font-face {
+  font-family: ml;
+  src: url(/MonoLisa-Regular.woff);
+}
+
+.font-mono {
+  font-variant-ligatures: common-ligatures discretionary-ligatures
+    historical-ligatures contextual;
+}

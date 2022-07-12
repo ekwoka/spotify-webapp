@@ -1,7 +1,11 @@
 module.exports = {
   content: ['dist/**/*.{js,html}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ['ml', 'ui-monospace', 'SFMono-Regular'],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
