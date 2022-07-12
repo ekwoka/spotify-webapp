@@ -1,4 +1,4 @@
-export { Component } from './PartyController';
+export { PartyController } from './PartyController';
 export { Player } from './Player';
 export { PlayerControls } from './PlayerControls';
 export { PlayerOptions } from './PlayerOptions';

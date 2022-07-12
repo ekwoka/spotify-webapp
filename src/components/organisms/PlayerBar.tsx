@@ -5,9 +5,7 @@ import { getBestImage } from '../../utils/getBestImage';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
 import { Zen } from '../atoms/Zen';
-import { PartyController } from '../molecules/PartyController';
-import { PlayerControls } from '../molecules/PlayerControls';
-import { PlayerOptions } from '../molecules/PlayerOptions';
+import { PartyController, PlayerControls, PlayerOptions } from '../molecules';
 
 export const PlayerBar = (): JSXInternal.Element => {
   const currentState = usePlayer()[2];
