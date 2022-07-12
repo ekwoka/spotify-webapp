@@ -1,17 +1,37 @@
 import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { usePlayer } from '../../hooks';
+import { useAsyncEffect, usePlayer, useSpotify } from '../../hooks';
 import { getBestImage } from '../../utils/getBestImage';
+import { radioPlay } from '../../utils/spotify/radioPlay';
 import { PlayProgress } from '../atoms/PlayProgress';
 import { SongLabel } from '../atoms/SongLabel';
 import { Zen } from '../atoms/Zen';
 import { PartyController, PlayerControls, PlayerOptions } from '../molecules';
 
 export const PlayerBar = (): JSXInternal.Element => {
-  const currentState = usePlayer()[2];
+  const [_, { play }, currentState] = usePlayer();
+  const spotify = useSpotify();
   const currentSong = useMemo(() => {
     if (!currentState) return null;
     return currentState.track_window.current_track;
+  }, [currentState]);
+
+  useAsyncEffect(async () => {
+    if (!currentState) return;
+    console.log(currentState.track_window);
+    const { current_track, previous_tracks, next_tracks } =
+      currentState.track_window;
+    if (
+      next_tracks.length !== 0 ||
+      !previous_tracks.some(({ id }) => id === current_track.id)
+    )
+      return;
+    const trackUris = await radioPlay(
+      spotify,
+      previous_tracks.map(({ id }) => id)
+    );
+    if (!trackUris) return;
+    play(trackUris);
   }, [currentState]);
 
   if (!currentState || !currentSong)

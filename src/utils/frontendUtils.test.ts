@@ -1,4 +1,5 @@
 import { it, expect, describe, jest } from '@jest/globals';
+import { arrayWrap } from './arrayWrap';
 import { chunkArray } from './chunkArray';
 import { classNames } from './classNames';
 import { debounce } from './debounce';
@@ -11,7 +12,6 @@ describe('Front End Utilities', () => {
       expect(classNames('foo', 'bar')).toBe('foo bar');
     });
   });
-
   describe('debounce', () => {
     it('returns a function', () => {
       expect(
@@ -32,7 +32,6 @@ describe('Front End Utilities', () => {
       expect(func).toHaveBeenCalledTimes(1);
     });
   });
-
   describe('responsiveImage', () => {
     it('returns a respImage string', () => {
       const src = toRespImageURL('https://example.com/image.jpg', 200);
@@ -77,6 +76,14 @@ describe('Front End Utilities', () => {
       const chunks = chunkArray(testArray, 3, true);
       expect(chunks).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
       expect(testArray.length).toEqual(0);
+    });
+  });
+  describe('arrayWrap', () => {
+    it('wraps element in an array', () => {
+      expect(arrayWrap(1)).toEqual([1]);
+    });
+    it('returns passed in array', () => {
+      expect(arrayWrap([1, 2, 3])).toEqual([1, 2, 3]);
     });
   });
 });
