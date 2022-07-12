@@ -8,4 +8,5 @@ type ENV = {
   SPOTIFY_CLIENT: string;
   SPOTIFY_SECRET: string;
   REDIRECT: string;
+  FAUNADB_SERVER_SECRET: string;
 };

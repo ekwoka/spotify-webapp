@@ -2,6 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { ENV } from './config';
 import { generateRandomString } from './crypto';
 import { formattedReturn } from './formattedReturn';
+import { makeRoomCode } from './makeRoomCode';
 import { redirect } from './redirect';
 import { refreshCookie } from './refreshCookie';
 
@@ -61,6 +62,13 @@ describe('Server Utilities', () => {
       expect(ENV.SPOTIFY_CLIENT).toBeDefined();
       expect(ENV.SPOTIFY_SECRET).toBeDefined();
       expect(ENV.REDIRECT).toBeDefined();
+    });
+  });
+
+  describe('Make Room Code', () => {
+    it('should return a 4 character code string', () => {
+      const code = makeRoomCode();
+      expect(code).toMatch(/^[A-Z]{4}$/);
     });
   });
 });
