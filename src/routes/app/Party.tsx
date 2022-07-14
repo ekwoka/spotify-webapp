@@ -50,7 +50,6 @@ export const Party = (): JSXInternal.Element => {
   }: {
     target: { value: string };
   }) => {
-    console.log(code);
     if (code.length !== 4) return;
     const response = await fetch('/api/joinroom', {
       method: 'POST',

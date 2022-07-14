@@ -11,7 +11,7 @@ const query = async (expr: Expr) => {
   const client = getClient();
   const data = await client.query(expr);
   client.close();
-  return data;
+  return data as FaunaData;
 };
 
 const openQuery: Fauna['openQuery'] = async (fn): Promise<any> => {
@@ -28,7 +28,14 @@ export const fauna: Fauna = {
 };
 
 type Fauna = {
-  query: (query: Expr) => Promise<object>;
+  query: (query: Expr) => Promise<FaunaData>;
   openQuery: <T>(fn: (client: Client) => Promise<T>) => Promise<T>;
   getClient: () => Client;
+};
+
+type FaunaData = {
+  ref: any;
+  data: {
+    [key: string]: any;
+  };
 };

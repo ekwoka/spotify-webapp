@@ -10,7 +10,7 @@ export const handler: Handler = async (): Promise<FormattedReturn> => {
 
     const response = await fauna.query(
       Create(Collection('party_rooms'), {
-        data: { code, created_at: Date.now(), songs: [] },
+        data: { code, created_at: Date.now(), queue: [] },
       })
     );
     return formattedReturn(200, { code, response });

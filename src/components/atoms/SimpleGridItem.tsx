@@ -12,7 +12,7 @@ export const SimpleGridItem = ({
   class: className,
 }: TrackObject): JSXInternal.Element => {
   const SpotifyApi = useSpotify();
-  const { play } = usePlayer()[1];
+  const [_, { play }] = usePlayer();
 
   const artist = useAsyncMemo<{ [key: string]: any } | null>(
     async () => (await SpotifyApi.getArtist(artists[0].id)).body,

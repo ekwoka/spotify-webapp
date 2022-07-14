@@ -2,6 +2,9 @@ import { useEffect, useMemo } from 'preact/hooks';
 import SpotifyPlayer, { SpotifyWebPlaybackState } from 'spotify-web-playback';
 import { useAsyncEffect } from './useAsyncEffect';
 import { useGlobalState } from '@ekwoka/preact-global-state';
+import { useSpotify } from './useSpotify';
+import { arrayWrap } from '../utils';
+import { addToRoomQueue } from '../utils/apiLayer/addToRoomQueue';
 
 let alreadyCalled = false;
 
@@ -19,6 +22,8 @@ export const usePlayer = (): [
     nullPlaybackState
   );
   const [token, setToken] = useGlobalState<string>('token', '');
+  const [room] = useGlobalState<string>('roomCode', '');
+  const SpotifyApi = useSpotify();
 
   useAsyncEffect(async () => {
     if (alreadyCalled || !token) return;
@@ -57,22 +62,31 @@ export const usePlayer = (): [
     () =>
       player
         ? {
-            play: (items?: string | string[], offset?: number) =>
-              player.play(items, offset),
+            play: (items?: string | string[], offset?: number) => {
+              if (!items) return;
+              if (status?.track_window.current_track.id) {
+                arrayWrap(items ?? []).forEach((item) =>
+                  SpotifyApi.addToQueue(item)
+                );
+                return;
+              }
+              if (!room) return player.play(items, offset);
+              return addToRoomQueue(items, room);
+            },
             pause: () => player.pause(),
             next: () => player.next(),
             previous: () => player.previous(),
             seek: (position: number) => player.seek(position),
           }
         : nullPlayerActions,
-    [player]
+    [player, room, status?.track_window.current_track.id, SpotifyApi]
   );
 
   return [player, actions, status];
 };
 
 export type PlayerActions = {
-  play: (items?: string | string[], offset?: number) => Promise<void>;
+  play: (items?: string | string[], offset?: number) => Promise<void> | void;
   pause: () => Promise<void>;
   next: () => Promise<void>;
   previous: () => Promise<void>;

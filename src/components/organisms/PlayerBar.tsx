@@ -18,7 +18,6 @@ export const PlayerBar = (): JSXInternal.Element => {
 
   useAsyncEffect(async () => {
     if (!currentState) return;
-    console.log(currentState.track_window);
     const { current_track, previous_tracks, next_tracks } =
       currentState.track_window;
     if (
