@@ -17,7 +17,7 @@ export const handler: Handler = async (req): Promise<FormattedReturn> => {
     } = await fauna.query(Get(Match(Index('roomWithCode'), code)));
     if (!queue) throw 'No queue found';
     uri.forEach((uri: string) => queue.push(uri));
-    const update = await fauna.query(
+    await fauna.query(
       Update(ref, {
         data: { queue },
       })
