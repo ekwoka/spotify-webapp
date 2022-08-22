@@ -19,7 +19,8 @@
     "lint": "eslint --fix src; prettier --write src --loglevel error; eslint --fix api; prettier --write api --loglevel error",
     "netlify:deploy": "netlify deploy --prod",
     "netlify:serve": "netlify dev",
-    "upgrade": "ncu -u && pnpm i && pnpm build && git commit -S -am ':arrow_up: Dependencies' && pnpm version patch"
+    "upgrade": "ncu -u && pnpm i && pnpm build && git commit -S -am ':arrow_up: Dependencies' && pnpm version patch",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -62,6 +63,7 @@
     "eslint": "^8.22.0",
     "eslint-config-preact": "^1.3.0",
     "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.3",
     "npm-run-all": "^4.1.5",
     "pnpm": "^7.9.3",
