@@ -1,4 +1,5 @@
-import { PlayIcon, ViewGridAddIcon } from '@heroicons/react/solid';
+import { PlaySolid } from '@graywolfai/react-heroicons/dist/solid/play-solid';
+import { SquaresPlusSolid } from '@graywolfai/react-heroicons/dist/solid/squares-plus-solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { TrackObject } from '../../hooks/useSpotify';
@@ -49,7 +50,7 @@ export const ResultsItem = ({
               type="button"
               class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-neutral-200 hover:bg-neutral-50/40 hover:text-neutral-200"
               onClick={() => play(uri)}>
-              <PlayIcon class="h-5 w-5 text-neutral-200" aria-hidden="true" />
+              <PlaySolid class="h-5 w-5 text-neutral-200" aria-hidden="true" />
               <span class="ml-3">Play Now</span>
             </button>
           </div>
@@ -57,7 +58,7 @@ export const ResultsItem = ({
             <button
               type="button"
               class="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-neutral-200 hover:bg-neutral-50/40 hover:text-neutral-200">
-              <ViewGridAddIcon
+              <SquaresPlusSolid
                 class="h-5 w-5 text-neutral-200"
                 aria-hidden="true"
               />

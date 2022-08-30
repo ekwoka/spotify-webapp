@@ -1,10 +1,8 @@
 import { useGlobalState } from '@ekwoka/preact-global-state';
-import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
-  ScaleIcon,
-} from '@heroicons/react/outline';
+import { ChatBubbleBottomCenterOutline } from '@graywolfai/react-heroicons/dist/outline/chat-bubble-bottom-center-outline';
+import { GlobeAltOutline } from '@graywolfai/react-heroicons/dist/outline/globe-alt-outline';
+import { BoltOutline } from '@graywolfai/react-heroicons/dist/outline/bolt-outline';
+import { ScaleOutline } from '@graywolfai/react-heroicons/dist/outline/scale-outline';
 import { JSXInternal } from 'preact/src/jsx';
 import { BasicInput, MainButton } from '../../components/atoms/inputs';
 
@@ -13,25 +11,25 @@ const partyFeatures = [
     name: 'One Main Stream',
     description:
       'Only one Spotify Premium account is needed, and all songs are played through that account.',
-    icon: GlobeAltIcon,
+    icon: GlobeAltOutline,
   },
   {
     name: 'Infinite DJs',
     description:
       'Everyone can choose songs to add to the queue, from their own devices.',
-    icon: ScaleIcon,
+    icon: ScaleOutline,
   },
   {
     name: 'Party Management Tools',
     description:
       'Party Hosts can manage the queue, and enforce a variety of rules for songs (such as max length, limit genres, etc.)',
-    icon: LightningBoltIcon,
+    icon: BoltOutline,
   },
   {
     name: 'Simple Room Codes',
     description:
       'Room codes are just 4 digits! Easy to share with friends. You can even generate a QR code to make it even easier for others to join.',
-    icon: AnnotationIcon,
+    icon: ChatBubbleBottomCenterOutline,
   },
 ];
 

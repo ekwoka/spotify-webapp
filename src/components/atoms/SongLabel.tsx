@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/solid';
+import { ChevronRightSolid } from '@graywolfai/react-heroicons/dist/solid/chevron-right-solid';
 import { classNames } from '../../utils';
 
 export const SongLabel = ({
@@ -17,7 +17,7 @@ export const SongLabel = ({
       <h3 class="shrink-1 max-w-[20ch] truncate whitespace-pre-wrap font-medium text-neutral-50 line-clamp-1">
         {name}
       </h3>
-      <ChevronRightIcon class="block h-3 w-3 shrink-0" />
+      <ChevronRightSolid class="block h-3 w-3 shrink-0" />
       <span class="max-w-[16ch] shrink-0 truncate whitespace-pre-wrap text-neutral-200 line-clamp-1">
         {artist}
       </span>

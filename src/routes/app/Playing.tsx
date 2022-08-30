@@ -1,17 +1,21 @@
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { SpotifyApiClient, getPlaylist } from '@ekwoka/spotify-api/dist';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleListSong } from '../../components/atoms/SimpleListSong';
-import { useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { useAsyncMemo, usePlayer } from '../../hooks';
 import { getBestImage, SpotifyImageArray } from '../../utils/getBestImage';
 
 export const Playing = (): JSXInternal.Element => {
   const [_, { play }, state] = usePlayer();
-  const spotifyApi = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const currentPlaylist = useAsyncMemo(
     async () => {
       if (!state?.context?.uri) return;
       const playlistId = (state.context.uri as string).split(':playlist:')[1];
-      const playlist = await spotifyApi.getPlaylistTracks(playlistId);
-      return (playlist?.body?.items ?? []).map((item) => item.track);
+      const playlist = await client(
+        getPlaylist(playlistId, { fields: 'tracks' })
+      );
+      return playlist.tracks.items.map((item) => item.track);
     },
     [],
     [state?.context?.uri]

@@ -1,13 +1,15 @@
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { SpotifyApiClient, getUsersPlaylists } from '@ekwoka/spotify-api/dist';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleFlexGrid } from '../../components/molecules';
-import { useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { useAsyncMemo, usePlayer } from '../../hooks';
 
 export const Playlists = (): JSXInternal.Element => {
-  const Spotify = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const playlists = useAsyncMemo(
     async () => {
-      const response = await Spotify.getUserPlaylists();
-      return (response?.body?.items || []).map((item) => ({
+      const response = await client(getUsersPlaylists());
+      return response.items.map((item) => ({
         ...item,
         key: item.id,
       }));

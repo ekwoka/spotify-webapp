@@ -1,4 +1,6 @@
-import { FastForwardIcon, PauseIcon, PlayIcon } from '@heroicons/react/solid';
+import { ForwardSolid } from '@graywolfai/react-heroicons/dist/solid/forward-solid';
+import { PauseSolid } from '@graywolfai/react-heroicons/dist/solid/pause-solid';
+import { PlaySolid } from '@graywolfai/react-heroicons/dist/solid/play-solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 
@@ -11,7 +13,7 @@ export const PlayerControls = (): JSXInternal.Element => {
         onClick={() => previous()}
         class="block disabled:text-gray-400"
         disabled={!currentState?.track_window.current_track.id}>
-        <FastForwardIcon class="h-8 w-8 rotate-180" />
+        <ForwardSolid class="h-8 w-8 rotate-180" />
       </button>
       <button
         class="text-lime-500 disabled:text-gray-400"
@@ -24,12 +26,12 @@ export const PlayerControls = (): JSXInternal.Element => {
         {currentState?.paused ? (
           <>
             <span class="sr-only">Play Current Track</span>
-            <PlayIcon class="h-12 w-12" />
+            <PlaySolid class="h-12 w-12" />
           </>
         ) : (
           <>
             <span class="sr-only">Pause Current Track</span>
-            <PauseIcon class="h-12 w-12" />
+            <PauseSolid class="h-12 w-12" />
           </>
         )}
       </button>
@@ -37,7 +39,7 @@ export const PlayerControls = (): JSXInternal.Element => {
         onClick={() => next()}
         class="block disabled:text-gray-400"
         disabled={!currentState?.track_window.current_track.id}>
-        <FastForwardIcon class="h-8 w-8" />
+        <ForwardSolid class="h-8 w-8" />
       </button>
     </div>
   );

@@ -2,9 +2,9 @@ import { useEffect, useMemo } from 'preact/hooks';
 import SpotifyPlayer, { SpotifyWebPlaybackState } from 'spotify-web-playback';
 import { useAsyncEffect } from './useAsyncEffect';
 import { useGlobalState } from '@ekwoka/preact-global-state';
-import { useSpotify } from './useSpotify';
 import { arrayWrap } from '../utils';
 import { addToRoomQueue } from '../utils/apiLayer/addToRoomQueue';
+import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api/dist';
 
 let alreadyCalled = false;
 
@@ -23,7 +23,7 @@ export const usePlayer = (): [
   );
   const [token, setToken] = useGlobalState<string>('token', '');
   const [room] = useGlobalState<string>('roomCode', '');
-  const SpotifyApi = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
 
   useAsyncEffect(async () => {
     if (alreadyCalled || !token) return;
@@ -66,7 +66,7 @@ export const usePlayer = (): [
               if (!items) return;
               if (status?.track_window.current_track.id) {
                 arrayWrap(items ?? []).forEach((item) =>
-                  SpotifyApi.addToQueue(item)
+                  client(addToQueue(item))
                 );
                 return;
               }
@@ -79,7 +79,7 @@ export const usePlayer = (): [
             seek: (position: number) => player.seek(position),
           }
         : nullPlayerActions,
-    [player, room, status?.track_window.current_track.id, SpotifyApi]
+    [player, room, status?.track_window.current_track.id, client]
   );
 
   return [player, actions, status];

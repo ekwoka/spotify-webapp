@@ -1,12 +1,9 @@
-import 'dotenv/config';
+import '../utils/config';
 import { Handler } from '@netlify/functions';
 import { Event } from '@netlify/functions/dist/function/event';
 import { formattedReturn } from '../utils';
-import fetch from 'cross-fetch';
 import { parse } from 'cookie';
 import { refreshToken as getRefreshToken } from '@ekwoka/spotify-api';
-
-global.fetch = fetch;
 
 export const handler: Handler | MockedHandler = async (req: Event) => {
   try {

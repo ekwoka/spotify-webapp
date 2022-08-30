@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/outline';
+import { ChevronRightOutline } from '@graywolfai/react-heroicons/dist/outline/chevron-right-outline';
 import { useRef } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { classNames } from '../../utils';
@@ -44,7 +44,7 @@ export const SimpleFlexGrid = <T extends unknown>({
             type="button"
             onClick={scrollRight}
             class="pointer-events-auto flex h-full w-1/3 items-center justify-end bg-gradient-to-r from-transparent via-neutral-900/75 to-neutral-900">
-            <ChevronRightIcon class="m-12 h-8 w-8 text-neutral-200/50" />
+            <ChevronRightOutline class="m-12 h-8 w-8 text-neutral-200/50" />
           </button>
         </div>
       )}

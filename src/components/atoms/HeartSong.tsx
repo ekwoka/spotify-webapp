@@ -1,27 +1,33 @@
-import { HeartIcon } from '@heroicons/react/solid';
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import {
+  removeTracks,
+  SpotifyApiClient,
+  trackIsSaved,
+  saveTracks,
+} from '@ekwoka/spotify-api';
+import { HeartSolid } from '@graywolfai/react-heroicons/dist/solid/heart-solid';
 import { useState } from 'preact/hooks';
-import { useAsyncEffect, useSpotify } from '../../hooks';
+import { useAsyncEffect } from '../../hooks';
 import { classNames } from '../../utils';
-import { getLiked } from '../../utils/spotify';
 
 export const HeartSong = ({ id }: { id: string }) => {
-  const Spotify = useSpotify();
   const [isLiked, setIsLiked] = useState(false);
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   useAsyncEffect(async () => {
     if (!id) return;
-    setIsLiked(await getLiked(id));
+    setIsLiked(await client(trackIsSaved(id)));
   }, [id]);
   const toggleHeart = () => {
     setIsLiked((prev) => {
       if (!id) return prev;
-      if (prev) Spotify.removeFromMySavedTracks([id]);
-      else Spotify.addToMySavedTracks([id]);
+      if (prev) client(removeTracks(id));
+      else client(saveTracks(id));
       return !prev;
     });
   };
   return (
     <button type="button" onClick={toggleHeart} disabled={!id}>
-      <HeartIcon
+      <HeartSolid
         class={classNames(
           'h-6 w-6 flex-none transition-colors',
           isLiked

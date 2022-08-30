@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/outline';
+import { XMarkOutline } from '@graywolfai/react-heroicons/dist/outline/x-mark-outline';
 import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { MAIN_NAVIGATION } from '../../../data/navigation';
@@ -40,7 +40,10 @@ export const MobileSideBar = ({
               onClick={() => setIsOpen(false)}
               tabIndex={isOpen ? 0 : -1}>
               <span class="sr-only">Close sidebar</span>
-              <XIcon class="h-6 w-6 text-neutral-200" aria-hidden="true" />
+              <XMarkOutline
+                class="h-6 w-6 text-neutral-200"
+                aria-hidden="true"
+              />
             </button>
           </TogglePanel>
 

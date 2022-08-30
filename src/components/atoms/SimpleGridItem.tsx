@@ -1,5 +1,7 @@
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { getArtist, SpotifyApiClient } from '@ekwoka/spotify-api/dist';
 import { JSXInternal } from 'preact/src/jsx';
-import { TrackObject, useAsyncMemo, usePlayer, useSpotify } from '../../hooks';
+import { TrackObject, useAsyncMemo, usePlayer } from '../../hooks';
 import { classNames } from '../../utils';
 import { getBestImage } from '../../utils/getBestImage';
 import { SongLabel } from './SongLabel';
@@ -11,11 +13,11 @@ export const SimpleGridItem = ({
   uri,
   class: className,
 }: TrackObject): JSXInternal.Element => {
-  const SpotifyApi = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const [_, { play }] = usePlayer();
 
   const artist = useAsyncMemo<{ [key: string]: any } | null>(
-    async () => (await SpotifyApi.getArtist(artists[0].id)).body,
+    async () => await client(getArtist(artists[0].id)),
     null,
     []
   );

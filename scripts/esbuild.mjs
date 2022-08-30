@@ -22,6 +22,7 @@ build({
   inject: test ? [] : ['./src/preact-shim.ts'],
   splitting: false,
   format: test ? 'cjs' : 'esm',
+  treeShaking: true,
   bundle: !test,
   target: 'es2017',
   platform: 'browser',

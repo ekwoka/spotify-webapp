@@ -1,6 +1,8 @@
+import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { SpotifyApiClient } from '@ekwoka/spotify-api/dist';
 import { useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { useAsyncEffect, usePlayer, useSpotify } from '../../hooks';
+import { useAsyncEffect, usePlayer } from '../../hooks';
 import { getBestImage } from '../../utils/getBestImage';
 import { radioPlay } from '../../utils/spotify/radioPlay';
 import { PlayProgress } from '../atoms/PlayProgress';
@@ -10,7 +12,7 @@ import { PartyController, PlayerControls, PlayerOptions } from '../molecules';
 
 export const PlayerBar = (): JSXInternal.Element => {
   const [_, { play }, currentState] = usePlayer();
-  const spotify = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const currentSong = useMemo(() => {
     if (!currentState) return null;
     return currentState.track_window.current_track;
@@ -26,7 +28,7 @@ export const PlayerBar = (): JSXInternal.Element => {
     )
       return;
     const trackUris = await radioPlay(
-      spotify,
+      client,
       previous_tracks.map(({ id }) => id)
     );
     if (!trackUris) return;

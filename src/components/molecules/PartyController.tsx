@@ -1,12 +1,12 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api/dist';
 import { useEffect, useRef } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
-import { useSpotify } from '../../hooks';
 
 export const PartyController = (): JSXInternal.Element => {
   const [code] = useGlobalState('roomCode', '');
   const [_] = useGlobalState('isPartyHost', false);
-  const SpotifyApi = useSpotify();
+  const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const alreadyAdded = useRef<Set<string>>(new Set());
 
   useEffect(() => {
@@ -20,14 +20,14 @@ export const PartyController = (): JSXInternal.Element => {
           const uri = queue[i];
           if (alreadyAdded.current.has(uri)) continue;
           alreadyAdded.current.add(uri);
-          await SpotifyApi.addToQueue(uri);
+          await client(addToQueue(uri));
         }
       } catch (e) {
         console.error(e);
       }
     }, THREE_MINUTES);
     return () => clearInterval(interval);
-  }, [code, SpotifyApi]);
+  }, [code, client]);
 
   if (!code) return <></>;
   return (

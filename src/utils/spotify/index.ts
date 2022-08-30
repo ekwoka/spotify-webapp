@@ -1,2 +1,2 @@
-export { getRecommendations } from './getRecommendations';
-export { getLiked } from './isLiked';
+export { autoRecommend } from './autoRecommend';
+export { radioPlay } from './radioPlay';

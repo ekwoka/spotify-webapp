@@ -1,46 +1,43 @@
-import {
-  CogIcon,
-  DotsHorizontalIcon,
-  HeartIcon,
-  HomeIcon,
-  InformationCircleIcon,
-  MapIcon,
-  SearchIcon,
-  SparklesIcon,
-  UserIcon,
-} from '@heroicons/react/outline';
-import { JSXInternal } from 'preact/src/jsx';
+import { CogOutline } from '@graywolfai/react-heroicons/dist/outline/cog-outline';
+import { EllipsisHorizontalOutline } from '@graywolfai/react-heroicons/dist/outline/ellipsis-horizontal-outline';
+import { HeartOutline } from '@graywolfai/react-heroicons/dist/outline/heart-outline';
+import { HomeOutline } from '@graywolfai/react-heroicons/dist/outline/home-outline';
+import { InformationCircleOutline } from '@graywolfai/react-heroicons/dist/outline/information-circle-outline';
+import { MapOutline } from '@graywolfai/react-heroicons/dist/outline/map-outline';
+import { MagnifyingGlassOutline } from '@graywolfai/react-heroicons/dist/outline/magnifying-glass-outline';
+import { SparklesOutline } from '@graywolfai/react-heroicons/dist/outline/sparkles-outline';
+import { UserOutline } from '@graywolfai/react-heroicons/dist/outline/user-outline';
 
 export const MAIN_NAVIGATION: NavigationItem[] = [
   {
     name: 'Home',
     path: '/',
-    Icon: HomeIcon,
+    Icon: HomeOutline,
   },
   {
     name: 'Profile',
     path: '/profile',
-    Icon: UserIcon,
+    Icon: UserOutline,
   },
   {
     name: 'Library',
     path: '/library',
-    Icon: HeartIcon,
+    Icon: HeartOutline,
   },
   {
     name: 'Discover',
     path: '/discover',
-    Icon: MapIcon,
+    Icon: MapOutline,
   },
   {
     name: 'Search',
     path: '/search',
-    Icon: SearchIcon,
+    Icon: MagnifyingGlassOutline,
   },
   {
     name: 'Party Mode',
     path: '/party',
-    Icon: SparklesIcon,
+    Icon: SparklesOutline,
   },
 ];
 
@@ -48,12 +45,12 @@ export const SECONDARY_NAVIGATION: NavigationItem[] = [
   {
     name: 'Settings',
     path: '/',
-    Icon: CogIcon,
+    Icon: CogOutline,
   },
   {
     name: 'About',
     path: '/',
-    Icon: InformationCircleIcon,
+    Icon: InformationCircleOutline,
   },
 ];
 
@@ -77,12 +74,12 @@ export const TAB_NAV: NavigationItem[] = [
   {
     name: '',
     path: '/more',
-    Icon: DotsHorizontalIcon,
+    Icon: EllipsisHorizontalOutline,
   },
 ];
 
 type NavigationItem = {
   name: string;
   path: string;
-  Icon?: (...props: any[]) => JSXInternal.Element;
+  Icon?: typeof HomeOutline;
 };

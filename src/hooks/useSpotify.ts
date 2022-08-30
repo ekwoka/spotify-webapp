@@ -1,17 +1,23 @@
 import { useGlobalState } from '@ekwoka/preact-global-state';
-import SpotifyWebApi from 'spotify-web-api-node';
 import { useEffect } from 'preact/hooks';
-
-export const spotifyApi = new SpotifyWebApi();
+import {
+  setToken,
+  spotifyApiClient,
+  SpotifyApiClient,
+} from '@ekwoka/spotify-api';
 
 export const useSpotify = () => {
   const [token] = useGlobalState<string>('token');
+  const [apiClient, setApiClient] =
+    useGlobalState<SpotifyApiClient>('apiClient');
 
   useEffect(() => {
-    if (token) spotifyApi.setAccessToken(token);
-  }, [token]);
+    if (!apiClient && !token) return;
+    if (!apiClient) return setApiClient(() => spotifyApiClient(token));
+    if (token) apiClient(setToken(token));
+  }, [token, apiClient, setApiClient]);
 
-  return spotifyApi;
+  return apiClient;
 };
 
 export type TrackObject = any;

@@ -39,9 +39,7 @@ export const SearchInput = ({
     () =>
       config.debounce === false
         ? setter
-        : debounce((value: string): void => {
-            setter(value);
-          }),
+        : debounce((value: string): void => setter(value)),
     [config.debounce, setter]
   );
 
