@@ -1,8 +1,10 @@
-import { AdjustmentsVerticalSolid } from '@ekwoka/preact-heroicons/dist/solid/adjustments-vertical-solid';
-import { RectangleStackSolid } from '@ekwoka/preact-heroicons/dist/solid/rectangle-stack-solid';
-import { MicrophoneSolid } from '@ekwoka/preact-heroicons/dist/solid/microphone-solid';
-import { PlusOutline } from '@ekwoka/preact-heroicons/dist/outline/plus-outline';
-import { SpeakerWaveSolid } from '@ekwoka/preact-heroicons/dist/solid/speaker-wave-solid';
+import {
+  AdjustmentsVerticalSolid,
+  RectangleStackSolid,
+  MicrophoneSolid,
+  PlusOutline,
+  SpeakerWaveSolid,
+} from 'preact-heroicons';
 import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { SpotifyWebPlaybackTrack } from 'spotify-web-playback';

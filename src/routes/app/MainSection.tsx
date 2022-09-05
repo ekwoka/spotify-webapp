@@ -3,9 +3,14 @@ import Router, { route, Route } from 'preact-router';
 import { JSXInternal } from 'preact/src/jsx';
 import { PlayerBar } from '../../components/organisms/PlayerBar';
 import { TopBar } from '../../components/organisms/navigation/TopBar';
-import { LazyHome, LazyPlaying, LazyPlaylist, LazySearch } from './lazyRoutes';
+import {
+  LazyHome,
+  LazyPlaying,
+  LazyPlaylist,
+  LazySearch,
+  LazyParty,
+} from './lazyRoutes';
 import { useEffect } from 'preact/hooks';
-import { Party } from './Party';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
@@ -25,7 +30,7 @@ export const MainSection = (): JSXInternal.Element => {
           <Route path="/search/:q" component={LazySearch} />
           <Route path="/playlists" component={LazyPlaylist} />
           <Route path="/playing" component={LazyPlaying} />
-          <Route path="/party" component={Party} />
+          <Route path="/party" component={LazyParty} />
         </Router>
       </main>
       <PlayerBar />

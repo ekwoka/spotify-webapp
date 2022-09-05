@@ -16,3 +16,6 @@ export const LazyPlaylist = lazyLoad(() =>
 export const LazyPlaying = lazyLoad(() =>
   import('./Playing').then((mod) => mod.Playing)
 );
+export const LazyParty = lazyLoad(() =>
+  import('./Party').then((mod) => mod.Party)
+);

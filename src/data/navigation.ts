@@ -1,12 +1,15 @@
-import { CogOutline } from '@ekwoka/preact-heroicons/dist/outline/cog-outline';
-import { EllipsisHorizontalOutline } from '@ekwoka/preact-heroicons/dist/outline/ellipsis-horizontal-outline';
-import { HeartOutline } from '@ekwoka/preact-heroicons/dist/outline/heart-outline';
-import { HomeOutline } from '@ekwoka/preact-heroicons/dist/outline/home-outline';
-import { InformationCircleOutline } from '@ekwoka/preact-heroicons/dist/outline/information-circle-outline';
-import { MapOutline } from '@ekwoka/preact-heroicons/dist/outline/map-outline';
-import { MagnifyingGlassOutline } from '@ekwoka/preact-heroicons/dist/outline/magnifying-glass-outline';
-import { SparklesOutline } from '@ekwoka/preact-heroicons/dist/outline/sparkles-outline';
-import { UserOutline } from '@ekwoka/preact-heroicons/dist/outline/user-outline';
+import {
+  CogOutline,
+  EllipsisHorizontalOutline,
+  HeartOutline,
+  HomeOutline,
+  InformationCircleOutline,
+  MapOutline,
+  MagnifyingGlassOutline,
+  SparklesOutline,
+  UserOutline,
+  HeroIcon,
+} from 'preact-heroicons';
 
 export const MAIN_NAVIGATION: NavigationItem[] = [
   {
@@ -81,5 +84,5 @@ export const TAB_NAV: NavigationItem[] = [
 type NavigationItem = {
   name: string;
   path: string;
-  Icon?: typeof HomeOutline;
+  Icon?: HeroIcon;
 };

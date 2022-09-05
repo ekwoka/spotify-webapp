@@ -1,6 +1,4 @@
-import { ForwardSolid } from '@ekwoka/preact-heroicons/dist/solid/forward-solid';
-import { PauseSolid } from '@ekwoka/preact-heroicons/dist/solid/pause-solid';
-import { PlaySolid } from '@ekwoka/preact-heroicons/dist/solid/play-solid';
+import { ForwardSolid, PauseSolid, PlaySolid } from 'preact-heroicons';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 

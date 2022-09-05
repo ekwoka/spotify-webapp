@@ -1,5 +1,4 @@
-import { PlaySolid } from '@ekwoka/preact-heroicons/dist/solid/play-solid';
-import { SquaresPlusSolid } from '@ekwoka/preact-heroicons/dist/solid/squares-plus-solid';
+import { PlaySolid, SquaresPlusSolid } from 'preact-heroicons';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { TrackObject } from '../../hooks/useSpotify';
