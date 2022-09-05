@@ -1,6 +1,6 @@
-import { ForwardSolid } from '@graywolfai/react-heroicons/dist/solid/forward-solid';
-import { PauseSolid } from '@graywolfai/react-heroicons/dist/solid/pause-solid';
-import { PlaySolid } from '@graywolfai/react-heroicons/dist/solid/play-solid';
+import { ForwardSolid } from '@ekwoka/preact-heroicons/dist/solid/forward-solid';
+import { PauseSolid } from '@ekwoka/preact-heroicons/dist/solid/pause-solid';
+import { PlaySolid } from '@ekwoka/preact-heroicons/dist/solid/play-solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 

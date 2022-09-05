@@ -1,4 +1,4 @@
-import { ChevronRightOutline } from '@graywolfai/react-heroicons/dist/outline/chevron-right-outline';
+import { ChevronRightOutline } from '@ekwoka/preact-heroicons/dist/outline/chevron-right-outline';
 import { useRef } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 import { classNames } from '../../utils';

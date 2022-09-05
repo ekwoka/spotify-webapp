@@ -1,4 +1,4 @@
-import { ChevronRightSolid } from '@graywolfai/react-heroicons/dist/solid/chevron-right-solid';
+import { ChevronRightSolid } from '@ekwoka/preact-heroicons/dist/solid/chevron-right-solid';
 import { classNames } from '../../utils';
 
 export const SongLabel = ({

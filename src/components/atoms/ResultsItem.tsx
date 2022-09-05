@@ -1,5 +1,5 @@
-import { PlaySolid } from '@graywolfai/react-heroicons/dist/solid/play-solid';
-import { SquaresPlusSolid } from '@graywolfai/react-heroicons/dist/solid/squares-plus-solid';
+import { PlaySolid } from '@ekwoka/preact-heroicons/dist/solid/play-solid';
+import { SquaresPlusSolid } from '@ekwoka/preact-heroicons/dist/solid/squares-plus-solid';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
 import { TrackObject } from '../../hooks/useSpotify';

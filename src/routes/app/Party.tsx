@@ -1,8 +1,8 @@
 import { useGlobalState } from '@ekwoka/preact-global-state';
-import { ChatBubbleBottomCenterOutline } from '@graywolfai/react-heroicons/dist/outline/chat-bubble-bottom-center-outline';
-import { GlobeAltOutline } from '@graywolfai/react-heroicons/dist/outline/globe-alt-outline';
-import { BoltOutline } from '@graywolfai/react-heroicons/dist/outline/bolt-outline';
-import { ScaleOutline } from '@graywolfai/react-heroicons/dist/outline/scale-outline';
+import { ChatBubbleBottomCenterOutline } from '@ekwoka/preact-heroicons/dist/outline/chat-bubble-bottom-center-outline';
+import { GlobeAltOutline } from '@ekwoka/preact-heroicons/dist/outline/globe-alt-outline';
+import { BoltOutline } from '@ekwoka/preact-heroicons/dist/outline/bolt-outline';
+import { ScaleOutline } from '@ekwoka/preact-heroicons/dist/outline/scale-outline';
 import { JSXInternal } from 'preact/src/jsx';
 import { BasicInput, MainButton } from '../../components/atoms/inputs';
 

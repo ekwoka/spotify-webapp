@@ -1,4 +1,4 @@
-import { XMarkOutline } from '@graywolfai/react-heroicons/dist/outline/x-mark-outline';
+import { XMarkOutline } from '@ekwoka/preact-heroicons/dist/outline/x-mark-outline';
 import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { MAIN_NAVIGATION } from '../../../data/navigation';

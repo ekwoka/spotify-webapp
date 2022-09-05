@@ -1,8 +1,8 @@
-import { AdjustmentsVerticalSolid } from '@graywolfai/react-heroicons/dist/solid/adjustments-vertical-solid';
-import { RectangleStackSolid } from '@graywolfai/react-heroicons/dist/solid/rectangle-stack-solid';
-import { MicrophoneSolid } from '@graywolfai/react-heroicons/dist/solid/microphone-solid';
-import { PlusOutline } from '@graywolfai/react-heroicons/dist/outline/plus-outline';
-import { SpeakerWaveSolid } from '@graywolfai/react-heroicons/dist/solid/speaker-wave-solid';
+import { AdjustmentsVerticalSolid } from '@ekwoka/preact-heroicons/dist/solid/adjustments-vertical-solid';
+import { RectangleStackSolid } from '@ekwoka/preact-heroicons/dist/solid/rectangle-stack-solid';
+import { MicrophoneSolid } from '@ekwoka/preact-heroicons/dist/solid/microphone-solid';
+import { PlusOutline } from '@ekwoka/preact-heroicons/dist/outline/plus-outline';
+import { SpeakerWaveSolid } from '@ekwoka/preact-heroicons/dist/solid/speaker-wave-solid';
 import { Link } from 'preact-router/match';
 import { JSXInternal } from 'preact/src/jsx';
 import { SpotifyWebPlaybackTrack } from 'spotify-web-playback';

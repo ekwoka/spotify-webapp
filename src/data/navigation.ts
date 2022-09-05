@@ -1,12 +1,12 @@
-import { CogOutline } from '@graywolfai/react-heroicons/dist/outline/cog-outline';
-import { EllipsisHorizontalOutline } from '@graywolfai/react-heroicons/dist/outline/ellipsis-horizontal-outline';
-import { HeartOutline } from '@graywolfai/react-heroicons/dist/outline/heart-outline';
-import { HomeOutline } from '@graywolfai/react-heroicons/dist/outline/home-outline';
-import { InformationCircleOutline } from '@graywolfai/react-heroicons/dist/outline/information-circle-outline';
-import { MapOutline } from '@graywolfai/react-heroicons/dist/outline/map-outline';
-import { MagnifyingGlassOutline } from '@graywolfai/react-heroicons/dist/outline/magnifying-glass-outline';
-import { SparklesOutline } from '@graywolfai/react-heroicons/dist/outline/sparkles-outline';
-import { UserOutline } from '@graywolfai/react-heroicons/dist/outline/user-outline';
+import { CogOutline } from '@ekwoka/preact-heroicons/dist/outline/cog-outline';
+import { EllipsisHorizontalOutline } from '@ekwoka/preact-heroicons/dist/outline/ellipsis-horizontal-outline';
+import { HeartOutline } from '@ekwoka/preact-heroicons/dist/outline/heart-outline';
+import { HomeOutline } from '@ekwoka/preact-heroicons/dist/outline/home-outline';
+import { InformationCircleOutline } from '@ekwoka/preact-heroicons/dist/outline/information-circle-outline';
+import { MapOutline } from '@ekwoka/preact-heroicons/dist/outline/map-outline';
+import { MagnifyingGlassOutline } from '@ekwoka/preact-heroicons/dist/outline/magnifying-glass-outline';
+import { SparklesOutline } from '@ekwoka/preact-heroicons/dist/outline/sparkles-outline';
+import { UserOutline } from '@ekwoka/preact-heroicons/dist/outline/user-outline';
 
 export const MAIN_NAVIGATION: NavigationItem[] = [
   {

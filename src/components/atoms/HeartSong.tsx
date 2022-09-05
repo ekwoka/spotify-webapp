@@ -5,7 +5,7 @@ import {
   trackIsSaved,
   saveTracks,
 } from '@ekwoka/spotify-api';
-import { HeartSolid } from '@graywolfai/react-heroicons/dist/solid/heart-solid';
+import { HeartSolid } from '@ekwoka/preact-heroicons/dist/solid/heart-solid';
 import { useState } from 'preact/hooks';
 import { useAsyncEffect } from '../../hooks';
 import { classNames } from '../../utils';
