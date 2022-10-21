@@ -1,13 +1,10 @@
 [build]
-  command = "npx pnpm install --store=node_modules/.pnpm-store && pnpm netlify|| npm run netlify"
+  command = "pnpm run netlify"
   functions = "api/endpoints"
   publish = "./dist"
 
-[build.environment]
-  NPM_FLAGS="--version"
-
 [context.production.environment]
-  NODE_VERSION = '18.4.0'
+  NODE_VERSION = '18.11.0'
   AWS_LAMBDA_JS_RUNTIME = 'nodejs16.x'
 
   [[redirects]]
