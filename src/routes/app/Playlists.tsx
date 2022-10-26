@@ -1,5 +1,5 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
-import { SpotifyApiClient, getUsersPlaylists } from '@ekwoka/spotify-api/dist';
+import { SpotifyApiClient, getUsersPlaylists } from '@ekwoka/spotify-api';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleFlexGrid } from '../../components/molecules';
 import { useAsyncMemo, usePlayer } from '../../hooks';

@@ -4,7 +4,7 @@ import { useAsyncEffect } from './useAsyncEffect';
 import { useGlobalState } from '@ekwoka/preact-global-state';
 import { arrayWrap } from '../utils';
 import { addToRoomQueue } from '../utils/apiLayer/addToRoomQueue';
-import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api/dist';
+import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api';
 
 let alreadyCalled = false;
 

@@ -1,5 +1,5 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
-import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api/dist';
+import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api';
 import { useEffect, useRef } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 

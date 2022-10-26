@@ -51,7 +51,8 @@ export const AnimatedWaves = ({
               class="absolute bottom-0 stroke-green-200 text-green-600"
               style={{
                 height: `${320 + (waves - i - 1) * 100}px`,
-              }}>
+              }}
+              key={i}>
               <path
                 fill="currentColor"
                 id={`wave-path-${i}`}

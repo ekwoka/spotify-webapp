@@ -3,7 +3,7 @@ import {
   getTopItems,
   recentlyPlayedTracks,
   SpotifyApiClient,
-} from '@ekwoka/spotify-api/dist';
+} from '@ekwoka/spotify-api';
 import { cloneElement, VNode } from 'preact';
 import { JSXInternal } from 'preact/src/jsx';
 import { TrackObject, useAsyncMemo } from '../../hooks';

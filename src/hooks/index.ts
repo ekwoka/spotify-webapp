@@ -1,6 +1,7 @@
 export { useAsyncEffect } from './useAsyncEffect';
 export { useAsyncMemo } from './useAsyncMemo';
 export { useAuth } from './useAuth';
+export { useAutoAnimate } from './useAutoAnimate';
 export { usePlayer } from './usePlayer';
 export { useSpotify } from './useSpotify';
 export { useStorage } from './useStorage';

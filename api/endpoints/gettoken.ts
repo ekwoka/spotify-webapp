@@ -3,7 +3,7 @@ import { Handler } from '@netlify/functions';
 import { Event } from '@netlify/functions/dist/function/event';
 import { formattedReturn, refreshCookie } from '../utils';
 import { FormattedReturn } from '../utils/formattedReturn';
-import { tokensFromCode } from '@ekwoka/spotify-api/dist';
+import { tokensFromCode } from '@ekwoka/spotify-api';
 
 export const handler: Handler | MockedHandler = async (
   req: Event

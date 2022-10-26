@@ -3,7 +3,7 @@ import {
   recentlyPlayedTracks,
   SpotifyApiClient,
   getRecommendations,
-} from '@ekwoka/spotify-api/dist';
+} from '@ekwoka/spotify-api';
 
 export const autoRecommend = async (spotifyApi: SpotifyApiClient) => {
   const [recent, top] = await Promise.all([

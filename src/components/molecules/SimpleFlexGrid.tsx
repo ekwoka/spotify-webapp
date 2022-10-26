@@ -1,6 +1,6 @@
 import { ChevronRightOutline } from 'preact-heroicons';
-import { useRef } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
+import { useAutoAnimate } from '../../hooks';
 import { classNames } from '../../utils';
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
@@ -15,7 +15,7 @@ export const SimpleFlexGrid = <T extends unknown>({
   minHeight?: number;
   wrap?: boolean;
 }): JSXInternal.Element => {
-  const container = useRef<HTMLUListElement>(null);
+  const container = useAutoAnimate<HTMLUListElement>();
   const scrollRight = (): void => {
     if (!container.current) return;
     container.current.scrollLeft += (container.current.clientWidth * 2) / 3;
