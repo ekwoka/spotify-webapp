@@ -19,5 +19,3 @@ export const useSpotify = () => {
 
   return apiClient;
 };
-
-export type TrackObject = any;

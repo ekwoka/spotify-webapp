@@ -1,3 +1,4 @@
+import { Signal } from '@preact/signals';
 import { ChevronRightOutline } from 'preact-heroicons';
 import { JSXInternal } from 'preact/src/jsx';
 import { useAutoAnimate } from '../../hooks';
@@ -11,7 +12,7 @@ export const SimpleFlexGrid = <T extends unknown>({
   wrap,
 }: {
   as: (item: T) => JSXInternal.Element;
-  items: T[];
+  items: T[] | Signal<T[]>;
   minHeight?: number;
   wrap?: boolean;
 }): JSXInternal.Element => {
@@ -36,7 +37,7 @@ export const SimpleFlexGrid = <T extends unknown>({
           minHeight: `${(minHeight ?? 0) / 4}rem`,
           paddingRight: !wrap ? `${(minHeight ?? 0) / 8}rem` : '',
         }}>
-        {items.map(as)}
+        {(Array.isArray(items) ? items : items.value).map(as)}
       </ul>
       {!wrap && (
         <div class="pointer-events-none absolute inset-0 flex flex-row justify-end">
