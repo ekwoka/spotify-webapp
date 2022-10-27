@@ -1,5 +1,4 @@
 import { JSXInternal } from 'preact/src/jsx';
-import { useAsyncEffect } from '../../hooks';
 import { SimpleGridItem } from '../../components/atoms';
 import { SimpleFlexGrid } from '../../components/molecules';
 import { SearchInput } from '../../components/atoms/inputs';
@@ -7,23 +6,31 @@ import { route } from 'preact-router';
 import { autoRecommend } from '../../utils/spotify/autoRecommend';
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { SpotifyApiClient, search } from '@ekwoka/spotify-api';
-import { useSignal } from '@preact/signals';
+import { useSignal, useSignalEffect } from '@preact/signals';
 import { TrackStub } from '@ekwoka/spotify-api/dist/endpoints';
+import { useQuery } from '@tanstack/react-query';
 
 export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
-  const results = useSignal<TrackStub[]>([]);
   const searchQuery = useSignal<string>(query ?? '');
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
-
-  useAsyncEffect(async () => {
+  useSignalEffect(() => {
     route(`/search/${searchQuery.value}`);
-    if (!searchQuery.value) {
-      results.value = await autoRecommend(client);
-      return;
+  });
+  const { data: results } = useQuery<TrackStub[]>(
+    ['search', searchQuery.value],
+    async () => {
+      if (!searchQuery.value) return await autoRecommend(client);
+
+      const tracks = await client(search(searchQuery.value, 'track'));
+      return tracks.tracks.items;
+    },
+    {
+      keepPreviousData: true,
+      initialData: [],
+      staleTime: 1000 * 60 * 15,
+      initialDataUpdatedAt: 0,
     }
-    const tracks = await client(search(searchQuery.value, 'track'));
-    results.value = tracks.tracks.items;
-  }, [searchQuery.value]);
+  );
 
   return (
     <div class="flex w-full flex-col gap-8">
