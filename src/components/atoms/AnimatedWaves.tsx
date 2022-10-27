@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useSignal } from '@preact/signals';
+import { useEffect, useMemo } from 'preact/hooks';
 import { JSXInternal } from 'preact/src/jsx';
 
 export const AnimatedWaves = ({
@@ -6,17 +7,17 @@ export const AnimatedWaves = ({
 }: {
   layers: number;
 }): JSXInternal.Element => {
-  const [waves, setWaves] = useState<number>(layers);
+  const waves = useSignal<number>(layers);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
-    if (mediaQuery.matches) setWaves(1);
-    else setWaves(layers);
-    const handleResize = ({ matches }: { matches: boolean }): void =>
-      setWaves(matches ? 1 : layers);
+    if (mediaQuery.matches) waves.value = 1;
+    else waves.value = layers;
+    const handleResize = ({ matches }: { matches: boolean }) =>
+      (waves.value = matches ? 1 : layers);
     mediaQuery.addEventListener('change', handleResize);
     return () => mediaQuery.removeEventListener('change', handleResize);
-  }, [layers]);
+  }, [layers, waves]);
 
   return useMemo(
     () => (
@@ -38,7 +39,7 @@ export const AnimatedWaves = ({
             </filter>
           </defs>
         </svg>
-        {Array.from({ length: waves }, (_, i): JSXInternal.Element => {
+        {Array.from({ length: waves.value }, (_, i): JSXInternal.Element => {
           const steps = Array.from(
             { length: 3 },
             () => waveStrings[Math.floor(Math.random() * waveStrings.length)]
@@ -50,7 +51,7 @@ export const AnimatedWaves = ({
               viewBox="0 0 1440 320"
               class="absolute bottom-0 stroke-green-200 text-green-600"
               style={{
-                height: `${320 + (waves - i - 1) * 100}px`,
+                height: `${320 + (waves.value - i - 1) * 100}px`,
               }}
               key={i}>
               <path
@@ -72,7 +73,7 @@ export const AnimatedWaves = ({
         })}
       </div>
     ),
-    [waves]
+    [waves.value]
   );
 };
 
