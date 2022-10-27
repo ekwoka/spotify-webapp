@@ -1,11 +1,12 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
+import { useSignal } from '@preact/signals';
 import { route } from 'preact-router';
-import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
+import { useCallback, useEffect, useRef } from 'preact/hooks';
 import { useAsyncEffect } from './useAsyncEffect';
 
 export const useAuth = (): UseAuth => {
-  const [done, setDone] = useState<boolean>(false);
-  const [status, setStatus] = useState<AuthStatus>('preparing');
+  const done = useSignal<boolean>(false);
+  const status = useSignal<AuthStatus>('preparing');
   const setToken = useGlobalState<string>('token', '')[1];
   const code = useRef<string | null>(
     (() => {
@@ -18,7 +19,7 @@ export const useAuth = (): UseAuth => {
     if (!code.current) return;
 
     try {
-      setStatus('getting token');
+      status.value = 'getting token';
       const response = await fetch('/api/gettoken', {
         method: 'POST',
         headers: {
@@ -29,15 +30,15 @@ export const useAuth = (): UseAuth => {
       if (!response.ok) throw 'Code Invalid';
       const { access_token } = await response.json();
       setToken(access_token);
-      setStatus('logged in');
-      setDone(true);
+      status.value = 'logged in';
+      done.value = true;
     } catch (e) {
-      setStatus('logged out');
+      status.value = 'logged out';
       console.log('code failed', e);
       window.location.href = '/';
     }
     code.current = null;
-  }, [code.current]);
+  }, [code.current, status, done]);
 
   const refresh = useCallback(async () => {
     if (code.current) return;
@@ -46,16 +47,16 @@ export const useAuth = (): UseAuth => {
       if (!response.ok) throw 'Refresh Token Invalid';
       const { access_token } = await response.json();
       setToken(access_token);
-      setStatus('logged in');
+      status.value = 'logged in';
     } catch (error) {
-      setStatus('logged out');
+      status.value = 'logged out';
     }
-    setDone(true);
+    done.value = true;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [status, done]);
 
   useEffect(() => {
-    if (!done) {
+    if (!done.value) {
       refresh();
     } else {
       const timeout = setInterval(refresh, TEN_MINUTES);
@@ -65,10 +66,10 @@ export const useAuth = (): UseAuth => {
   }, [done, refresh]);
 
   useEffect(() => {
-    if (status === 'logged out') route('/login');
+    if (status.value === 'logged out') route('/login');
   });
 
-  return [done, status];
+  return [done.value, status.value];
 };
 
 const TEN_MINUTES = 1000 * 60 * 10;

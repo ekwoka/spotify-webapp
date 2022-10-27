@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useSignal } from '@preact/signals';
 import { useAsyncEffect } from './useAsyncEffect';
 
 export const useAsyncMemo = <T>(
@@ -6,11 +6,11 @@ export const useAsyncMemo = <T>(
   fallback: T,
   deps: any[]
 ): T => {
-  const [state, setState] = useState<T>(fallback);
+  const state = useSignal<T>(fallback);
   useAsyncEffect(async () => {
     const result = await fn();
     if (!result) return;
-    setState(result);
+    state.value = result;
   }, deps);
-  return state;
+  return state.value;
 };

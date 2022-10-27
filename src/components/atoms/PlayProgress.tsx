@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useSignal } from '@preact/signals';
+import { useEffect } from 'preact/hooks';
 
 export const PlayProgress = ({
   currentTime,
@@ -9,7 +10,7 @@ export const PlayProgress = ({
   duration: number;
   isPlaying: boolean;
 }) => {
-  const [display, setDisplay] = useState<number>(currentTime);
+  const display = useSignal<number>(currentTime);
 
   useEffect(() => {
     let start: number | null = null;
@@ -18,14 +19,14 @@ export const PlayProgress = ({
     const step: FrameRequestCallback = (time) => {
       if (!start) start = time;
       if (cancelled || !isPlaying) return;
-      setDisplay(Math.round(currentTime + (time - start)));
+      display.value = Math.round(currentTime + (time - start));
       requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
     return () => {
       cancelled = true;
     };
-  }, [currentTime, isPlaying]);
+  }, [currentTime, isPlaying, display]);
 
   return (
     <progress
