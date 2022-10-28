@@ -1,24 +1,28 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { SpotifyApiClient, getPlaylist } from '@ekwoka/spotify-api';
+import { useQuery } from '@tanstack/react-query';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleListSong } from '../../components/atoms/SimpleListSong';
-import { useAsyncMemo, usePlayer } from '../../hooks';
+import { usePlayer } from '../../hooks';
 import { getBestImage, SpotifyImageArray } from '../../utils/getBestImage';
 
 export const Playing = (): JSXInternal.Element => {
   const [_, { play }, state] = usePlayer();
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
-  const currentPlaylist = useAsyncMemo(
+  const { data: currentPlaylist } = useQuery(
+    ['currentPlaylist', state?.context.uri ?? 'none'],
     async () => {
-      if (!state?.context?.uri) return;
+      if (!state?.context.uri) return [];
       const playlistId = (state.context.uri as string).split(':playlist:')[1];
       const playlist = await client(
         getPlaylist(playlistId, { fields: 'tracks' })
       );
       return playlist.tracks.items.map((item) => item.track);
     },
-    [],
-    [state?.context?.uri]
+    {
+      keepPreviousData: true,
+      staleTime: 1000 * 60 * 15,
+    }
   );
   const currentIndex = (currentPlaylist ?? []).findIndex(
     (track) => track?.id === state?.track_window.current_track.id

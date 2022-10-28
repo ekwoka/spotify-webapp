@@ -8,4 +8,3 @@ export { useStorage } from './useStorage';
 export { useZen } from './useZen';
 export type { AuthStatus } from './useAuth';
 export type { PlayerActions, PlayerState } from './usePlayer';
-export type { TrackObject } from './useSpotify';

@@ -4,9 +4,10 @@ import {
   recentlyPlayedTracks,
   SpotifyApiClient,
 } from '@ekwoka/spotify-api';
+import { useQuery } from '@tanstack/react-query';
 import { cloneElement, VNode } from 'preact';
 import { JSXInternal } from 'preact/src/jsx';
-import { TrackObject, useAsyncMemo } from '../../hooks';
+import { TrackObject } from '../../hooks';
 
 export const TrackList = ({
   type,
@@ -14,7 +15,8 @@ export const TrackList = ({
   limit = 20,
 }: TrackListProps): JSXInternal.Element => {
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
-  const tracks = useAsyncMemo<TrackObject[]>(
+  const { data: tracks } = useQuery<TrackObject[]>(
+    [type, limit],
     async () => {
       if (type === 'recentlyPlayed') {
         const response = await client(recentlyPlayedTracks({ limit }));
@@ -23,11 +25,13 @@ export const TrackList = ({
       const results = (await client(getTopItems('tracks', { limit }))).items;
       return results;
     },
-    [],
-    []
+    {
+      keepPreviousData: true,
+      staleTime: 1000 * 60 * 15,
+    }
   );
 
-  return cloneElement(Child, { items: tracks });
+  return cloneElement(Child, { items: tracks ?? [] });
 };
 type TrackListProps = {
   type: 'topTracks' | 'recentlyPlayed';

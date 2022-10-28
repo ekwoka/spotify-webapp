@@ -1,12 +1,14 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { SpotifyApiClient, getUsersPlaylists } from '@ekwoka/spotify-api';
+import { useQuery } from '@tanstack/react-query';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleFlexGrid } from '../../components/molecules';
-import { useAsyncMemo, usePlayer } from '../../hooks';
+import { usePlayer } from '../../hooks';
 
 export const Playlists = (): JSXInternal.Element => {
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
-  const playlists = useAsyncMemo(
+  const { data: playlists } = useQuery(
+    ['userPlaylists'],
     async () => {
       const response = await client(getUsersPlaylists());
       return response.items.map((item) => ({
@@ -14,8 +16,12 @@ export const Playlists = (): JSXInternal.Element => {
         key: item.id,
       }));
     },
-    [],
-    []
+    {
+      keepPreviousData: true,
+      initialData: [],
+      staleTime: 1000 * 60 * 15,
+      initialDataUpdatedAt: 0,
+    }
   );
   return <SimpleFlexGrid items={playlists} as={PlaylistItem} wrap={true} />;
 };
