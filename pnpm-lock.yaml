@@ -20,7 +20,7 @@ specifiers:
   '@types/spotify-web-api-node': ^5.0.7
   '@typescript-eslint/eslint-plugin': ^5.41.0
   '@typescript-eslint/parser': ^5.41.0
-  autoprefixer: ^10.4.12
+  autoprefixer: ^10.4.13
   cookie: ^0.5.0
   cross-fetch: ^3.1.5
   dotenv: ^16.0.3
@@ -56,7 +56,7 @@ dependencies:
   '@ekwoka/spotify-api': 0.13.0
   '@formkit/auto-animate': 1.0.0-beta.3
   '@preact/signals': 1.1.2_preact@10.11.2
-  '@tanstack/react-query': 4.13.0
+  '@tanstack/react-query': 4.13.0_scdi3ws2kaxntw6z2xio2kenfi
   cookie: 0.5.0
   cross-fetch: 3.1.5
   dotenv: 16.0.3
@@ -77,7 +77,7 @@ devDependencies:
   '@types/spotify-web-api-node': 5.0.7
   '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
   '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
-  autoprefixer: 10.4.12_postcss@8.4.18
+  autoprefixer: 10.4.13_postcss@8.4.18
   esbuild: 0.15.12
   esbuild-plugin-alias: 0.2.1
   esbuild-plugin-clean: 0.9.0_esbuild@0.15.12
@@ -1205,7 +1205,7 @@ packages:
       }
     dev: false
 
-  /@tanstack/react-query/4.13.0:
+  /@tanstack/react-query/4.13.0_scdi3ws2kaxntw6z2xio2kenfi:
     resolution:
       {
         integrity: sha512-dI/5hJ/pGQ74P5hxBLC9h6K0/Cap2T3k0ZjjjFLBCNnohDYgl7LNmMopzrRzBHk2mMjf2hgXHIzcKNG8GOZ5hg==,
@@ -1223,7 +1223,8 @@ packages:
         optional: true
     dependencies:
       '@tanstack/query-core': 4.13.0
-      use-sync-external-store: 1.2.0
+      react: link:npm:preact@^10/compat
+      use-sync-external-store: 1.2.0_scdi3ws2kaxntw6z2xio2kenfi
     dev: false
 
   /@types/babel__core/7.1.19:
@@ -1797,10 +1798,10 @@ packages:
     engines: { node: '>=8' }
     dev: true
 
-  /autoprefixer/10.4.12_postcss@8.4.18:
+  /autoprefixer/10.4.13_postcss@8.4.18:
     resolution:
       {
-        integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==,
+        integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==,
       }
     engines: { node: ^10 || ^12 || >=14 }
     hasBin: true
@@ -1808,7 +1809,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001412
+      caniuse-lite: 1.0.30001426
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2053,6 +2054,13 @@ packages:
     resolution:
       {
         integrity: sha512-+TeEIee1gS5bYOiuf+PS/kp2mrXic37Hl66VY6EAfxasIk5fELTktK2oOezYed12H8w7jt3s512PpulQidPjwA==,
+      }
+    dev: true
+
+  /caniuse-lite/1.0.30001426:
+    resolution:
+      {
+        integrity: sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A==,
       }
     dev: true
 
@@ -6765,7 +6773,7 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-sync-external-store/1.2.0:
+  /use-sync-external-store/1.2.0_scdi3ws2kaxntw6z2xio2kenfi:
     resolution:
       {
         integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==,
@@ -6775,6 +6783,8 @@ packages:
     peerDependenciesMeta:
       react:
         optional: true
+    dependencies:
+      react: link:npm:preact@^10/compat
     dev: false
 
   /util-deprecate/1.0.2:

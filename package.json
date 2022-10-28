@@ -49,7 +49,7 @@
     "@types/spotify-web-api-node": "^5.0.7",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "esbuild": "^0.15.12",
     "esbuild-plugin-alias": "^0.2.1",
     "esbuild-plugin-clean": "^0.9.0",
