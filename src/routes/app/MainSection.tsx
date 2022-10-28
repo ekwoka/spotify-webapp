@@ -11,9 +11,11 @@ import {
   LazyParty,
 } from './lazyRoutes';
 import { useEffect } from 'preact/hooks';
+import { useAutoAnimate } from '../../hooks';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
+  const animate = useAutoAnimate();
 
   useEffect(() => {
     if (!search) return;
@@ -23,7 +25,7 @@ export const MainSection = (): JSXInternal.Element => {
   return (
     <div class="relative flex flex-1 flex-col gap-2 md:pl-64">
       <TopBar />
-      <main class="mb-36 px-4 py-4 text-neutral-200">
+      <main class="mb-36 px-4 py-4 text-neutral-200" ref={animate}>
         <Router>
           <Route path="/" component={LazyHome} />
           <Route path="/search" component={LazySearch} />
