@@ -1,13 +1,15 @@
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
-import { SpotifyApiClient, getPlaylist } from '@ekwoka/spotify-api';
+import { SpotifyApiClient, getPlaylistItems } from '@ekwoka/spotify-api';
 import { useQuery } from '@tanstack/react-query';
 import { JSXInternal } from 'preact/src/jsx';
 import { SimpleListSong } from '../../components/atoms/SimpleListSong';
-import { usePlayer } from '../../hooks';
+import { useAutoAnimate, usePlayer } from '../../hooks';
 import { getBestImage, SpotifyImageArray } from '../../utils/getBestImage';
 
 export const Playing = (): JSXInternal.Element => {
   const [_, { play }, state] = usePlayer();
+  const animateCurrent = useAutoAnimate<HTMLDivElement>();
+  const animateUpcoming = useAutoAnimate<HTMLDivElement>();
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const { data: currentPlaylist } = useQuery(
     ['currentPlaylist', state?.context.uri ?? 'none'],
@@ -15,9 +17,9 @@ export const Playing = (): JSXInternal.Element => {
       if (!state?.context.uri) return [];
       const playlistId = (state.context.uri as string).split(':playlist:')[1];
       const playlist = await client(
-        getPlaylist(playlistId, { fields: 'tracks' })
+        getPlaylistItems(playlistId, { limit: Infinity })
       );
-      return playlist.tracks.items.map((item) => item.track);
+      return playlist.items.map((item) => item.track);
     },
     {
       keepPreviousData: true,
@@ -39,7 +41,7 @@ export const Playing = (): JSXInternal.Element => {
     <section class="flex flex-col gap-8">
       <div class="flex flex-col gap-4">
         <h2 class="text-lg">Currently Playing</h2>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2" ref={animateCurrent}>
           {state?.track_window.current_track && (
             <SimpleListSong
               id={state?.track_window.current_track?.id}
@@ -60,7 +62,7 @@ export const Playing = (): JSXInternal.Element => {
       </div>
       <div class="flex flex-col gap-4">
         <h2 class="text-lg">Up Next</h2>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2" ref={animateUpcoming}>
           {nextTracks.map((track, i) => (
             <SimpleListSong
               id={track?.id ?? ''}
