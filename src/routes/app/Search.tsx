@@ -7,7 +7,6 @@ import { autoRecommend } from '../../utils/spotify/autoRecommend';
 import { useGlobalState } from '@ekwoka/preact-global-state/dist';
 import { SpotifyApiClient, search } from '@ekwoka/spotify-api';
 import { useSignal, useSignalEffect } from '@preact/signals';
-import { TrackStub } from '@ekwoka/spotify-api/dist/endpoints';
 import { useQuery } from '@tanstack/react-query';
 
 export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
@@ -16,7 +15,7 @@ export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
   useSignalEffect(() => {
     route(`/search/${searchQuery.value}`);
   });
-  const { data: results } = useQuery<TrackStub[]>(
+  const { data: results } = useQuery(
     ['search', searchQuery.value],
     async () => {
       if (!searchQuery.value) return await autoRecommend(client);

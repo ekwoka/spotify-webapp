@@ -14,7 +14,7 @@ export const SimpleGridItem = ({
   album,
   uri,
   class: className,
-}: Track & { class: string }): JSXInternal.Element => {
+}: Track & { class?: string }): JSXInternal.Element => {
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
   const [_, { play }] = usePlayer();
 
