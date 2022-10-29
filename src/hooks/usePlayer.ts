@@ -64,6 +64,8 @@ export const usePlayer = (): [
         ? {
             play: (items?: string | string[], offset?: number) => {
               if (!items) return;
+              if (typeof items === 'string' && /^spotify:playlist:/.test(items))
+                return player.play(items, offset);
               if (status?.track_window.current_track.id) {
                 arrayWrap(items ?? []).forEach((item) =>
                   client(addToQueue(item))
