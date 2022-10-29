@@ -5,32 +5,42 @@ import {
   trackIsSaved,
   saveTracks,
 } from '@ekwoka/spotify-api';
-import { useSignal } from '@preact/signals';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { HeartSolid } from 'preact-heroicons';
-import { useAsyncEffect } from '../../hooks';
 import { classNames } from '../../utils';
 
 export const HeartSong = ({ id }: { id: string }) => {
-  const isLiked = useSignal(false);
   const [client] = useGlobalState<SpotifyApiClient>('apiClient');
-  useAsyncEffect(async () => {
-    if (!id) return;
-    isLiked.value = await client(trackIsSaved(id));
-  }, [id]);
-  const toggleHeart = () => {
-    isLiked.value = ((prev) => {
-      if (!id) return prev;
-      if (prev) client(removeTracks(id));
-      else client(saveTracks(id));
-      return !prev;
-    })(isLiked.value);
-  };
+  const queryClient = useQueryClient();
+  const { data: isLiked } = useQuery(
+    ['isLiked', id],
+    () => {
+      if (!id) return false;
+      return client(trackIsSaved(id));
+    },
+    {
+      keepPreviousData: true,
+      staleTime: 1000 * 60 * 15,
+      initialData: false,
+      initialDataUpdatedAt: 0,
+    }
+  );
+  const mutateIsLiked = useMutation(
+    async (isLiked: boolean) =>
+      await client((isLiked ? saveTracks : removeTracks)(id)),
+
+    {
+      onSuccess: (newState) =>
+        queryClient.setQueryData(['isLiked', id], newState),
+    }
+  );
+  const toggleHeart = () => mutateIsLiked.mutate(!isLiked);
   return (
     <button type="button" onClick={toggleHeart} disabled={!id}>
       <HeartSolid
         class={classNames(
           'h-6 w-6 flex-none transition-colors',
-          isLiked.value
+          isLiked
             ? 'animate-like text-rose-600'
             : 'stroke-white text-transparent'
         )}

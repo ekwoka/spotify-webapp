@@ -6,14 +6,14 @@ overrides:
 specifiers:
   '@ekwoka/hotkeys': ^1.0.1
   '@ekwoka/preact-global-state': ^2.0.0
-  '@ekwoka/spotify-api': ^0.13.0
+  '@ekwoka/spotify-api': ^0.13.1
   '@formkit/auto-animate': 1.0.0-beta.3
   '@netlify/functions': ^1.3.0
   '@preact/signals': ^1.1.2
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.7
-  '@tanstack/react-query': ^4.13.0
+  '@tanstack/react-query': ^4.13.4
   '@types/cookie': ^0.5.1
   '@types/node': ^18.11.7
   '@types/spotify-api': ^0.0.19
@@ -38,7 +38,7 @@ specifiers:
   jest: ^29.2.2
   lint-staged: ^13.0.3
   npm-run-all: ^4.1.5
-  pnpm: ^7.14.0
+  pnpm: ^7.14.1
   postcss: ^8.4.18
   preact: ^10.11.2
   preact-heroicons: 2.0.12
@@ -53,10 +53,10 @@ specifiers:
 dependencies:
   '@ekwoka/hotkeys': 1.0.1
   '@ekwoka/preact-global-state': 2.0.0_ganhexdry3x62y3rr3aa37h4ym
-  '@ekwoka/spotify-api': 0.13.0
+  '@ekwoka/spotify-api': 0.13.1
   '@formkit/auto-animate': 1.0.0-beta.3
   '@preact/signals': 1.1.2_preact@10.11.2
-  '@tanstack/react-query': 4.13.0_scdi3ws2kaxntw6z2xio2kenfi
+  '@tanstack/react-query': 4.13.4_scdi3ws2kaxntw6z2xio2kenfi
   cookie: 0.5.0
   cross-fetch: 3.1.5
   dotenv: 16.0.3
@@ -91,7 +91,7 @@ devDependencies:
   jest: 29.2.2_@types+node@18.11.7
   lint-staged: 13.0.3
   npm-run-all: 4.1.5
-  pnpm: 7.14.0
+  pnpm: 7.14.1
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
@@ -613,10 +613,10 @@ packages:
       preact: 10.11.2
     dev: false
 
-  /@ekwoka/spotify-api/0.13.0:
+  /@ekwoka/spotify-api/0.13.1:
     resolution:
       {
-        integrity: sha512-CKP7iUGxD4l8lsIGAd7tpkdAEvev4nnXhnIH3XFxTT5tApciF2fNW4RLYn0JNUCC2nsur6KX1Oycj0YIv3YBeg==,
+        integrity: sha512-zlgcb3K7hrpelVdo5oTXsmf/EfJehRv6U12ip/u7r7cVMZN7VUX0aiamIvDHPISYMeOuQOU/eMcRrnHJMkvA0Q==,
       }
     dev: false
 
@@ -1198,17 +1198,17 @@ packages:
       tailwindcss: 3.2.1_postcss@8.4.18
     dev: true
 
-  /@tanstack/query-core/4.13.0:
+  /@tanstack/query-core/4.13.4:
     resolution:
       {
-        integrity: sha512-PzmLQcEgC4rl2OzkiPHYPC9O79DFcMGaKsOzDEP+U4PJ+tbkcEP+Z+FQDlfvX8mCwYC7UNH7hXrQ5EdkGlJjVg==,
+        integrity: sha512-DMIy6tgGehYoRUFyoR186+pQspOicyZNSGvBWxPc2CinHjWOQ7DPnGr9zmn/kE9xK4Zd3GXd25Nj3X20+TF6Lw==,
       }
     dev: false
 
-  /@tanstack/react-query/4.13.0_scdi3ws2kaxntw6z2xio2kenfi:
+  /@tanstack/react-query/4.13.4_scdi3ws2kaxntw6z2xio2kenfi:
     resolution:
       {
-        integrity: sha512-dI/5hJ/pGQ74P5hxBLC9h6K0/Cap2T3k0ZjjjFLBCNnohDYgl7LNmMopzrRzBHk2mMjf2hgXHIzcKNG8GOZ5hg==,
+        integrity: sha512-OHkUulPorHDiWNcUrcSUNxedeZ28z9kCKRG3JY+aJ8dFH/o4fixtac4ys0lwCP/n/VL1XMPnu+/CXEhbXHyJZA==,
       }
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1222,7 +1222,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.13.0
+      '@tanstack/query-core': 4.13.4
       react: link:npm:preact@^10/compat
       use-sync-external-store: 1.2.0_scdi3ws2kaxntw6z2xio2kenfi
     dev: false
@@ -5709,10 +5709,10 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /pnpm/7.14.0:
+  /pnpm/7.14.1:
     resolution:
       {
-        integrity: sha512-yUKSckJLBIw8ByqMKJF9497kzwrevuQhdL6o2eYbky7woAictxoGX9veBdQYCdBemuC239X2FJq/LGTpCjQ55w==,
+        integrity: sha512-jxnp3SGzTZcSITKfaTfRrkOJYSeHwlU/rF+K9ofaIeHUYF3zR3Qcy5vl8mm07ECMfWhNjOy2phs2o3Zb41pHAg==,
       }
     engines: { node: '>=14.6' }
     hasBin: true
