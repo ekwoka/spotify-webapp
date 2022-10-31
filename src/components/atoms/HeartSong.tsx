@@ -7,6 +7,7 @@ import {
 } from '@ekwoka/spotify-api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { HeartSolid } from 'preact-heroicons';
+import toast from 'react-hot-toast';
 import { classNames } from '../../utils';
 
 export const HeartSong = ({ id }: { id: string }) => {
@@ -27,8 +28,11 @@ export const HeartSong = ({ id }: { id: string }) => {
   );
   const mutateIsLiked = useMutation(
     async (isLiked: boolean) =>
-      await client((isLiked ? saveTracks : removeTracks)(id)),
-
+      await toast.promise(client((isLiked ? saveTracks : removeTracks)(id)), {
+        loading: isLiked ? 'Adding...' : 'Removing...',
+        success: isLiked ? 'Added' : 'Removed',
+        error: isLiked ? 'Failed to add' : 'Failed to remove',
+      }),
     {
       onSuccess: (newState) =>
         queryClient.setQueryData(['isLiked', id], newState),

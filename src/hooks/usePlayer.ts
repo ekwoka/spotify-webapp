@@ -5,6 +5,7 @@ import { useGlobalState } from '@ekwoka/preact-global-state';
 import { arrayWrap } from '../utils';
 import { addToRoomQueue } from '../utils/apiLayer/addToRoomQueue';
 import { SpotifyApiClient, addToQueue } from '@ekwoka/spotify-api';
+import toast from 'react-hot-toast';
 
 let alreadyCalled = false;
 
@@ -65,15 +66,36 @@ export const usePlayer = (): [
             play: (items?: string | string[], offset?: number) => {
               if (!items) return;
               if (typeof items === 'string' && /^spotify:playlist:/.test(items))
-                return player.play(items, offset);
+                return toast.promise(player.play(items, offset), {
+                  loading: 'Loading playlist...',
+                  success: 'Playing Playlist',
+                  error: 'Failed to play playlist',
+                });
               if (status?.track_window.current_track.id) {
-                arrayWrap(items ?? []).forEach((item) =>
-                  client(addToQueue(item))
+                return toast.promise(
+                  Promise.all(
+                    arrayWrap(items ?? []).map((item) =>
+                      client(addToQueue(item))
+                    )
+                  ).then(() => undefined),
+                  {
+                    loading: 'Adding to queue...',
+                    success: 'Added to queue',
+                    error: 'Failed to add to queue',
+                  }
                 );
-                return;
               }
-              if (!room) return player.play(items, offset);
-              return addToRoomQueue(items, room);
+              if (!room)
+                return toast.promise(player.play(items, offset), {
+                  loading: 'Queing song...',
+                  success: 'Playing song',
+                  error: 'Failed to play song',
+                });
+              return toast.promise(addToRoomQueue(items, room), {
+                loading: 'Adding to Room Queue',
+                success: 'Added to Room Queue',
+                error: 'Failed to add to Room Queue',
+              });
             },
             pause: () => player.pause(),
             next: () => player.next(),

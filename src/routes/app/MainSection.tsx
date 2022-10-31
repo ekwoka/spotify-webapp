@@ -12,6 +12,7 @@ import {
 } from './lazyRoutes';
 import { useEffect } from 'preact/hooks';
 import { useAutoAnimate } from '../../hooks';
+import { Toast, ToastBar, Toaster } from 'react-hot-toast';
 
 export const MainSection = (): JSXInternal.Element => {
   const [search] = useGlobalState<string>('searchString', '');
@@ -36,6 +37,18 @@ export const MainSection = (): JSXInternal.Element => {
         </Router>
       </main>
       <PlayerBar />
+      <Toaster>
+        {(t: Toast) => (
+          <ToastBar
+            toast={t}
+            style={{
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            }}
+          />
+        )}
+      </Toaster>
     </div>
   );
 };

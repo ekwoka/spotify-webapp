@@ -23,6 +23,7 @@ specifiers:
   autoprefixer: ^10.4.13
   cookie: ^0.5.0
   cross-fetch: ^3.1.5
+  csstype: ^3.1.1
   dotenv: ^16.0.3
   esbuild: ^0.15.12
   esbuild-plugin-alias: ^0.2.1
@@ -45,7 +46,9 @@ specifiers:
   preact-router: ^4.1.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
-  react: npm:preact@^10/compat
+  react: link:npm:preact@latest/compat
+  react-dom: link:npm:preact@latest/compat
+  react-hot-toast: ^2.4.0
   spotify-web-playback: ^1.4.0
   tailwindcss: ^3.2.1
   typescript: ^4.8.4
@@ -56,14 +59,16 @@ dependencies:
   '@ekwoka/spotify-api': 0.13.2
   '@formkit/auto-animate': 1.0.0-beta.3
   '@preact/signals': 1.1.2_preact@10.11.2
-  '@tanstack/react-query': 4.13.5_scdi3ws2kaxntw6z2xio2kenfi
+  '@tanstack/react-query': 4.13.5_eutpb76xxau2526ysvy5bw6uda
   cookie: 0.5.0
   cross-fetch: 3.1.5
+  csstype: 3.1.1
   dotenv: 16.0.3
   faunadb: 4.7.1
   preact: 10.11.2
   preact-heroicons: 2.0.12_preact@10.11.2
   preact-router: 4.1.0_preact@10.11.2
+  react-hot-toast: 2.4.0_txdt2ol65wlpysti5ln52en6oy
   spotify-web-playback: 1.4.0
 
 devDependencies:
@@ -95,7 +100,8 @@ devDependencies:
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
-  react: link:npm:preact@^10/compat
+  react: link:npm:preact@latest/compat
+  react-dom: link:npm:preact@latest/compat
   tailwindcss: 3.2.1_postcss@8.4.18
   typescript: 4.8.4
 
@@ -1205,7 +1211,7 @@ packages:
       }
     dev: false
 
-  /@tanstack/react-query/4.13.5_scdi3ws2kaxntw6z2xio2kenfi:
+  /@tanstack/react-query/4.13.5_eutpb76xxau2526ysvy5bw6uda:
     resolution:
       {
         integrity: sha512-p2HcWGuqfvG7Pz04un4phWZeXzlITD7Ue0gMXjD56g8y3rP1r5qEYC/BckffrZLf4dZtQeVPCWOa8RYAqx036g==,
@@ -1223,8 +1229,9 @@ packages:
         optional: true
     dependencies:
       '@tanstack/query-core': 4.13.4
-      react: link:npm:preact@^10/compat
-      use-sync-external-store: 1.2.0_scdi3ws2kaxntw6z2xio2kenfi
+      react: link:npm:preact@latest/compat
+      react-dom: link:npm:preact@latest/compat
+      use-sync-external-store: 1.2.0_2dw4zjptod43ug2cuaduoleuay
     dev: false
 
   /@types/babel__core/7.1.19:
@@ -2340,6 +2347,13 @@ packages:
     engines: { node: '>=4' }
     hasBin: true
     dev: true
+
+  /csstype/3.1.1:
+    resolution:
+      {
+        integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==,
+      }
+    dev: false
 
   /debug/2.6.9:
     resolution:
@@ -3774,6 +3788,17 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
+
+  /goober/2.1.11_csstype@3.1.1:
+    resolution:
+      {
+        integrity: sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A==,
+      }
+    peerDependencies:
+      csstype: ^3.0.10
+    dependencies:
+      csstype: 3.1.1
+    dev: false
 
   /graceful-fs/4.2.10:
     resolution:
@@ -5924,6 +5949,26 @@ packages:
     engines: { node: '>=10' }
     dev: true
 
+  /react-hot-toast/2.4.0_txdt2ol65wlpysti5ln52en6oy:
+    resolution:
+      {
+        integrity: sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==,
+      }
+    engines: { node: '>=10' }
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      goober: 2.1.11_csstype@3.1.1
+      react: link:npm:preact@latest/compat
+      react-dom: link:npm:preact@latest/compat
+    transitivePeerDependencies:
+      - csstype
+    dev: false
+
   /react-is/16.13.1:
     resolution:
       {
@@ -6773,7 +6818,7 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-sync-external-store/1.2.0_scdi3ws2kaxntw6z2xio2kenfi:
+  /use-sync-external-store/1.2.0_2dw4zjptod43ug2cuaduoleuay:
     resolution:
       {
         integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==,
@@ -6784,7 +6829,7 @@ packages:
       react:
         optional: true
     dependencies:
-      react: link:npm:preact@^10/compat
+      react: link:npm:preact@latest/compat
     dev: false
 
   /util-deprecate/1.0.2:
