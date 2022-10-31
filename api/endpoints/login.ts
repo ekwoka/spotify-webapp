@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Handler } from '@netlify/functions';
 import { redirect } from '../utils';
 import { makeAuthURL } from '@ekwoka/spotify-api';
-import { scope } from '@ekwoka/spotify-api/auth/makeAuthURL';
+import type { scope } from '@ekwoka/spotify-api/auth/makeAuthURL';
 
 export const handler: Handler | MockedHandler = async () => {
   return redirect(makeAuthURL(scopes));
