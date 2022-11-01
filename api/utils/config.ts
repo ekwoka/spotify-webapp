@@ -5,7 +5,7 @@ import fetch from 'cross-fetch';
 if (!global.fetch) global.fetch = fetch;
 
 // @ts-ignore-next-line
-export const ENV: ENV = process.env as ENV;
+export const config: ENV = process.env as ENV;
 // eslint-disable-next-line @typescript-eslint/no-redeclare -- intentionally naming the variable the same as the type
 type ENV = {
   SPOTIFY_CLIENT: string;

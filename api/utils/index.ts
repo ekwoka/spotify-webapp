@@ -1,5 +1,5 @@
-export { ENV } from './config';
-export { generateRandomString } from './crypto';
+export { config } from './config';
+export { generateRandomString } from './generateRandomString';
 export { formattedReturn } from './formattedReturn';
 export { makeRoomCode } from './makeRoomCode';
 export { redirect } from './redirect';

@@ -1,6 +1,6 @@
 import { formattedReturn, FormattedReturn } from '../utils/formattedReturn';
 import { Handler } from '@netlify/functions';
-import { fauna } from '../lib';
+import { faunadb } from '../lib';
 import { Get, Match, Index, Update } from 'faunadb';
 
 export const handler: Handler = async (req): Promise<FormattedReturn> => {
@@ -14,10 +14,10 @@ export const handler: Handler = async (req): Promise<FormattedReturn> => {
     const {
       ref,
       data: { queue },
-    } = await fauna.query(Get(Match(Index('roomWithCode'), code)));
+    } = await faunadb.query(Get(Match(Index('roomWithCode'), code)));
     if (!queue) throw 'No queue found';
     uri.forEach((uri: string) => queue.push(uri));
-    await fauna.query(
+    await faunadb.query(
       Update(ref, {
         data: { queue },
       })

@@ -1,9 +1,9 @@
 import { Client, Expr } from 'faunadb';
-import { ENV } from '../utils';
+import { config } from '../utils';
 
 const getClient = () =>
   new Client({
-    secret: ENV.FAUNADB_SERVER_SECRET,
+    secret: config.FAUNADB_SERVER_SECRET,
     http2SessionIdleTime: 10,
   });
 
@@ -21,7 +21,7 @@ const openQuery: Fauna['openQuery'] = async (fn): Promise<any> => {
   return data;
 };
 
-export const fauna: Fauna = {
+export const faunadb: Fauna = {
   query,
   openQuery,
   getClient,

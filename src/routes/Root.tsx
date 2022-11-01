@@ -4,7 +4,7 @@ import { Splash } from '../components/templates';
 import { useAuth, useSpotify } from '../hooks';
 
 const LazyLogin = lazyLoad(() => import('./Login').then((mod) => mod.Login));
-const LazyMain = lazyLoad(() => import('./AppMain').then((mod) => mod.Main));
+const LazyMain = lazyLoad(() => import('./Main').then((mod) => mod.Main));
 
 export const Root = () => {
   const [ready, status] = useAuth();

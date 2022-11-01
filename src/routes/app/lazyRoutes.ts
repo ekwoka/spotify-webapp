@@ -1,3 +1,4 @@
+/* eslint-disable filename-export/match-named-export */
 import { JSXInternal } from 'preact/src/jsx';
 import { lazyLoad } from '../../components/organisms';
 

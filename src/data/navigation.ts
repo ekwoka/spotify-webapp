@@ -86,3 +86,9 @@ type NavigationItem = {
   path: string;
   Icon?: HeroIcon;
 };
+
+export const navigation = {
+  MAIN_NAVIGATION,
+  SECONDARY_NAVIGATION,
+  TAB_NAV,
+};

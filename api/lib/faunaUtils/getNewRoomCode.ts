@@ -1,5 +1,5 @@
 import { makeRoomCode } from '../../utils';
-import { fauna } from '../';
+import { faunadb } from '../';
 import { Client, Exists, Index, Match } from 'faunadb';
 
 export const getNewRoomCode = (): Promise<string> => {
@@ -12,5 +12,5 @@ export const getNewRoomCode = (): Promise<string> => {
     return code;
   };
 
-  return fauna.openQuery<string>(roomLoop);
+  return faunadb.openQuery<string>(roomLoop);
 };

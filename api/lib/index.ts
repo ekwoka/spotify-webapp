@@ -1,1 +1,1 @@
-export { fauna } from './faunadb';
+export { faunadb } from './faunadb';
