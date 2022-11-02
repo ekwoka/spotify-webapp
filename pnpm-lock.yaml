@@ -13,7 +13,7 @@ specifiers:
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.7
-  '@tanstack/react-query': ^4.13.5
+  '@tanstack/react-query': ^4.14.1
   '@types/cookie': ^0.5.1
   '@types/node': ^18.11.9
   '@types/spotify-api': ^0.0.19
@@ -40,7 +40,7 @@ specifiers:
   jest: ^29.2.2
   lint-staged: ^13.0.3
   npm-run-all: ^4.1.5
-  pnpm: ^7.14.1
+  pnpm: ^7.14.2
   postcss: ^8.4.18
   preact: ^10.11.2
   preact-heroicons: 2.0.12
@@ -60,7 +60,7 @@ dependencies:
   '@ekwoka/spotify-api': 0.14.0
   '@formkit/auto-animate': 1.0.0-beta.3
   '@preact/signals': 1.1.2_preact@10.11.2
-  '@tanstack/react-query': 4.13.5_eutpb76xxau2526ysvy5bw6uda
+  '@tanstack/react-query': 4.14.1_eutpb76xxau2526ysvy5bw6uda
   cookie: 0.5.0
   cross-fetch: 3.1.5
   csstype: 3.1.1
@@ -98,7 +98,7 @@ devDependencies:
   jest: 29.2.2_@types+node@18.11.9
   lint-staged: 13.0.3
   npm-run-all: 4.1.5
-  pnpm: 7.14.1
+  pnpm: 7.14.2
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
@@ -1206,17 +1206,17 @@ packages:
       tailwindcss: 3.2.1_postcss@8.4.18
     dev: true
 
-  /@tanstack/query-core/4.13.4:
+  /@tanstack/query-core/4.14.1:
     resolution:
       {
-        integrity: sha512-DMIy6tgGehYoRUFyoR186+pQspOicyZNSGvBWxPc2CinHjWOQ7DPnGr9zmn/kE9xK4Zd3GXd25Nj3X20+TF6Lw==,
+        integrity: sha512-mUejKoFDe4NZB8jQJR1uuAl6IwvkUpOD2m8NcuTVPOu0pcxeeFPdrnHaljwOEFPtlqXoiiIIQGYy6whjCMN+iQ==,
       }
     dev: false
 
-  /@tanstack/react-query/4.13.5_eutpb76xxau2526ysvy5bw6uda:
+  /@tanstack/react-query/4.14.1_eutpb76xxau2526ysvy5bw6uda:
     resolution:
       {
-        integrity: sha512-p2HcWGuqfvG7Pz04un4phWZeXzlITD7Ue0gMXjD56g8y3rP1r5qEYC/BckffrZLf4dZtQeVPCWOa8RYAqx036g==,
+        integrity: sha512-cRgNzigw4GSPwGlTEkXi8hi/xgUnSEt9jCkiC8oAT3PEIdsQ50onZcpXd+JNJcZk2RTh8KM1fGyWz6xYLiY8bg==,
       }
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1230,7 +1230,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.13.4
+      '@tanstack/query-core': 4.14.1
       react: link:npm:preact@latest/compat
       react-dom: link:npm:preact@latest/compat
       use-sync-external-store: 1.2.0_2dw4zjptod43ug2cuaduoleuay
@@ -5828,10 +5828,10 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /pnpm/7.14.1:
+  /pnpm/7.14.2:
     resolution:
       {
-        integrity: sha512-jxnp3SGzTZcSITKfaTfRrkOJYSeHwlU/rF+K9ofaIeHUYF3zR3Qcy5vl8mm07ECMfWhNjOy2phs2o3Zb41pHAg==,
+        integrity: sha512-NSxrIaRW07jFQQ1fPFFOA8eMfuogsMeygOKd3zaFgyJBdo1oh61jl2JjWc+w0XNzWIMG7/v9HK7nP8RTL5NO3g==,
       }
     engines: { node: '>=14.6' }
     hasBin: true
