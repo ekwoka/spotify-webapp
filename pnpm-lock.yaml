@@ -7,7 +7,7 @@ specifiers:
   '@ekwoka/hotkeys': ^1.0.1
   '@ekwoka/preact-global-state': ^2.0.0
   '@ekwoka/spotify-api': ^0.14.0
-  '@formkit/auto-animate': 1.0.0-beta.4
+  '@formkit/auto-animate': 1.0.0-beta.5
   '@netlify/functions': ^1.3.0
   '@preact/signals': ^1.1.2
   '@tailwindcss/forms': ^0.5.3
@@ -27,8 +27,8 @@ specifiers:
   dotenv: ^16.0.3
   esbuild: ^0.15.14
   esbuild-plugin-alias: ^0.2.1
-  esbuild-plugin-clean: ^0.9.0
-  esbuild-plugin-copy: ^1.6.0
+  esbuild-plugin-clean: ^1.0.0
+  esbuild-plugin-copy: ^2.0.0
   esbuild-plugin-filesize: ^0.4.0
   esbuild-plugin-import-glob: ^0.1.1
   eslint: ^8.27.0
@@ -40,7 +40,7 @@ specifiers:
   jest: ^29.3.1
   lint-staged: ^13.0.3
   npm-run-all: ^4.1.5
-  pnpm: ^7.16.0
+  pnpm: ^7.16.1
   postcss: ^8.4.19
   preact: ^10.11.3
   preact-heroicons: 2.0.13
@@ -58,7 +58,7 @@ dependencies:
   '@ekwoka/hotkeys': 1.0.1
   '@ekwoka/preact-global-state': 2.0.0_rzpze37dszwy6uiwoj3tdospr4
   '@ekwoka/spotify-api': 0.14.0
-  '@formkit/auto-animate': 1.0.0-beta.4
+  '@formkit/auto-animate': 1.0.0-beta.5
   '@preact/signals': 1.1.2_preact@10.11.3
   '@tanstack/react-query': 4.16.1_eutpb76xxau2526ysvy5bw6uda
   cookie: 0.5.0
@@ -87,8 +87,8 @@ devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.19
   esbuild: 0.15.14
   esbuild-plugin-alias: 0.2.1
-  esbuild-plugin-clean: 0.9.0_esbuild@0.15.14
-  esbuild-plugin-copy: 1.6.0_esbuild@0.15.14
+  esbuild-plugin-clean: 1.0.0_esbuild@0.15.14
+  esbuild-plugin-copy: 2.0.0_esbuild@0.15.14
   esbuild-plugin-filesize: 0.4.0_esbuild@0.15.14
   esbuild-plugin-import-glob: 0.1.1
   eslint: 8.27.0
@@ -98,7 +98,7 @@ devDependencies:
   jest: 29.3.1_@types+node@18.11.9
   lint-staged: 13.0.3
   npm-run-all: 4.1.5
-  pnpm: 7.16.0
+  pnpm: 7.16.1
   postcss: 8.4.19
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
@@ -672,10 +672,10 @@ packages:
       - supports-color
     dev: true
 
-  /@formkit/auto-animate/1.0.0-beta.4:
+  /@formkit/auto-animate/1.0.0-beta.5:
     resolution:
       {
-        integrity: sha512-7K+IZeJMST4la9c+V2s/Moyq38stU4Ttf/j/cLEAFctNXZGcUcTsrbEGSeM2OTGr/OuEcgEkCLSS1nhMcxPYyg==,
+        integrity: sha512-WoSwyhAZPOe6RB/IgicOtCHtrWwEpfKIZ/H/nxpKfnZL9CB6hhhBGU5bCdMRw7YpAUF2CDlQa+WWh+gCqz5lDg==,
       }
     dev: false
 
@@ -2932,23 +2932,23 @@ packages:
       }
     dev: true
 
-  /esbuild-plugin-clean/0.9.0_esbuild@0.15.14:
+  /esbuild-plugin-clean/1.0.0_esbuild@0.15.14:
     resolution:
       {
-        integrity: sha512-l0Miq30jdGCh1zkQEKw/LIQsY5UYiIid6xjwrWfvVfH4UHwJGFuvZV1MasKXcHRRxbTDgCVkD0SN0SJQLllYCw==,
+        integrity: sha512-8hYZqNalY1Vm4qR58tymkZhMy5bVjFlz1nS+Cj6I0DtctCPUhiBlrS2wx68uyaTMLpjO3HWWMITvTIzWTu25dw==,
       }
     peerDependencies:
-      esbuild: ^0.14.0
+      esbuild: '>= 0.14.0'
     dependencies:
       chalk: 4.1.2
       del: 6.1.1
       esbuild: 0.15.14
     dev: true
 
-  /esbuild-plugin-copy/1.6.0_esbuild@0.15.14:
+  /esbuild-plugin-copy/2.0.0_esbuild@0.15.14:
     resolution:
       {
-        integrity: sha512-wN1paBCoE0yRBl9ZY3ZSD6SxGE4Yfr0Em7zh2yTbJv1JaHEIR3FYYN7HU6F+j/peSaGZJNSORSGxJ5QX1a1Sgg==,
+        integrity: sha512-Y/pOM2z/A15OQjIk6OZvhb/h8/czrynrrfDxrAHd4aNxrZdK5o2vjAu4M4s9kM72thbzoK170CQcpu7ExZE1NQ==,
       }
     peerDependencies:
       esbuild: '>= 0.14.0'
@@ -3868,7 +3868,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
@@ -5826,10 +5826,10 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /pnpm/7.16.0:
+  /pnpm/7.16.1:
     resolution:
       {
-        integrity: sha512-jGDe7kz6wmoJiiEn+zQBwV+h0PazsvkeXGS5RnM0bEAD2rTxMR+oOfhWfuEDXddiBocCDNuuo1PL4ChuvR0t/g==,
+        integrity: sha512-vtAw/kJ+Slm/XdLvd3zbSA8FKBgetrk+1KQFDnyvPP0q2Pjc1f2HsA7idYs9MJewYi4o03cjyZhAdqrCcjknsw==,
       }
     engines: { node: '>=14.6' }
     hasBin: true
