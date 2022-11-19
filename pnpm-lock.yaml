@@ -27,8 +27,8 @@ specifiers:
   dotenv: ^16.0.3
   esbuild: ^0.15.14
   esbuild-plugin-alias: ^0.2.1
-  esbuild-plugin-clean: ^1.0.0
-  esbuild-plugin-copy: ^2.0.0
+  esbuild-plugin-clean: 0.9.0
+  esbuild-plugin-copy: 1.6.0
   esbuild-plugin-filesize: ^0.4.0
   esbuild-plugin-import-glob: ^0.1.1
   eslint: ^8.27.0
@@ -87,8 +87,8 @@ devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.19
   esbuild: 0.15.14
   esbuild-plugin-alias: 0.2.1
-  esbuild-plugin-clean: 1.0.0_esbuild@0.15.14
-  esbuild-plugin-copy: 2.0.0_esbuild@0.15.14
+  esbuild-plugin-clean: 0.9.0_esbuild@0.15.14
+  esbuild-plugin-copy: 1.6.0_esbuild@0.15.14
   esbuild-plugin-filesize: 0.4.0_esbuild@0.15.14
   esbuild-plugin-import-glob: 0.1.1
   eslint: 8.27.0
@@ -2932,23 +2932,23 @@ packages:
       }
     dev: true
 
-  /esbuild-plugin-clean/1.0.0_esbuild@0.15.14:
+  /esbuild-plugin-clean/0.9.0_esbuild@0.15.14:
     resolution:
       {
-        integrity: sha512-8hYZqNalY1Vm4qR58tymkZhMy5bVjFlz1nS+Cj6I0DtctCPUhiBlrS2wx68uyaTMLpjO3HWWMITvTIzWTu25dw==,
+        integrity: sha512-l0Miq30jdGCh1zkQEKw/LIQsY5UYiIid6xjwrWfvVfH4UHwJGFuvZV1MasKXcHRRxbTDgCVkD0SN0SJQLllYCw==,
       }
     peerDependencies:
-      esbuild: '>= 0.14.0'
+      esbuild: ^0.14.0
     dependencies:
       chalk: 4.1.2
       del: 6.1.1
       esbuild: 0.15.14
     dev: true
 
-  /esbuild-plugin-copy/2.0.0_esbuild@0.15.14:
+  /esbuild-plugin-copy/1.6.0_esbuild@0.15.14:
     resolution:
       {
-        integrity: sha512-Y/pOM2z/A15OQjIk6OZvhb/h8/czrynrrfDxrAHd4aNxrZdK5o2vjAu4M4s9kM72thbzoK170CQcpu7ExZE1NQ==,
+        integrity: sha512-wN1paBCoE0yRBl9ZY3ZSD6SxGE4Yfr0Em7zh2yTbJv1JaHEIR3FYYN7HU6F+j/peSaGZJNSORSGxJ5QX1a1Sgg==,
       }
     peerDependencies:
       esbuild: '>= 0.14.0'
