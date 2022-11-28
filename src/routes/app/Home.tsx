@@ -1,5 +1,5 @@
 import { JSXInternal } from 'preact/src/jsx';
-import { TrackObject } from '../../hooks';
+import { Track } from '@ekwoka/spotify-api/dist/endpoints/tracks';
 import { SimpleFlexGrid } from '../../components/molecules/SimpleFlexGrid';
 import { SimpleGridItem } from '../../components/atoms/SimpleGridItem';
 import { TrackList } from '../../components/organisms/TrackList';
@@ -14,7 +14,7 @@ export const Home = (): JSXInternal.Element => {
             as={(item) => (
               <SimpleGridItem key={item.id} {...item} class="w-52" />
             )}
-            items={[] as TrackObject[]}
+            items={[] as Track[]}
             minHeight={52}
           />
         </TrackList>
@@ -26,7 +26,7 @@ export const Home = (): JSXInternal.Element => {
             as={(item) => (
               <SimpleGridItem key={item.id} {...item} class="w-52" />
             )}
-            items={[] as TrackObject[]}
+            items={[] as Track[]}
             minHeight={52}
           />
         </TrackList>

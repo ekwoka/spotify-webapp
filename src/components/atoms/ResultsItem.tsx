@@ -1,7 +1,7 @@
 import { PlaySolid, SquaresPlusSolid } from 'preact-heroicons';
 import { JSXInternal } from 'preact/src/jsx';
 import { usePlayer } from '../../hooks';
-import { TrackObject } from '../../hooks/useSpotify';
+import { Track } from '@ekwoka/spotify-api/dist/endpoints';
 import { getBestImage } from '../../utils/getBestImage';
 
 export const ResultsItem = ({
@@ -11,7 +11,7 @@ export const ResultsItem = ({
   album,
   uri,
   ...rest
-}: TrackObject): JSXInternal.Element => {
+}: Track): JSXInternal.Element => {
   const { play } = usePlayer()[1];
   return (
     <li
