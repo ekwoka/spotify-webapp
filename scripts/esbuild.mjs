@@ -42,7 +42,7 @@ build({
     copy({
       assets: {
         from: ['./src/static/*'],
-        to: ['./dist'],
+        to: ['./'],
       },
     }),
     importGlobPlugin.default(),
@@ -51,7 +51,7 @@ build({
       'react-dom': require.resolve('preact/compat'),
     }),
   ],
-}).then(async (_) => {
+}).then((_) => {
   console.log(dev ? 'watching...' : 'JS Build Complete');
   console.timeEnd('esbuild');
 });
