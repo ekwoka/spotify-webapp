@@ -1,8 +1,4 @@
 import 'dotenv/config';
-import fetch from 'cross-fetch';
-
-// @ts-ignore-next-line
-if (!global.fetch) global.fetch = fetch;
 
 // @ts-ignore-next-line
 export const config: ENV = process.env as ENV;

@@ -22,8 +22,6 @@ specifiers:
   '@typescript-eslint/parser': 5.47.0
   autoprefixer: 10.4.13
   cookie: 0.5.0
-  cross-fetch: 3.1.5
-  csstype: 3.1.1
   dotenv: 16.0.3
   esbuild: 0.16.10
   esbuild-plugin-alias: 0.2.1
@@ -62,15 +60,13 @@ dependencies:
   '@preact/signals': 1.1.2_preact@10.11.3
   '@tanstack/react-query': 4.20.4_eutpb76xxau2526ysvy5bw6uda
   cookie: 0.5.0
-  cross-fetch: 3.1.5
-  csstype: 3.1.1
   dotenv: 16.0.3
   eslint-plugin-filename-export: 0.5.0
   faunadb: 4.7.1
   preact: 10.11.3
   preact-heroicons: 2.0.13_preact@10.11.3
   preact-router: 4.1.0_preact@10.11.3
-  react-hot-toast: 2.4.0_txdt2ol65wlpysti5ln52en6oy
+  react-hot-toast: 2.4.0_eutpb76xxau2526ysvy5bw6uda
   spotify-web-playback: 1.4.0
 
 devDependencies:
@@ -2672,13 +2668,6 @@ packages:
     hasBin: true
     dev: true
 
-  /csstype/3.1.1:
-    resolution:
-      {
-        integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==,
-      }
-    dev: false
-
   /debug/2.6.9:
     resolution:
       {
@@ -3902,15 +3891,13 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /goober/2.1.12_csstype@3.1.1:
+  /goober/2.1.12:
     resolution:
       {
         integrity: sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==,
       }
     peerDependencies:
       csstype: ^3.0.10
-    dependencies:
-      csstype: 3.1.1
     dev: false
 
   /gopd/1.0.1:
@@ -6064,7 +6051,7 @@ packages:
     engines: { node: '>=10' }
     dev: true
 
-  /react-hot-toast/2.4.0_txdt2ol65wlpysti5ln52en6oy:
+  /react-hot-toast/2.4.0_eutpb76xxau2526ysvy5bw6uda:
     resolution:
       {
         integrity: sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==,
@@ -6077,7 +6064,7 @@ packages:
       react:
         optional: true
     dependencies:
-      goober: 2.1.12_csstype@3.1.1
+      goober: 2.1.12
       react: link:npm:preact@latest/compat
       react-dom: link:npm:preact@latest/compat
     transitivePeerDependencies:

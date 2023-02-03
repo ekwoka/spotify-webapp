@@ -30,8 +30,6 @@
     "@preact/signals": "1.1.2",
     "@tanstack/react-query": "4.20.4",
     "cookie": "0.5.0",
-    "cross-fetch": "3.1.5",
-    "csstype": "3.1.1",
     "dotenv": "16.0.3",
     "eslint-plugin-filename-export": "0.5.0",
     "faunadb": "4.7.1",
