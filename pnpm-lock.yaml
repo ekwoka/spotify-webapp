@@ -41,7 +41,7 @@ specifiers:
   pnpm: 7.19.0
   postcss: 8.4.20
   preact: 10.13.0
-  preact-heroicons: 2.0.13
+  preact-heroicons: 2.0.16
   preact-router: 4.1.0
   prettier: 2.8.1
   prettier-plugin-tailwindcss: 0.2.1
@@ -64,7 +64,7 @@ dependencies:
   eslint-plugin-filename-export: 0.5.0
   faunadb: 4.7.1
   preact: 10.13.0
-  preact-heroicons: 2.0.13_preact@10.13.0
+  preact-heroicons: 2.0.16_preact@10.13.0
   preact-router: 4.1.0_preact@10.13.0
   react-hot-toast: 2.4.0_eutpb76xxau2526ysvy5bw6uda
   spotify-web-playback: 1.4.0
@@ -4380,8 +4380,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact-heroicons/2.0.13_preact@10.13.0:
-    resolution: {integrity: sha512-NQ10tfw1BLVtVtI8zjh9NzlGG4cGwQfJoAcN9cEuvG9qVMQVmBdlV01Tz/S61Z6KkExsXHfEY57cxH+h1nvLBQ==}
+  /preact-heroicons/2.0.16_preact@10.13.0:
+    resolution: {integrity: sha512-fvIpjBKIgVLbK66ffjkSOak+w+HMirE/w7PDnODMHW8prQ4G2cw0dfYtaiU/IE4rm1Fi52IIQzrGwy6Buo63kw==}
     peerDependencies:
       preact: 9 - 11
     dependencies:
