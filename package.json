@@ -33,7 +33,7 @@
     "dotenv": "16.0.3",
     "eslint-plugin-filename-export": "0.5.0",
     "faunadb": "4.7.1",
-    "preact": "10.11.3",
+    "preact": "10.13.0",
     "preact-heroicons": "2.0.13",
     "preact-router": "4.1.0",
     "react-hot-toast": "2.4.0",
