@@ -5,19 +5,31 @@
   "assignees": ["ekwoka"],
   "reviewers": ["ekwoka"],
   "commitMessagePrefix": ":arrow_up: ",
-  "schedule": ["on the last day of the month"],
+  "schedule": ["on tuesday"],
   "timezone": "GMT",
-  "stabilityDays": 3,
+  "stabilityDays": 7,
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "devDependencies"
+      "groupName": "devDependencies",
+      "automerge": true
     },
     {
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["major"],
       "groupName": "devDependencies (major)"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "dependencies",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "dependencies (major)"
     }
   ]
 }
