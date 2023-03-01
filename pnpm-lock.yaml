@@ -6,7 +6,7 @@ overrides:
 specifiers:
   '@ekwoka/hotkeys': 1.0.1
   '@ekwoka/preact-global-state': 2.0.0
-  '@ekwoka/spotify-api': 0.14.0
+  '@ekwoka/spotify-api': 0.15.0
   '@formkit/auto-animate': 1.0.0-beta.6
   '@netlify/functions': 1.3.0
   '@preact/signals': 1.1.2
@@ -55,7 +55,7 @@ specifiers:
 dependencies:
   '@ekwoka/hotkeys': 1.0.1
   '@ekwoka/preact-global-state': 2.0.0_5kw3vmt5jykbqrg6zc7y3nk7j4
-  '@ekwoka/spotify-api': 0.14.0
+  '@ekwoka/spotify-api': 0.15.0
   '@formkit/auto-animate': 1.0.0-beta.6
   '@preact/signals': 1.1.2_preact@10.13.0
   '@tanstack/react-query': 4.24.10_eutpb76xxau2526ysvy5bw6uda
@@ -490,8 +490,8 @@ packages:
       preact: 10.13.0
     dev: false
 
-  /@ekwoka/spotify-api/0.14.0:
-    resolution: {integrity: sha512-UIChQ3I2RsShWq916FPkco45vKXeAGp2x9KL9rIIc8nd7sUKS9ryHLAr97KH4F6R+4Zyvu9+Aw5V+0egZvI9HQ==}
+  /@ekwoka/spotify-api/0.15.0:
+    resolution: {integrity: sha512-d90nbS65+CYvk//Ox2RrDRv1CIvfSb0K63ATU+ADgkp9PWtfLHivStgKxDHhgcDFY5eb+xwvhLh/yaENj2B6Xg==}
     dev: false
 
   /@esbuild/android-arm/0.16.10:
