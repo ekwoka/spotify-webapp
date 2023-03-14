@@ -13,7 +13,7 @@ specifiers:
   '@tailwindcss/forms': 0.5.3
   '@tailwindcss/line-clamp': 0.4.2
   '@tailwindcss/typography': 0.5.9
-  '@tanstack/react-query': 4.24.10
+  '@tanstack/react-query': 4.26.1
   '@types/cookie': 0.5.1
   '@types/node': 18.14.6
   '@types/spotify-api': 0.0.20
@@ -58,7 +58,7 @@ dependencies:
   '@ekwoka/spotify-api': 0.15.0
   '@formkit/auto-animate': 1.0.0-beta.6
   '@preact/signals': 1.1.3_preact@10.13.0
-  '@tanstack/react-query': 4.24.10_eutpb76xxau2526ysvy5bw6uda
+  '@tanstack/react-query': 4.26.1_eutpb76xxau2526ysvy5bw6uda
   cookie: 0.5.0
   dotenv: 16.0.3
   eslint-plugin-filename-export: 0.5.1
@@ -1112,12 +1112,12 @@ packages:
       tailwindcss: 3.2.7_postcss@8.4.21
     dev: true
 
-  /@tanstack/query-core/4.24.10:
-    resolution: {integrity: sha512-2QywqXEAGBIUoTdgn1lAB4/C8QEqwXHj2jrCLeYTk2xVGtLiPEUD8jcMoeB2noclbiW2mMt4+Fq7fZStuz3wAQ==}
+  /@tanstack/query-core/4.26.1:
+    resolution: {integrity: sha512-Zrx2pVQUP4ndnsu6+K/m8zerXSVY8QM+YSbxA1/jbBY21GeCd5oKfYl92oXPK0hPEUtoNuunIdiq0ZMqLos+Zg==}
     dev: false
 
-  /@tanstack/react-query/4.24.10_eutpb76xxau2526ysvy5bw6uda:
-    resolution: {integrity: sha512-FY1DixytOcNNCydPQXLxuKEV7VSST32CAuJ55BjhDNqASnMLZn+6c30yQBMrODjmWMNwzfjMZnq0Vw7C62Fwow==}
+  /@tanstack/react-query/4.26.1_eutpb76xxau2526ysvy5bw6uda:
+    resolution: {integrity: sha512-i3dnz4TOARGIXrXQ5P7S25Zfi4noii/bxhcwPurh2nrf5EUCcAt/95TB2HSmMweUBx206yIMWUMEQ7ptd6zwDg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1130,7 +1130,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.24.10
+      '@tanstack/query-core': 4.26.1
       react: link:npm:preact@latest/compat
       react-dom: link:npm:preact@latest/compat
       use-sync-external-store: 1.2.0_2dw4zjptod43ug2cuaduoleuay
