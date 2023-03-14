@@ -26,7 +26,7 @@ specifiers:
   esbuild: 0.17.11
   esbuild-plugin-alias: 0.2.1
   esbuild-plugin-clean: 1.0.1
-  esbuild-plugin-copy: 2.0.2
+  esbuild-plugin-copy: 2.1.0
   esbuild-plugin-filesize: 0.4.0
   esbuild-plugin-import-glob: 0.1.1
   eslint: 8.35.0
@@ -84,7 +84,7 @@ devDependencies:
   esbuild: 0.17.11
   esbuild-plugin-alias: 0.2.1
   esbuild-plugin-clean: 1.0.1_esbuild@0.17.11
-  esbuild-plugin-copy: 2.0.2_esbuild@0.17.11
+  esbuild-plugin-copy: 2.1.0_esbuild@0.17.11
   esbuild-plugin-filesize: 0.4.0_esbuild@0.17.11
   esbuild-plugin-import-glob: 0.1.1
   eslint: 8.35.0
@@ -2250,12 +2250,13 @@ packages:
       esbuild: 0.17.11
     dev: true
 
-  /esbuild-plugin-copy/2.0.2_esbuild@0.17.11:
-    resolution: {integrity: sha512-HlDgkHXagBCwaoB8tlQFeH08/i5a2ey6Pc26annV1YcG5CkAHzzRzmCwp3wdi5KHI//HVUgipS+Zsy2tQmn9gQ==}
+  /esbuild-plugin-copy/2.1.0_esbuild@0.17.11:
+    resolution: {integrity: sha512-RHKhPV9ZYuWqYZ7ZjJ8qgJHzDOQ5K+z+7aaMQaHfiHntBTaFgiy554Gad6KrM2pBAC7ZiYervUYQET1jIWoOLg==}
     peerDependencies:
       esbuild: '>= 0.14.0'
     dependencies:
       chalk: 4.1.2
+      chokidar: 3.5.3
       esbuild: 0.17.11
       fs-extra: 10.1.0
       globby: 11.1.0
