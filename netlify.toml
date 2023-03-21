@@ -3,6 +3,9 @@
   functions = "api/endpoints"
   publish = "./dist"
 
+[dev]
+  command = "pnpm run watch"
+
 [context.production.environment]
   NODE_VERSION = '18.13.0'
   AWS_LAMBDA_JS_RUNTIME = 'nodejs18.x'

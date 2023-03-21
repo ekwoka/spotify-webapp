@@ -31,5 +31,16 @@
       "matchUpdateTypes": ["major"],
       "groupName": "dependencies (major)"
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": false,
+    "recreateClosed": true,
+    "rebaseStalePrs": true,
+    "branchTopic": "lock-file-maintenance",
+    "commitMessageAction": "Lock file maintenance",
+    "schedule": ["on the last day of the month"],
+    "prBodyDefinitions": {
+      "Change": "All locks refreshed"
+    }
+  }
 }
