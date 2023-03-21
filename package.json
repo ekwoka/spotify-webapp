@@ -5,18 +5,13 @@
   "type": "module",
   "scripts": {
     "deploy": "run-s build netlify:deploy",
-    "serve": "run-p watch netlify:serve",
-    "netlify": "run-s build:*",
+    "serve": "netlify dev",
+    "netlify": "vite build",
     "tsc": "tsc",
-    "build": "run-s tsc lint build:*",
-    "build:js": "node scripts/esbuild.mjs",
-    "build:css": "tailwindcss -i src/tailwind.pre.css -o dist/styles.css -m",
-    "watch": "run-p watch:*",
-    "watch:js": "NODE_ENV=development node scripts/esbuild.mjs",
-    "watch:css": "tailwindcss -i src/tailwind.pre.css -o dist/styles.css -w",
+    "build": "vite build",
+    "watch": "vite",
     "lint": "eslint --fix src; prettier --write src --loglevel error; eslint --fix api; prettier --write api --loglevel error",
     "netlify:deploy": "netlify deploy --prod",
-    "netlify:serve": "netlify dev",
     "upgrade": "ncu -u && pnpm i && pnpm build && git commit -S -am ':arrow_up: Dependencies' && pnpm version patch",
     "prepare": "husky install"
   },
@@ -41,6 +36,7 @@
   },
   "devDependencies": {
     "@netlify/functions": "1.4.0",
+    "@preact/preset-vite": "^2.5.0",
     "@tailwindcss/forms": "0.5.3",
     "@tailwindcss/line-clamp": "0.4.2",
     "@tailwindcss/typography": "0.5.9",
@@ -51,27 +47,22 @@
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
     "autoprefixer": "10.4.13",
-    "esbuild": "0.17.11",
-    "esbuild-plugin-alias": "0.2.1",
-    "esbuild-plugin-clean": "1.0.1",
-    "esbuild-plugin-copy": "2.1.0",
-    "esbuild-plugin-filesize": "0.4.0",
-    "esbuild-plugin-import-glob": "0.1.1",
     "eslint": "8.35.0",
     "eslint-config-preact": "1.3.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
-    "jest": "29.5.0",
+    "jest": "^29.5.0",
     "lint-staged": "13.1.4",
     "npm-run-all": "4.1.5",
     "pnpm": "7.29.0",
     "postcss": "8.4.21",
     "prettier": "2.8.4",
     "prettier-plugin-tailwindcss": "0.2.4",
-    "react": "link:npm:preact@latest/compat",
-    "react-dom": "link:npm:preact@latest/compat",
+    "react": "npm:preact@latest/compat",
+    "react-dom": "npm:preact@latest/compat",
     "tailwindcss": "3.2.7",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "vite": "^4.2.1"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -80,7 +71,8 @@
       ]
     },
     "overrides": {
-      "terser@>=5.0.0 <5.14.2": ">=5.14.2"
+      "terser@>=5.0.0 <5.14.2": ">=5.14.2",
+      "react@>=10": ">=10"
     }
   },
   "eslintConfig": {

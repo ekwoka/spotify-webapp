@@ -67,7 +67,7 @@
 
 @font-face {
   font-family: ml;
-  src: url(/MonoLisa-Regular.woff);
+  src: url(./static/MonoLisa-Regular.woff);
 }
 
 .font-mono {
