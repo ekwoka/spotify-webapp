@@ -10,19 +10,19 @@ dependencies:
     version: 1.0.1
   '@ekwoka/preact-global-state':
     specifier: 2.0.0
-    version: 2.0.0(@preact/signals@1.1.3)(preact@10.13.1)
+    version: 2.0.0(@preact/signals@1.1.3)(preact@10.13.2)
   '@ekwoka/spotify-api':
-    specifier: 0.15.0
-    version: 0.15.0
+    specifier: 0.16.1
+    version: 0.16.1
   '@formkit/auto-animate':
     specifier: 1.0.0-beta.6
     version: 1.0.0-beta.6
   '@preact/signals':
     specifier: 1.1.3
-    version: 1.1.3(preact@10.13.1)
+    version: 1.1.3(preact@10.13.2)
   '@tanstack/react-query':
-    specifier: 4.28.0
-    version: 4.28.0(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
+    specifier: 4.29.1
+    version: 4.29.1(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
   cookie:
     specifier: 0.5.0
     version: 0.5.0
@@ -36,14 +36,14 @@ dependencies:
     specifier: 4.8.0
     version: 4.8.0
   preact:
-    specifier: 10.13.1
-    version: 10.13.1
+    specifier: 10.13.2
+    version: 10.13.2
   preact-heroicons:
-    specifier: 2.0.16
-    version: 2.0.16(preact@10.13.1)
+    specifier: 2.0.17
+    version: 2.0.17(preact@10.13.2)
   preact-router:
     specifier: 4.1.0
-    version: 4.1.0(preact@10.13.1)
+    version: 4.1.0(preact@10.13.2)
   react-hot-toast:
     specifier: 2.4.0
     version: 2.4.0(csstype@3.1.1)(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
@@ -57,7 +57,7 @@ devDependencies:
     version: 1.4.0
   '@preact/preset-vite':
     specifier: 2.5.0
-    version: 2.5.0(@babel/core@7.20.12)(preact@10.13.1)(vite@4.2.1)
+    version: 2.5.0(@babel/core@7.20.12)(preact@10.13.2)(vite@4.2.1)
   '@tailwindcss/forms':
     specifier: 0.5.3
     version: 0.5.3(tailwindcss@3.2.7)
@@ -547,18 +547,18 @@ packages:
     resolution: {integrity: sha512-iBmrbFx3zGivtm/dKiERp0Z6Gm18ahS/kxA3H6LUR3XbqN7Mv4l5aqD1KxNEyINZmmPz0yktoe5SuHRyWr8hWA==}
     dev: false
 
-  /@ekwoka/preact-global-state@2.0.0(@preact/signals@1.1.3)(preact@10.13.1):
+  /@ekwoka/preact-global-state@2.0.0(@preact/signals@1.1.3)(preact@10.13.2):
     resolution: {integrity: sha512-8AnS8SRL6ZgQradAzbZT8yumM362jCSxJGK7qrHxUAhKYDC0YTNrHo0HINLM6xcNbuu7wRFnHd33sjljppNIGw==}
     peerDependencies:
       '@preact/signals': '>=1'
       preact: 9 - 10
     dependencies:
-      '@preact/signals': 1.1.3(preact@10.13.1)
-      preact: 10.13.1
+      '@preact/signals': 1.1.3(preact@10.13.2)
+      preact: 10.13.2
     dev: false
 
-  /@ekwoka/spotify-api@0.15.0:
-    resolution: {integrity: sha512-d90nbS65+CYvk//Ox2RrDRv1CIvfSb0K63ATU+ADgkp9PWtfLHivStgKxDHhgcDFY5eb+xwvhLh/yaENj2B6Xg==}
+  /@ekwoka/spotify-api@0.16.1:
+    resolution: {integrity: sha512-nUAIkqqbaT7pDJtPHN4Q/kGDBaKdxmqyyjZWB77rmeHBlmo7LJ/ML8OHvj8dxOe5exdHr5SnM40MAxxgSicwDA==}
     dev: false
 
   /@esbuild/android-arm64@0.17.12:
@@ -1129,7 +1129,7 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@preact/preset-vite@2.5.0(@babel/core@7.20.12)(preact@10.13.1)(vite@4.2.1):
+  /@preact/preset-vite@2.5.0(@babel/core@7.20.12)(preact@10.13.2)(vite@4.2.1):
     resolution: {integrity: sha512-BUhfB2xQ6ex0yPkrT1Z3LbfPzjpJecOZwQ/xJrXGFSZD84+ObyS//41RdEoQCMWsM0t7UHGaujUxUBub7WM1Jw==}
     peerDependencies:
       '@babel/core': 7.x
@@ -1138,7 +1138,7 @@ packages:
       '@babel/core': 7.20.12
       '@babel/plugin-transform-react-jsx': 7.21.0(@babel/core@7.20.12)
       '@babel/plugin-transform-react-jsx-development': 7.18.6(@babel/core@7.20.12)
-      '@prefresh/vite': 2.2.9(preact@10.13.1)(vite@4.2.1)
+      '@prefresh/vite': 2.2.9(preact@10.13.2)(vite@4.2.1)
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.20.12)
       debug: 4.3.4
@@ -1154,32 +1154,32 @@ packages:
     resolution: {integrity: sha512-Kui4p7PMcEQevBgsTO0JBo3gyQ88Q3qzEvsVCuSp11t0JcN4DmGCTJcGRVSCq7Bn7lGxJBO+57jNSzDoDJ+QmA==}
     dev: false
 
-  /@preact/signals@1.1.3(preact@10.13.1):
+  /@preact/signals@1.1.3(preact@10.13.2):
     resolution: {integrity: sha512-N09DuAVvc90bBZVRwD+aFhtGyHAmJLhS3IFoawO/bYJRcil4k83nBOchpCEoS0s5+BXBpahgp0Mjf+IOqP57Og==}
     peerDependencies:
       preact: 10.x
     dependencies:
       '@preact/signals-core': 1.2.3
-      preact: 10.13.1
+      preact: 10.13.2
     dev: false
 
   /@prefresh/babel-plugin@0.4.4:
     resolution: {integrity: sha512-/EvgIFMDL+nd20WNvMO0JQnzIl1EJPgmSaSYrZUww7A+aSdKsi37aL07TljrZR1cBMuzFxcr4xvqsUQLFJEukw==}
     dev: true
 
-  /@prefresh/core@1.4.1(preact@10.13.1):
+  /@prefresh/core@1.4.1(preact@10.13.2):
     resolution: {integrity: sha512-og1vaBj3LMJagVncNrDb37Gqc0cWaUcDbpVt5hZtsN4i2Iwzd/5hyTsDHvlMirhSym3wL9ihU0Xa2VhSaOue7g==}
     peerDependencies:
       preact: ^10.0.0
     dependencies:
-      preact: 10.13.1
+      preact: 10.13.2
     dev: true
 
   /@prefresh/utils@1.1.3:
     resolution: {integrity: sha512-Mb9abhJTOV4yCfkXrMrcgFiFT7MfNOw8sDa+XyZBdq/Ai2p4Zyxqsb3EgHLOEdHpMj6J9aiZ54W8H6FTam1u+A==}
     dev: true
 
-  /@prefresh/vite@2.2.9(preact@10.13.1)(vite@4.2.1):
+  /@prefresh/vite@2.2.9(preact@10.13.2)(vite@4.2.1):
     resolution: {integrity: sha512-1ERBF85Ja9/lkrfaltmo4Gca7R2ClQPSHHDDysFgfvPzHmLUeyB0x9WHwhwov/AA1DnyPhsfYT54z3yQd8XrgA==}
     peerDependencies:
       preact: ^10.4.0
@@ -1187,10 +1187,10 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@prefresh/babel-plugin': 0.4.4
-      '@prefresh/core': 1.4.1(preact@10.13.1)
+      '@prefresh/core': 1.4.1(preact@10.13.2)
       '@prefresh/utils': 1.1.3
       '@rollup/pluginutils': 4.2.1
-      preact: 10.13.1
+      preact: 10.13.2
       vite: 4.2.1(@types/node@18.15.5)
     transitivePeerDependencies:
       - supports-color
@@ -1249,12 +1249,12 @@ packages:
       tailwindcss: 3.2.7(postcss@8.4.21)
     dev: true
 
-  /@tanstack/query-core@4.27.0:
-    resolution: {integrity: sha512-sm+QncWaPmM73IPwFlmWSKPqjdTXZeFf/7aEmWh00z7yl2FjqophPt0dE1EHW9P1giMC5rMviv7OUbSDmWzXXA==}
+  /@tanstack/query-core@4.29.1:
+    resolution: {integrity: sha512-vkPewLEG8ua0efo3SsVT0BcBtkq5RZX8oPhDAyKL+k/rdOYSQTEocfGEXSaBwIwsXeOGBUpfKqI+UmHvNqdWXg==}
     dev: false
 
-  /@tanstack/react-query@4.28.0(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
-    resolution: {integrity: sha512-8cGBV5300RHlvYdS4ea+G1JcZIt5CIuprXYFnsWggkmGoC0b5JaqG0fIX3qwDL9PTNkKvG76NGThIWbpXivMrQ==}
+  /@tanstack/react-query@4.29.1(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
+    resolution: {integrity: sha512-/crv1v+OeuGG6EOvaQmyeo9GCKtH4jbmuhZkvk9ulufRiHcTr/A9+YP9GevEAZzUTdzXMwenpTbyxBGvG2xXvw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1267,7 +1267,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.27.0
+      '@tanstack/query-core': 4.29.1
       react: link:npm:preact@latest/compat
       react-dom: link:npm:preact@latest/compat
       use-sync-external-store: 1.2.0(react@npm+preact@latest+compat)
@@ -4422,24 +4422,24 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact-heroicons@2.0.16(preact@10.13.1):
-    resolution: {integrity: sha512-fvIpjBKIgVLbK66ffjkSOak+w+HMirE/w7PDnODMHW8prQ4G2cw0dfYtaiU/IE4rm1Fi52IIQzrGwy6Buo63kw==}
+  /preact-heroicons@2.0.17(preact@10.13.2):
+    resolution: {integrity: sha512-k4iBjlKO/pNeYXvZRGkn9rZu1cnSnA3pgu39wZqnBPTlpvi91W0K6A9PcbQJcsMkJD5VIeYS3qQ94M4LWwWtvQ==}
     peerDependencies:
       preact: 9 - 11
     dependencies:
-      preact: 10.13.1
+      preact: 10.13.2
     dev: false
 
-  /preact-router@4.1.0(preact@10.13.1):
+  /preact-router@4.1.0(preact@10.13.2):
     resolution: {integrity: sha512-y1w2YvVpKAju9FMV+fAVR1NpH4MW5q07BZrziMZeg6F/rGJ9KvLUZtjOqsy2I8fDYiX36AM1AQTXIIK3jigBhA==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.13.1
+      preact: 10.13.2
     dev: false
 
-  /preact@10.13.1:
-    resolution: {integrity: sha512-KyoXVDU5OqTpG9LXlB3+y639JAGzl8JSBXLn1J9HTSB3gbKcuInga7bZnXLlxmK94ntTs1EFeZp0lrja2AuBYQ==}
+  /preact@10.13.2:
+    resolution: {integrity: sha512-q44QFLhOhty2Bd0Y46fnYW0gD/cbVM9dUVtNTDKPcdXSMA7jfY+Jpd6rk3GB0lcQss0z5s/6CmVP0Z/hV+g6pw==}
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
