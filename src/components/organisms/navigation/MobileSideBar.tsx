@@ -23,13 +23,13 @@ export const MobileSideBar = (): JSXInternal.Element => {
         falseClass={'-translate-x-full pointer-events-none'}
         class="fixed inset-0 z-40 flex duration-500"
         as="div">
-        <div class="relative flex w-full max-w-xs flex-1 flex-col bg-lime-700 pt-5 pb-4">
+        <div class="relative flex w-full max-w-xs flex-1 flex-col bg-lime-700 pb-4 pt-5">
           <TogglePanel
             show={isOpen.value}
             trueClass="opacity-100"
             falseClass="opacity-0 pointer-events-none"
             as="div"
-            class="absolute top-0 right-0 -mr-12 pt-2 duration-500">
+            class="absolute right-0 top-0 -mr-12 pt-2 duration-500">
             <button
               type="button"
               class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"

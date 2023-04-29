@@ -12,7 +12,7 @@ export const TopBar = (): JSXInternal.Element => {
               key={tab.name}
               href={tab.path}
               activeClassName="border-lime-500 text-lime-400 text-lg"
-              class="whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-neutral-400 hover:border-neutral-300 hover:text-neutral-200">
+              class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-neutral-400 hover:border-neutral-300 hover:text-neutral-200">
               {tab.Icon && <tab.Icon class="h-6 w-6" />}
               {tab.name}
             </Link>

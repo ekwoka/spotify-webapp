@@ -89,7 +89,7 @@ export const Party = (): JSXInternal.Element => {
                 {feature.name}
               </p>
             </dt>
-            <dd class="mt-2 ml-16 text-base text-gray-400">
+            <dd class="ml-16 mt-2 text-base text-gray-400">
               {feature.description}
             </dd>
           </div>

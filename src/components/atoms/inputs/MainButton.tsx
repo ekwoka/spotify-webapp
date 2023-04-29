@@ -11,7 +11,7 @@ export const MainButton = ({
 }): JSXInternal.Element => (
   <button
     class={classNames(
-      'flex w-full justify-center rounded-md border border-transparent bg-lime-500 py-2 px-4 font-medium text-neutral-900 shadow-sm hover:bg-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2',
+      'flex w-full justify-center rounded-md border border-transparent bg-lime-500 px-4 py-2 font-medium text-neutral-900 shadow-sm hover:bg-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2',
       className
     )}
     {...props}>
