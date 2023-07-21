@@ -15,7 +15,7 @@ dependencies:
     version: 1.0.1
   '@ekwoka/preact-global-state':
     specifier: 2.0.0
-    version: 2.0.0(@preact/signals@1.1.4)(preact@10.15.1)
+    version: 2.0.0(@preact/signals@1.1.5)(preact@10.16.0)
   '@ekwoka/spotify-api':
     specifier: 0.16.1
     version: 0.16.1
@@ -23,8 +23,8 @@ dependencies:
     specifier: 1.0.0-pre-alpha.3
     version: 1.0.0-pre-alpha.3(react@npm+preact@latest+compat)
   '@preact/signals':
-    specifier: 1.1.4
-    version: 1.1.4(preact@10.15.1)
+    specifier: 1.1.5
+    version: 1.1.5(preact@10.16.0)
   '@tanstack/react-query':
     specifier: 4.29.19
     version: 4.29.19(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
@@ -38,14 +38,14 @@ dependencies:
     specifier: 4.8.0
     version: 4.8.0
   preact:
-    specifier: 10.15.1
-    version: 10.15.1
+    specifier: 10.16.0
+    version: 10.16.0
   preact-heroicons:
     specifier: 2.0.18
-    version: 2.0.18(preact@10.15.1)
+    version: 2.0.18(preact@10.16.0)
   preact-router:
     specifier: 4.1.1
-    version: 4.1.1(preact@10.15.1)
+    version: 4.1.1(preact@10.16.0)
   react-hot-toast:
     specifier: 2.4.1
     version: 2.4.1(csstype@3.1.1)(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
@@ -59,7 +59,7 @@ devDependencies:
     version: 1.6.0
   '@preact/preset-vite':
     specifier: 2.5.0
-    version: 2.5.0(@babel/core@7.20.12)(preact@10.15.1)(vite@4.4.3)
+    version: 2.5.0(@babel/core@7.20.12)(preact@10.16.0)(vite@4.4.3)
   '@tailwindcss/forms':
     specifier: 0.5.4
     version: 0.5.4(tailwindcss@3.3.3)
@@ -550,14 +550,14 @@ packages:
     resolution: {integrity: sha512-iBmrbFx3zGivtm/dKiERp0Z6Gm18ahS/kxA3H6LUR3XbqN7Mv4l5aqD1KxNEyINZmmPz0yktoe5SuHRyWr8hWA==}
     dev: false
 
-  /@ekwoka/preact-global-state@2.0.0(@preact/signals@1.1.4)(preact@10.15.1):
+  /@ekwoka/preact-global-state@2.0.0(@preact/signals@1.1.5)(preact@10.16.0):
     resolution: {integrity: sha512-8AnS8SRL6ZgQradAzbZT8yumM362jCSxJGK7qrHxUAhKYDC0YTNrHo0HINLM6xcNbuu7wRFnHd33sjljppNIGw==}
     peerDependencies:
       '@preact/signals': '>=1'
       preact: 9 - 10
     dependencies:
-      '@preact/signals': 1.1.4(preact@10.15.1)
-      preact: 10.15.1
+      '@preact/signals': 1.1.5(preact@10.16.0)
+      preact: 10.16.0
     dev: false
 
   /@ekwoka/spotify-api@0.16.1:
@@ -1147,7 +1147,7 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@preact/preset-vite@2.5.0(@babel/core@7.20.12)(preact@10.15.1)(vite@4.4.3):
+  /@preact/preset-vite@2.5.0(@babel/core@7.20.12)(preact@10.16.0)(vite@4.4.3):
     resolution: {integrity: sha512-BUhfB2xQ6ex0yPkrT1Z3LbfPzjpJecOZwQ/xJrXGFSZD84+ObyS//41RdEoQCMWsM0t7UHGaujUxUBub7WM1Jw==}
     peerDependencies:
       '@babel/core': 7.x
@@ -1156,7 +1156,7 @@ packages:
       '@babel/core': 7.20.12
       '@babel/plugin-transform-react-jsx': 7.21.0(@babel/core@7.20.12)
       '@babel/plugin-transform-react-jsx-development': 7.18.6(@babel/core@7.20.12)
-      '@prefresh/vite': 2.2.9(preact@10.15.1)(vite@4.4.3)
+      '@prefresh/vite': 2.2.9(preact@10.16.0)(vite@4.4.3)
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.20.12)
       debug: 4.3.4
@@ -1172,32 +1172,32 @@ packages:
     resolution: {integrity: sha512-DL+3kDssZ3UOMz9HufwSYE/gK0+TnT1jzegfF5rstgyPrnyfjz4BHAoxmzQA6Mkp4UlKe8qjsgl3v5a/obzNig==}
     dev: false
 
-  /@preact/signals@1.1.4(preact@10.15.1):
-    resolution: {integrity: sha512-4s0U8yHfy6OzBjTx8lgG0JZGFq1y+ye7xLmaaI8SXyJ5p+jAtMKW40Mg3GDLISM5WyKnqbfrQ4SOmbq1VTBtTw==}
+  /@preact/signals@1.1.5(preact@10.16.0):
+    resolution: {integrity: sha512-OWr9TjuNh9ol/B5rNbLANEA940MvbYDMGcSAjPaKzAHBPhnTpuFCWhBB8vSm9lfy1BxKx6DKJLSs3Cz24otdkw==}
     peerDependencies:
       preact: 10.x
     dependencies:
       '@preact/signals-core': 1.3.1
-      preact: 10.15.1
+      preact: 10.16.0
     dev: false
 
   /@prefresh/babel-plugin@0.4.4:
     resolution: {integrity: sha512-/EvgIFMDL+nd20WNvMO0JQnzIl1EJPgmSaSYrZUww7A+aSdKsi37aL07TljrZR1cBMuzFxcr4xvqsUQLFJEukw==}
     dev: true
 
-  /@prefresh/core@1.4.1(preact@10.15.1):
+  /@prefresh/core@1.4.1(preact@10.16.0):
     resolution: {integrity: sha512-og1vaBj3LMJagVncNrDb37Gqc0cWaUcDbpVt5hZtsN4i2Iwzd/5hyTsDHvlMirhSym3wL9ihU0Xa2VhSaOue7g==}
     peerDependencies:
       preact: ^10.0.0
     dependencies:
-      preact: 10.15.1
+      preact: 10.16.0
     dev: true
 
   /@prefresh/utils@1.1.3:
     resolution: {integrity: sha512-Mb9abhJTOV4yCfkXrMrcgFiFT7MfNOw8sDa+XyZBdq/Ai2p4Zyxqsb3EgHLOEdHpMj6J9aiZ54W8H6FTam1u+A==}
     dev: true
 
-  /@prefresh/vite@2.2.9(preact@10.15.1)(vite@4.4.3):
+  /@prefresh/vite@2.2.9(preact@10.16.0)(vite@4.4.3):
     resolution: {integrity: sha512-1ERBF85Ja9/lkrfaltmo4Gca7R2ClQPSHHDDysFgfvPzHmLUeyB0x9WHwhwov/AA1DnyPhsfYT54z3yQd8XrgA==}
     peerDependencies:
       preact: ^10.4.0
@@ -1205,10 +1205,10 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@prefresh/babel-plugin': 0.4.4
-      '@prefresh/core': 1.4.1(preact@10.15.1)
+      '@prefresh/core': 1.4.1(preact@10.16.0)
       '@prefresh/utils': 1.1.3
       '@rollup/pluginutils': 4.2.1
-      preact: 10.15.1
+      preact: 10.16.0
       vite: 4.4.3(@types/node@20.4.2)
     transitivePeerDependencies:
       - supports-color
@@ -4499,24 +4499,24 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact-heroicons@2.0.18(preact@10.15.1):
+  /preact-heroicons@2.0.18(preact@10.16.0):
     resolution: {integrity: sha512-TZevBE2qr7WFHlxZm6Aaw//qJBfrwPyprhMAdsORc5x2udNJSUeDIPjyVbZStmwv8jm+IpFQk0egvm5Sdoio7w==}
     peerDependencies:
       preact: 9 - 11
     dependencies:
-      preact: 10.15.1
+      preact: 10.16.0
     dev: false
 
-  /preact-router@4.1.1(preact@10.15.1):
+  /preact-router@4.1.1(preact@10.16.0):
     resolution: {integrity: sha512-+LGrB3b2nR7+8vzyHw8i2/TjZazs3oMJovIEgBChPBXMDSISmwj2WDynZh8KDxZRK2GuXlqHPk15mMjaYWZH4g==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.15.1
+      preact: 10.16.0
     dev: false
 
-  /preact@10.15.1:
-    resolution: {integrity: sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==}
+  /preact@10.16.0:
+    resolution: {integrity: sha512-XTSj3dJ4roKIC93pald6rWuB2qQJO9gO2iLLyTe87MrjQN+HklueLsmskbywEWqCHlclgz3/M4YLL2iBr9UmMA==}
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
