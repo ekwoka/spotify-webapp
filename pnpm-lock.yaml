@@ -26,8 +26,8 @@ dependencies:
     specifier: 1.1.5
     version: 1.1.5(preact@10.16.0)
   '@tanstack/react-query':
-    specifier: 4.29.19
-    version: 4.29.19(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
+    specifier: 4.32.0
+    version: 4.32.0(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
   cookie:
     specifier: 0.5.0
     version: 0.5.0
@@ -44,8 +44,8 @@ dependencies:
     specifier: 2.0.18
     version: 2.0.18(preact@10.16.0)
   preact-router:
-    specifier: 4.1.1
-    version: 4.1.1(preact@10.16.0)
+    specifier: 4.1.2
+    version: 4.1.2(preact@10.16.0)
   react-hot-toast:
     specifier: 2.4.1
     version: 2.4.1(csstype@3.1.1)(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
@@ -1259,12 +1259,12 @@ packages:
       tailwindcss: 3.3.3
     dev: true
 
-  /@tanstack/query-core@4.29.19:
-    resolution: {integrity: sha512-uPe1DukeIpIHpQi6UzIgBcXsjjsDaLnc7hF+zLBKnaUlh7jFE/A+P8t4cU4VzKPMFB/C970n/9SxtpO5hmIRgw==}
+  /@tanstack/query-core@4.32.0:
+    resolution: {integrity: sha512-ei4IYwL2kmlKSlCw9WgvV7PpXi0MiswVwfQRxawhJA690zWO3dU49igaQ/UMTl+Jy9jj9dK5IKAYvbX7kUvviQ==}
     dev: false
 
-  /@tanstack/react-query@4.29.19(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
-    resolution: {integrity: sha512-XiTIOHHQ5Cw1WUlHaD4fmVUMhoWjuNJlAeJGq7eM4BraI5z7y8WkZO+NR8PSuRnQGblpuVdjClQbDFtwxTtTUw==}
+  /@tanstack/react-query@4.32.0(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
+    resolution: {integrity: sha512-B8WUMcByYAH9500ENejDCATOmEZhqjtS9wsfiQ3BNa+s+yAynY8SESI8WWHhSqUmjd0pmCSFRP6BOUGSda3QXA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1277,7 +1277,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.29.19
+      '@tanstack/query-core': 4.32.0
       react: link:npm:preact@latest/compat
       react-dom: link:npm:preact@latest/compat
       use-sync-external-store: 1.2.0(react@npm+preact@latest+compat)
@@ -4507,8 +4507,8 @@ packages:
       preact: 10.16.0
     dev: false
 
-  /preact-router@4.1.1(preact@10.16.0):
-    resolution: {integrity: sha512-+LGrB3b2nR7+8vzyHw8i2/TjZazs3oMJovIEgBChPBXMDSISmwj2WDynZh8KDxZRK2GuXlqHPk15mMjaYWZH4g==}
+  /preact-router@4.1.2(preact@10.16.0):
+    resolution: {integrity: sha512-uICUaUFYh+XQ+6vZtQn1q+X6rSqwq+zorWOCLWPF5FAsQh3EJ+RsDQ9Ee+fjk545YWQHfUxhrBAaemfxEnMOUg==}
     peerDependencies:
       preact: '>=10'
     dependencies:
