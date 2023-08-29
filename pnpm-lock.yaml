@@ -55,8 +55,8 @@ dependencies:
 
 devDependencies:
   '@netlify/functions':
-    specifier: 1.6.0
-    version: 1.6.0
+    specifier: 2.0.0
+    version: 2.0.0
   '@preact/preset-vite':
     specifier: 2.5.0
     version: 2.5.0(@babel/core@7.20.12)(preact@10.17.1)(vite@4.4.9)
@@ -106,8 +106,8 @@ devDependencies:
     specifier: 29.6.3
     version: 29.6.3(@types/node@20.5.2)
   lint-staged:
-    specifier: 13.3.0
-    version: 13.3.0
+    specifier: 14.0.1
+    version: 14.0.1
   npm-run-all:
     specifier: 4.1.5
     version: 4.1.5
@@ -802,7 +802,7 @@ packages:
   /@formkit/auto-animate@1.0.0-pre-alpha.3(react@npm+preact@latest+compat):
     resolution: {integrity: sha512-lMVZ3LFUIu0RIxCEwmV8nUUJQ46M2bv2NDU3hrhZivViuR1EheC8Mj5sx/ACqK5QLK8XB8z7GDIZBUGdU/9OZQ==}
     peerDependencies:
-      react: ^16.8.0
+      react: '>=10'
       vue: ^3.0.0
     peerDependenciesMeta:
       react:
@@ -1109,11 +1109,19 @@ packages:
     resolution: {integrity: sha512-EWUguj2kd7ldmrF9F+vI5hUOralPd+sdsUnYbRy33vZTuZkduC1shE9TtEMEjAQwyfyMb4ole5KtjF8MsnQOlA==}
     dev: true
 
-  /@netlify/functions@1.6.0:
-    resolution: {integrity: sha512-6G92AlcpFrQG72XU8YH8pg94eDnq7+Q0YJhb8x4qNpdGsvuzvrfHWBmqFGp/Yshmv4wex9lpsTRZOocdrA2erQ==}
+  /@netlify/functions@2.0.0:
+    resolution: {integrity: sha512-YJc8LikRByxcQ731cZo75TS7nu82baG02sy632AMNmtDLBP6QsRHN4R1rDjjpge24R0cMchLqbifnVNggs4FWQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
+      '@netlify/serverless-functions-api': 1.7.0
       is-promise: 4.0.0
+    dev: true
+
+  /@netlify/serverless-functions-api@1.7.0:
+    resolution: {integrity: sha512-wqkraNSlom2uHYVSjdzl5XiUnlgSjElQ2jamjNhoidXW2n2jKPgefzn47DT4tfLe6qewHOctz66I+pjVbLz9Ow==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    dependencies:
+      urlpattern-polyfill: 8.0.2
     dev: true
 
   /@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1:
@@ -1262,7 +1270,7 @@ packages:
   /@tanstack/react-query@4.33.0(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
     resolution: {integrity: sha512-97nGbmDK0/m0B86BdiXzx3EW9RcDYKpnyL2+WwyuLHEgpfThYAnXFaMMmnTDuAO4bQJXEhflumIEUfKmP7ESGA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: '>=10'
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-native: '*'
     peerDependenciesMeta:
@@ -4016,8 +4024,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged@13.3.0:
-    resolution: {integrity: sha512-mPRtrYnipYYv1FEE134ufbWpeggNTo+O/UPzngoaKzbzHAthvR55am+8GfHTnqNRQVRRrYQLGW9ZyUoD7DsBHQ==}
+  /lint-staged@14.0.1:
+    resolution: {integrity: sha512-Mw0cL6HXnHN1ag0mN/Dg4g6sr8uf8sn98w2Oc1ECtFto9tvRF7nkXGJRbx8gPlHyoR0pLyBr2lQHbWwmUHe1Sw==}
     engines: {node: ^16.14.0 || >=18.0.0}
     hasBin: true
     dependencies:
@@ -4747,7 +4755,7 @@ packages:
     resolution: {integrity: sha512-j8z+cQbWIM5LY37pR6uZR6D4LfseplqnuAO4co4u8917hBUvXlEqyP1ZzqVLcqoyUesZZv/ImreoCeHVDpE5pQ==}
     engines: {node: '>=10'}
     peerDependencies:
-      react: '>=16'
+      react: '>=10'
       react-dom: '>=16'
     peerDependenciesMeta:
       react:
@@ -5438,10 +5446,14 @@ packages:
       punycode: 2.3.0
     dev: true
 
+  /urlpattern-polyfill@8.0.2:
+    resolution: {integrity: sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==}
+    dev: true
+
   /use-sync-external-store@1.2.0(react@npm+preact@latest+compat):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: '>=10'
     peerDependenciesMeta:
       react:
         optional: true
@@ -5479,7 +5491,7 @@ packages:
       sass: '*'
       stylus: '*'
       sugarss: '*'
-      terser: ^5.4.0
+      terser: '>=5.14.2'
     peerDependenciesMeta:
       '@types/node':
         optional: true
