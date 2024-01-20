@@ -26,8 +26,8 @@ dependencies:
     specifier: 1.2.1
     version: 1.2.1(preact@10.17.1)
   '@tanstack/react-query':
-    specifier: 4.35.3
-    version: 4.35.3(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat)
+    specifier: 5.17.10
+    version: 5.17.10(react@npm+preact@latest+compat)
   cookie:
     specifier: 0.5.0
     version: 0.5.0
@@ -1118,28 +1118,20 @@ packages:
       tailwindcss: 3.4.0
     dev: true
 
-  /@tanstack/query-core@4.35.3:
-    resolution: {integrity: sha512-PS+WEjd9wzKTyNjjQymvcOe1yg8f3wYc6mD+vb6CKyZAKvu4sIJwryfqfBULITKCla7P9C4l5e9RXePHvZOZeQ==}
+  /@tanstack/query-core@5.17.10:
+    resolution: {integrity: sha512-bJ2oQUDBftvHcEkLS3gyzzShSeZpJyzNNRu8oHK13iNdsofyaDXtNO/c1Zy/PZYVX+PhqOXwoT42gMiEMRSSfQ==}
     dev: false
 
-  /@tanstack/react-query@4.35.3(react-dom@npm+preact@latest+compat)(react@npm+preact@latest+compat):
-    resolution: {integrity: sha512-UgTPioip/rGG3EQilXfA2j4BJkhEQsR+KAbF+KIuvQ7j4MkgnTCJF01SfRpIRNtQTlEfz/+IL7+jP8WA8bFbsw==}
+  /@tanstack/react-query@5.17.10(react@npm+preact@latest+compat):
+    resolution: {integrity: sha512-TNmJN7LkSLzmv01Jen3JbcvhXZyRhc/ETJNjssmmlyMB8IoNvicfgvDRX2gX3q1FTONq+mfsmWintwI+ejmEUw==}
     peerDependencies:
       react: '>=10'
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-native: '*'
     peerDependenciesMeta:
       react:
         optional: true
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
     dependencies:
-      '@tanstack/query-core': 4.35.3
+      '@tanstack/query-core': 5.17.10
       react: link:npm:preact@latest/compat
-      react-dom: link:npm:preact@latest/compat
-      use-sync-external-store: 1.2.0(react@npm+preact@latest+compat)
     dev: false
 
   /@types/cookie@0.6.0:
@@ -4371,17 +4363,6 @@ packages:
   /urlpattern-polyfill@8.0.2:
     resolution: {integrity: sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==}
     dev: true
-
-  /use-sync-external-store@1.2.0(react@npm+preact@latest+compat):
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: '>=10'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: link:npm:preact@latest/compat
-    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
