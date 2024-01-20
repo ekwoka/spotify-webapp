@@ -53,7 +53,7 @@
     "lint-staged": "14.0.1",
     "npm-run-all": "4.1.5",
     "pnpm": "8.14.0",
-    "postcss": "8.4.30",
+    "postcss": "8.4.31",
     "prettier": "3.1.1",
     "prettier-plugin-tailwindcss": "0.5.10",
     "react": "npm:preact@latest/compat",
