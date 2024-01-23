@@ -26,8 +26,8 @@ dependencies:
     specifier: 1.2.2
     version: 1.2.2(preact@10.19.3)
   '@tanstack/react-query':
-    specifier: 5.17.10
-    version: 5.17.10(react@npm+preact@latest+compat)
+    specifier: 5.17.15
+    version: 5.17.15(react@npm+preact@latest+compat)
   cookie:
     specifier: 0.6.0
     version: 0.6.0
@@ -1118,19 +1118,19 @@ packages:
       tailwindcss: 3.4.1
     dev: true
 
-  /@tanstack/query-core@5.17.10:
-    resolution: {integrity: sha512-bJ2oQUDBftvHcEkLS3gyzzShSeZpJyzNNRu8oHK13iNdsofyaDXtNO/c1Zy/PZYVX+PhqOXwoT42gMiEMRSSfQ==}
+  /@tanstack/query-core@5.17.15:
+    resolution: {integrity: sha512-QURxpu77/ICA4d61aPvV7EcJ2MwmksxUejKBaq/xLcO2TUJAlXf4PFKHC/WxnVFI/7F1jeLx85AO3Vpk0+uBXw==}
     dev: false
 
-  /@tanstack/react-query@5.17.10(react@npm+preact@latest+compat):
-    resolution: {integrity: sha512-TNmJN7LkSLzmv01Jen3JbcvhXZyRhc/ETJNjssmmlyMB8IoNvicfgvDRX2gX3q1FTONq+mfsmWintwI+ejmEUw==}
+  /@tanstack/react-query@5.17.15(react@npm+preact@latest+compat):
+    resolution: {integrity: sha512-9qur91mOihaUN7pXm6ioDtS+4qgkBcCiIaZyvi3lZNcQZsrMGCYZ+eP3hiFrV4khoJyJrFUX1W0NcCVlgwNZxQ==}
     peerDependencies:
       react: '>=10'
     peerDependenciesMeta:
       react:
         optional: true
     dependencies:
-      '@tanstack/query-core': 5.17.10
+      '@tanstack/query-core': 5.17.15
       react: link:npm:preact@latest/compat
     dev: false
 
