@@ -60,7 +60,7 @@
     "react-dom": "npm:preact@latest/compat",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
-    "vite": "4.5.2"
+    "vite": "4.5.3"
   },
   "pnpm": {
     "peerDependencyRules": {
