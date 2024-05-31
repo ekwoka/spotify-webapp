@@ -25,7 +25,7 @@ const Default = () => (
 
 export const lazyLoad = (
   cb: () => Promise<() => JSXInternal.Element>,
-  fallback?: LazyLoadProps['fallback']
+  fallback?: LazyLoadProps['fallback'],
 ) => {
   const LazyComponent = lazy(cb);
   const LazyLoadWrapped = (props: any) => (

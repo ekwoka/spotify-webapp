@@ -1,7 +1,7 @@
 export const chunkArray = <T>(
   arr: T[],
   maxSize: number,
-  mutate = false
+  mutate = false,
 ): T[][] => {
   if (!mutate) arr = [...arr];
   const output: T[][] = [];

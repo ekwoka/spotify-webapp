@@ -42,7 +42,7 @@ export const AnimatedWaves = ({
         {Array.from({ length: waves.value }, (_, i): JSXInternal.Element => {
           const steps = Array.from(
             { length: 3 },
-            () => waveStrings[Math.floor(Math.random() * waveStrings.length)]
+            () => waveStrings[Math.floor(Math.random() * waveStrings.length)],
           );
           steps.push(steps[0]);
           return (
@@ -73,7 +73,7 @@ export const AnimatedWaves = ({
         })}
       </div>
     ),
-    [waves.value]
+    [waves.value],
   );
 };
 

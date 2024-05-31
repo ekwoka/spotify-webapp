@@ -21,7 +21,7 @@ export const autoRecommend = async (spotifyApi: SpotifyApiClient) => {
       limit: 50,
       min_popularity: 50,
       min_energy: 0.5,
-    })
+    }),
   );
 
   return recommendations.tracks;

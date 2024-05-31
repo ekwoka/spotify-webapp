@@ -2,7 +2,7 @@ import autoAnimate, { AutoAnimateOptions } from '@formkit/auto-animate';
 import { useEffect, useRef } from 'preact/hooks';
 
 export const useAutoAnimate = <T extends HTMLElement>(
-  options: Partial<AutoAnimateOptions> = {}
+  options: Partial<AutoAnimateOptions> = {},
 ) => {
   const animate = useRef<T>(null);
   const hooked = useRef(false);

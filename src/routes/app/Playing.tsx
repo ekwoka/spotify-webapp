@@ -17,17 +17,17 @@ export const Playing = (): JSXInternal.Element => {
       if (!state?.context.uri) return [];
       const playlistId = (state.context.uri as string).split(':playlist:')[1];
       const playlist = await client(
-        getPlaylistItems(playlistId, { limit: Infinity })
+        getPlaylistItems(playlistId, { limit: Infinity }),
       );
       return playlist.items.map((item) => item.track);
     },
     {
       keepPreviousData: true,
       staleTime: 1000 * 60 * 15,
-    }
+    },
   );
   const currentIndex = (currentPlaylist ?? []).findIndex(
-    (track) => track?.id === state?.track_window.current_track.id
+    (track) => track?.id === state?.track_window.current_track.id,
   );
   const nextTracks =
     currentIndex >= 0 ? currentPlaylist?.slice(currentIndex + 1) ?? [] : [];
@@ -53,7 +53,7 @@ export const Playing = (): JSXInternal.Element => {
               image={
                 getBestImage(
                   (state?.track_window.current_track?.album?.images ??
-                    []) as SpotifyImageArray
+                    []) as SpotifyImageArray,
                 ) || 'https://placekitten.com/300/300'
               }
             />
@@ -72,7 +72,7 @@ export const Playing = (): JSXInternal.Element => {
               album={track?.album?.name ?? ''}
               artist={track?.artists[0]?.name ?? ''}
               image={getBestImage(
-                (track?.album?.images ?? []) as SpotifyImageArray
+                (track?.album?.images ?? []) as SpotifyImageArray,
               )}
             />
           ))}

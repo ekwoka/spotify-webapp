@@ -12,15 +12,15 @@ let alreadyCalled = false;
 export const usePlayer = (): [
   SpotifyPlayer | null,
   PlayerActions,
-  PlayerState | null
+  PlayerState | null,
 ] => {
   const [player, setPlayer] = useGlobalState<SpotifyPlayer | null>(
     'webplayer',
-    null
+    null,
   );
   const [status, setStatus] = useGlobalState<PlayerState | null>(
     'playerstate',
-    nullPlaybackState
+    nullPlaybackState,
   );
   const [token, setToken] = useGlobalState<string>('token', '');
   const [room] = useGlobalState<string>('roomCode', '');
@@ -75,14 +75,14 @@ export const usePlayer = (): [
                 return toast.promise(
                   Promise.all(
                     arrayWrap(items ?? []).map((item) =>
-                      client(addToQueue(item))
-                    )
+                      client(addToQueue(item)),
+                    ),
                   ).then(() => undefined),
                   {
                     loading: 'Adding to queue...',
                     success: 'Added to queue',
                     error: 'Failed to add to queue',
-                  }
+                  },
                 );
               }
               if (!room)
@@ -103,7 +103,7 @@ export const usePlayer = (): [
             seek: (position: number) => player.seek(position),
           }
         : nullPlayerActions,
-    [player, room, status?.track_window.current_track.id, client]
+    [player, room, status?.track_window.current_track.id, client],
   );
 
   return [player, actions, status];

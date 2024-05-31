@@ -24,14 +24,14 @@ export const SimpleGridItem = ({
     {
       keepPreviousData: true,
       staleTime: 1000 * 60 * 15,
-    }
+    },
   );
 
   return (
     <li
       class={classNames(
         'flex shrink-0 grow cursor-pointer snap-start flex-col gap-4',
-        className
+        className,
       )}
       onClick={() => play(uri)}>
       <img

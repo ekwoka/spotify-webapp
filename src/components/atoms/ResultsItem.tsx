@@ -20,7 +20,7 @@ export const ResultsItem = ({
       <div class="flex w-full items-center justify-between space-x-6 p-6">
         <div class="flex-1 truncate">
           <div class="flex items-center space-x-3">
-            <h3 class="truncate whitespace-pre-wrap text-sm font-medium text-neutral-50 line-clamp-3">
+            <h3 class="line-clamp-3 truncate whitespace-pre-wrap text-sm font-medium text-neutral-50">
               {name}
             </h3>
           </div>

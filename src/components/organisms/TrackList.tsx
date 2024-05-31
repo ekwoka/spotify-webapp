@@ -28,7 +28,7 @@ export const TrackList = ({
     {
       keepPreviousData: true,
       staleTime: 1000 * 60 * 15,
-    }
+    },
   );
 
   return cloneElement(Child, { items: tracks ?? [] });

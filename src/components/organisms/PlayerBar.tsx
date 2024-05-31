@@ -29,7 +29,7 @@ export const PlayerBar = (): JSXInternal.Element => {
       return;
     const trackUris = await radioPlay(
       client,
-      previous_tracks.map(({ id }) => id)
+      previous_tracks.map(({ id }) => id),
     );
     if (!trackUris) return;
     play(trackUris);

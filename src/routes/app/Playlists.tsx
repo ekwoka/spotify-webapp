@@ -21,7 +21,7 @@ export const Playlists = (): JSXInternal.Element => {
       initialData: [],
       staleTime: 1000 * 60 * 15,
       initialDataUpdatedAt: 0,
-    }
+    },
   );
   return <SimpleFlexGrid items={playlists} as={PlaylistItem} wrap={true} />;
 };

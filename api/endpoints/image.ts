@@ -9,7 +9,7 @@ import { formattedReturn } from '../utils';
 // import sharp from 'sharp';
 
 export const handler: Handler | MockedHandler = async (
-  _req: Event
+  _req: Event,
 ): Promise<Response> => {
   // const { url, w } = req.queryStringParameters as { url: string; w: string };
   // const webp = req.headers.accept?.includes('webp');

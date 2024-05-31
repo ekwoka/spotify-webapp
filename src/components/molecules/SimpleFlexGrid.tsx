@@ -28,10 +28,10 @@ export const SimpleFlexGrid = <T extends unknown>({
         role="list"
         ref={container}
         class={classNames(
-          'no-scrollbar  w-full max-w-full snap-x snap-proximity gap-8 overflow-x-scroll scroll-smooth',
+          'no-scrollbar w-full max-w-full snap-x snap-proximity gap-8 overflow-x-scroll scroll-smooth',
           wrap
             ? 'grid grid-flow-row grid-cols-[13rem]'
-            : 'flex flex-row flex-nowrap'
+            : 'flex flex-row flex-nowrap',
         )}
         style={{
           minHeight: `${(minHeight ?? 0) / 4}rem`,

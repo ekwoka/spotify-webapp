@@ -5,7 +5,7 @@ import { autoRecommend } from './autoRecommend';
 let running = false;
 export const radioPlay = async (
   spotifyApi: SpotifyApiClient,
-  context?: string | string[]
+  context?: string | string[],
 ): Promise<string[] | null> => {
   if (running) return null;
   running = true;
@@ -15,7 +15,7 @@ export const radioPlay = async (
       seed_tracks: arrayWrap(context),
       limit: 10,
       min_popularity: 50,
-    })
+    }),
   );
 
   running = false;

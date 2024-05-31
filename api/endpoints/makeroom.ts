@@ -11,7 +11,7 @@ export const handler: Handler = async (): Promise<FormattedReturn> => {
     const response = await faunadb.query(
       Create(Collection('party_rooms'), {
         data: { code, created_at: Date.now(), queue: [] },
-      })
+      }),
     );
     return formattedReturn(200, { code, response });
   } catch (e) {

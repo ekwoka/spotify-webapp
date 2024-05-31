@@ -2,7 +2,7 @@ import { arrayWrap } from '../arrayWrap';
 
 export const addToRoomQueue = async (
   uri: string | string[],
-  roomCode: string
+  roomCode: string,
 ): Promise<void> => {
   try {
     const response = await fetch('/api/addtoqueue', {

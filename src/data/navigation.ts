@@ -47,12 +47,12 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
 export const SECONDARY_NAVIGATION: NavigationItem[] = [
   {
     name: 'Settings',
-    path: '/',
+    path: '/#settings',
     Icon: CogOutline,
   },
   {
     name: 'About',
-    path: '/',
+    path: '/#about',
     Icon: InformationCircleOutline,
   },
 ];

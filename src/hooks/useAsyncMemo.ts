@@ -4,7 +4,7 @@ import { useAsyncEffect } from './useAsyncEffect';
 export const useAsyncMemo = <T>(
   fn: () => Promise<T>,
   fallback: T,
-  deps: any[]
+  deps: any[],
 ): T => {
   const state = useSignal<T>(fallback);
   useAsyncEffect(async () => {

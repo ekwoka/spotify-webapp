@@ -28,7 +28,7 @@ export const Search = ({ q: query }: { q: string }): JSXInternal.Element => {
       initialData: [],
       staleTime: 1000 * 60 * 15,
       initialDataUpdatedAt: 0,
-    }
+    },
   );
 
   return (

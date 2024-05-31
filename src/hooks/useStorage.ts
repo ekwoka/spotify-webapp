@@ -4,13 +4,13 @@ import { useGlobalState } from '@ekwoka/preact-global-state';
 export const useStorage = <T>(
   key: string,
   initialValue: T,
-  storage: Storage = localStorage
+  storage: Storage = localStorage,
 ): [T, (value: T) => void] => {
   const [value, setValue] = useGlobalState<T>(
     key,
     storage.getItem(key)
       ? JSON.parse(storage.getItem(key) as string)
-      : initialValue
+      : initialValue,
   );
 
   const set = useCallback(
@@ -19,7 +19,7 @@ export const useStorage = <T>(
       setValue(value);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [key, storage]
+    [key, storage],
   );
 
   return [value, set];

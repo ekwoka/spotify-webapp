@@ -7,6 +7,6 @@ export const useZen = (): string => {
       return response.text();
     },
     'None',
-    []
+    [],
   );
 };

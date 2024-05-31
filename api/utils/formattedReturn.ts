@@ -1,7 +1,7 @@
 export const formattedReturn = (
   statusCode: number,
   body: any,
-  header: AnyObject = {}
+  header: AnyObject = {},
 ): FormattedReturn => {
   return {
     statusCode,

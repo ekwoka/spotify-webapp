@@ -33,7 +33,7 @@ export const SearchInput = ({
       config.debounce === false
         ? (val: string) => (value.value = val)
         : debounce((val: string) => (value.value = val)),
-    [config.debounce, value]
+    [config.debounce, value],
   );
 
   useEffect(() => {

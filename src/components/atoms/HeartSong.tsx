@@ -24,7 +24,7 @@ export const HeartSong = ({ id }: { id: string }) => {
       staleTime: 1000 * 60 * 15,
       initialData: false,
       initialDataUpdatedAt: 0,
-    }
+    },
   );
   const mutateIsLiked = useMutation(
     async (isLiked: boolean) =>
@@ -36,7 +36,7 @@ export const HeartSong = ({ id }: { id: string }) => {
     {
       onSuccess: (newState) =>
         queryClient.setQueryData(['isLiked', id], newState),
-    }
+    },
   );
   const toggleHeart = () => mutateIsLiked.mutate(!isLiked);
   return (
@@ -46,7 +46,7 @@ export const HeartSong = ({ id }: { id: string }) => {
           'h-6 w-6 flex-none transition-colors',
           isLiked
             ? 'animate-like text-rose-600'
-            : 'stroke-white text-transparent'
+            : 'stroke-white text-transparent',
         )}
       />
     </button>

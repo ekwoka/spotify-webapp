@@ -20,7 +20,7 @@ export const handler: Handler = async (req): Promise<FormattedReturn> => {
     await faunadb.query(
       Update(ref, {
         data: { queue },
-      })
+      }),
     );
     return formattedReturn(200, {});
   } catch (e) {

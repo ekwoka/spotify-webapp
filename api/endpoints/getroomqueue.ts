@@ -7,7 +7,7 @@ export const handler: Handler = async (req): Promise<FormattedReturn> => {
   try {
     const { code } = req.queryStringParameters as { code: string };
     const response = await faunadb.query(
-      Get(Match(Index('roomWithCode'), code))
+      Get(Match(Index('roomWithCode'), code)),
     );
     if (!response.data.queue) throw 'No queue found';
     return formattedReturn(200, { ...response.data });

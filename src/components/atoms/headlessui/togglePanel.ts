@@ -16,7 +16,7 @@ export const TogglePanel = ({
     show ? trueClass : falseClass,
     'transition-all',
     constantClass || '',
-    !as && children ? children.props.class || children.props.className : ''
+    !as && children ? children.props.class || children.props.className : '',
   );
 
   return as
