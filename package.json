@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "7.11.0",
     "@typescript-eslint/parser": "7.11.0",
     "autoprefixer": "10.4.19",
-    "eslint": "8.57.0",
+    "eslint": "9.26.0",
     "eslint-config-preact": "1.4.0",
     "eslint-plugin-filename-export": "1.0.4",
     "eslint-plugin-import": "2.29.1",
