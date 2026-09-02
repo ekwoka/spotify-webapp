@@ -52,7 +52,7 @@
     "husky": "9.0.11",
     "lint-staged": "15.2.5",
     "npm-run-all2": "6.2.0",
-    "pnpm": "9.1.4",
+    "pnpm": "10.34.5",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.6.0",
